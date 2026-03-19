@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aathish Åkeri AB | Premium Taxi Sweden</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="lang-switcher">
+        <button class="lang-btn" onclick="setLanguage('en')"><img src="https://flagcdn.com/w40/us.png" width="20">
+            EN</button>
+        <button class="lang-btn" onclick="setLanguage('sv')"><img src="https://flagcdn.com/w40/se.png" width="20">
+            SV</button>
+        <button class="lang-btn" onclick="setLanguage('es')"><img src="https://flagcdn.com/w40/es.png" width="20">
+            ES</button>
+        <button class="lang-btn" onclick="setLanguage('fr')"><img src="https://flagcdn.com/w40/fr.png" width="20">
+            FR</button>
+        <button class="lang-btn" onclick="setLanguage('de')"><img src="https://flagcdn.com/w40/de.png" width="20">
+            DE</button>
+        <button class="lang-btn" onclick="setLanguage('nl')"><img src="https://flagcdn.com/w40/nl.png" width="20">
+            NL</button>
+        <button class="lang-btn" onclick="setLanguage('it')"><img src="https://flagcdn.com/w40/it.png" width="20">
+            IT</button>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <img src="assets/images/logo.png" alt="Aathish Åkeri AB" class="company-logo">
+        </div>
+        <h1 id="mainTitle">Aathish Åkeri AB</h1>
+        <p id="subTitle">Your Premium Journey Starts Here – Comfort in Every Mile.</p>
+        <a href="tel:+46737351993" class="btn-call" id="callBtn">Call Us Now</a>
+    </header>
+
+    <div class="container">
+        <section id="fleet">
+            <h2 id="fleetTitle">Our Fleet</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="assets/images/standard-car.jpg" alt="Standard Sedan" class="card-img">
+                    <h3 id="car1Title">Standard Sedan</h3>
+                    <p id="car1Desc">Reliable for up to 4 passengers.</p>
+                </div>
+                <div class="card highlight">
+                    <img src="assets/images/premium-sedan.jpg" alt="Premium Sedan" class="card-img">
+                    <h3 id="carPremiumTitle">Premium Sedan</h3>
+                    <p id="carPremiumDesc">Luxury experience for business trips.</p>
+                </div>
+                <div class="card">
+                    <img src="assets/images/van1.jpg" alt="Premium Van" class="card-img">
+                    <h3 id="car2Title">Premium Van</h3>
+                    <p id="car2Desc">Up to 8 passengers with large luggage space.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="enquiry-section">
+            <h2 id="enqTitle">Enquire About Your Trip Price</h2>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {showSuccessMessage();}"></iframe>
+
+<form id="googleForm" 
+      action="https://docs.google.com/forms/d/e/1FAIpQLSe5kT9UmKAafZ5iCg125C1en-iSmpKkFDpOLM97xkX3vYZNrw/formResponse" 
+      method="POST" 
+      target="hidden_iframe" 
+      onsubmit="submitted=true;">
+<div id="successModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:#fff; padding:30px; border-radius:10px; box-shadow:0 0 20px rgba(0,0,0,0.2); text-align:center; z-index:1000; width:90%; max-width:400px;">
+    <h3 style="color:#28a745;">✔ Thank You!</h3>
+    <p>Your enquiry has been sent successfully. We will contact you shortly.</p>
+    <button onclick="closeModal()" style="background:#000; color:#fff; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">Close</button>
+</div>
+		<div class="form-group">
+            <label id="lblName">Full Name:</label>
+            <input type="text" name="entry.1153646139" placeholder="Your Name" required>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label id="lblEmail">Email Address:</label>
+                <input type="email" name="entry.360215860" placeholder="email@example.com" required>
+            </div>
+            <div class="form-group">
+                <label id="lblPhone">Mobile Number:</label>
+                <input type="tel" name="entry.1852072444" placeholder="+46 70 000 00 00" required>
+            </div>
+        </div>
+
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+                <div class="form-group">
+                    <label id="lblPickup">Pickup (Airport/City):</label>
+                    <input type="text" name="entry.1606357890" list="locationList" placeholder="e.g. Arlanda Airport"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label id="lblDrop">Drop-off Location:</label>
+                    <input type="text" name="entry.1227612234" list="locationList" placeholder="e.g. Stockholm Central"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label id="lblFlight">Flight / Vessel No (Optional):</label>
+                    <input type="text" name="entry.1654527934" place>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label id="lblDate">Date:</label>
+                        <input type="date" id="visibleDate" required onchange="syncDateTime()">
+                        <input type="hidden" name="entry.902462622_year" id="date_year">
+                        <input type="hidden" name="entry.902462622_month" id="date_month">
+                        <input type="hidden" name="entry.902462622_day" id="date_day">
+                    </div>
+
+                    <div class="form-group">
+                        <label id="lblTime">Time:</label>
+                        <input type="time" id="visibleTime" required onchange="syncDateTime()">
+                        <input type="hidden" name="entry.1678380838_hour" id="time_hour">
+                        <input type="hidden" name="entry.1678380838_minute" id="time_minute">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label id="lblAdults">Adults:</label>
+                        <input type="number" name="entry.2086286042" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label id="lblKids">Children:</label>
+                        <input type="number" name="entry.1864332574" min="0" value="0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label id="lblBags">Luggage Bags:</label>
+                    <input type="number" name="entry.1332310678" min="0" value="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label id="lblNotes">Additional Notes / Questions:</label>
+                    <textarea name="entry.875811815" id="notesField"></textarea>
+                </div>
+
+                <p style="font-weight: bold; margin-top: 15px;" id="lblAddons">Extra Services / Add-ons:</p>
+                <div class="addons">
+                    <label><input type="checkbox" name="entry.1201531084" value="Child seat 0-8 months"> <span
+                            id="optChild1">Child
+                            seat 0-8 months</span></label>
+                    <label><input type="checkbox" name="entry.1201531084" value="Child seat 9-36 months"> <span
+                            id="optChild2">Child
+                            seat 9-36 months</span></label>
+                    <label><input type="checkbox" name="entry.1201531084" value="Child seat 3+ Years"> <span
+                            id="optChild3">Child
+                            seat 3+ Years</span></label>
+                    <label><input type="checkbox" name="entry.1201531084" value="Combi (Large Luggages)"> <span
+                            id="optCombi">Combi
+                            (Large Luggages)</span></label>
+                    <label><input type="checkbox" name="entry.1201531084" value="Porter Help"> <span
+                            id="optPorter">Porter
+                            Help</span></label>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">Send Enquiry</button>
+            </form>
+        </section>
+
+        <section class="contact-box">
+            <h2 id="contactTitle">Contact Info</h2>
+            <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <p><strong>Email:</strong> <a href="mailto:info@aathishakeri.se">info@aathishakeri.se</a></p>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <p><strong>Phone:</strong> <a href="tel:+46737351993">+46 737 351 993</a></p>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">💬</span>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/46737351993" target="_blank" class="wa-link">Chat
+                        with us on WhatsApp</a></p>
+            </div>
+
+
+        </section>
+    </div>
+
+    <footer>
+        © 2017-2026 Aathish Åkeri AB. All Rights Reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
