@@ -28,12 +28,22 @@ body {
     border: 1px solid #ddd;
     padding: 6px 12px;
     border-radius: 6px;
-    cursor: pointer;
     font-weight: bold;
     display: flex;
     align-items: center;
     gap: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    /* உங்கள் தேவைக்கேற்ப மாற்றிக்கொள்ளுங்கள் */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.lang-btn:hover {
+    transform: scale(0.85);
+    /* 15% சுருங்கும் (Zoom-out) */
+    opacity: 0.8;
+    /* லேசாக மங்கலாகத் தெரிய (தேவையெனில்) */
 }
 
 /* Header & Opaque Logo */
@@ -45,7 +55,8 @@ header {
 }
 
 .logo-container {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    margin-top: 15px;
     display: inline-block;
     padding: 15px;
     background: rgba(255, 255, 255, 0.98);
@@ -58,6 +69,7 @@ header {
     height: auto;
     display: block;
     opacity: 1;
+    
 }
 
 .container {
@@ -98,8 +110,10 @@ header {
 }
 
 .card:hover {
-    transform: translateY(-5px); /* கார்டை 5px மேலே உயர்த்தும் */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* நிழலை அதிகப்படுத்தும் */
+    transform: translateY(-5px);
+    /* கார்டை 5px மேலே உயர்த்தும் */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* நிழலை அதிகப்படுத்தும் */
 }
 
 /* Form & Correct Textarea Size */
