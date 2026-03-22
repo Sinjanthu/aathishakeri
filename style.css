@@ -12,6 +12,134 @@ body {
     color: #333;
 }
 
+.pricing-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.price-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 30px;
+    width: 280px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* நடுவில் உள்ள கார்டை (Kista) உயர்த்தி காட்ட */
+.price-card.featured {
+    border: 2px solid #ffd700;
+    transform: scale(1.05);
+}
+
+.price-card.featured:hover {
+    transform: scale(1.08) translateY(-10px);
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffd700;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.price-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    margin: 20px 0;
+}
+
+.price-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.price-card li {
+    margin-bottom: 10px;
+}
+
+.direction-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ffd700;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* கார்டுகளை நடுவில் வைக்கும் */
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.price-card h4 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.price-card {
+    flex: 0 1 calc(33.333% - 40px);
+    /* ஒரு வரிசைக்கு சரியாக 3 கார்டுகள் */
+    min-width: 280px;
+    /* மொபைலில் கார்டுகள் உடையாமல் இருக்க */
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* மொபைல் போன்களில் ஒரு வரிசைக்கு ஒரு கார்டு மட்டும் தெரிய */
+@media (max-width: 900px) {
+    .price-card {
+        flex: 0 1 100%;
+    }
+}
+
+.btn-book {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-book:hover {
+    background: #ffd700;
+    color: #000;
+}
+
 /* Lang Switcher */
 .lang-switcher {
     position: fixed;
@@ -33,7 +161,7 @@ body {
     align-items: center;
     gap: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    
+
     /* உங்கள் தேவைக்கேற்ப மாற்றிக்கொள்ளுங்கள் */
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -69,7 +197,7 @@ header {
     height: auto;
     display: block;
     opacity: 1;
-    
+
 }
 
 .container {
