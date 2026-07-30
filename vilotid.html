@@ -338,17 +338,21 @@
             calculateVilotidCorrect();
         });
 
+        // Reset All Fields & Automatically Populate Dates
         function resetAllFields() {
-            document.getElementById('date_0').value = getPastDateStr(2);
-            document.getElementById('date_1').value = getPastDateStr(1);
-            document.getElementById('date_2').value = getPastDateStr(0);
+            // Automatically populate dates
+            document.getElementById('date_0').value = getPastDateStr(2); // 2 days ago
+            document.getElementById('date_1').value = getPastDateStr(1); // Yesterday
+            document.getElementById('date_2').value = getPastDateStr(0); // Today
 
+            // Clear time input fields
             for (let i = 0; i < 3; i++) {
                 document.getElementById(`start1_${i}`).value = '';
                 document.getElementById(`end1_${i}`).value = '';
                 document.getElementById(`start2_${i}`).value = '';
                 document.getElementById(`end2_${i}`).value = '';
             }
+
             setCurrentTime();
             document.getElementById('driverName').value = '';
             document.getElementById('results').style.display = 'none';
