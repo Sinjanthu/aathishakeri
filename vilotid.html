@@ -13,6 +13,7 @@
             --success: #16a34a;
             --danger: #dc2626;
             --secondary: #475569;
+            --neutral: #64748b;
         }
 
         body {
@@ -191,6 +192,10 @@
         .bg-danger {
             background-color: var(--danger);
         }
+
+        .bg-info {
+            background-color: var(--neutral);
+        }
     </style>
 </head>
 
@@ -333,11 +338,10 @@
             calculateVilotidCorrect();
         });
 
-        // Reset All Fields & Set First Datum to Yesterday
         function resetAllFields() {
             document.getElementById('date_0').value = getPastDateStr(2);
-            document.getElementById('date_1').value = getPastDateStr(1); // Yesterday
-            document.getElementById('date_2').value = getPastDateStr(0); // Today
+            document.getElementById('date_1').value = getPastDateStr(1);
+            document.getElementById('date_2').value = getPastDateStr(0);
 
             for (let i = 0; i < 3; i++) {
                 document.getElementById(`start1_${i}`).value = '';
@@ -358,86 +362,108 @@
             const curDateStr = document.getElementById('date_2').value;
             const yestDateStr = document.getElementById('date_1').value;
 
-            if (!curTimeVal || !curDateStr) {
-                resultsList.innerHTML = `<div class="result-card" style="border-left-color: var(--danger);">⚠️ <b>Incomplete Data:</b> Please fill in date and current time.</div>`;
-                document.getElementById('results').style.display = 'block';
-                return;
-            }
-
             // --- YESTERDAY'S CALCULATION (Index 1) ---
             const s1_yest = document.getElementById('start1_1').value;
             const e1_yest = document.getElementById('end1_1').value;
             const s2_yest = document.getElementById('start2_1').value;
             const e2_yest = document.getElementById('end2_1').value;
 
-            let r1_yest_mins = (s1_yest && e1_yest) ? Math.round((new Date(`${yestDateStr}T${e1_yest}`) - new Date(`${yestDateStr}T${s1_yest}`)) / (1000 * 60)) : 0;
-            let r2_yest_mins = (s2_yest && e2_yest) ? Math.round((new Date(`${yestDateStr}T${e2_yest}`) - new Date(`${yestDateStr}T${s2_yest}`)) / (1000 * 60)) : 0;
-            let totalYestRestMins = r1_yest_mins + r2_yest_mins;
+            let yestCardHTML = "";
+            let hasYestData = (s1_yest && e1_yest) || (s2_yest && e2_yest);
 
-            let yestWorkMins = (24 * 60) - totalYestRestMins;
-            let isYestCompliant = totalYestRestMins >= 11 * 60;
+            if (!hasYestData) {
+                yestCardHTML = `
+                <div class="result-card" style="border-left-color: var(--neutral);">
+                    <span class="badge bg-info">NO DATA</span>
+                    <strong>📅 Yesterday Summary (${yestDateStr || 'Not Set'}):</strong><br><br>
+                    • <i>No rest entry recorded for yesterday.</i>
+                </div>
+            `;
+            } else {
+                let r1_yest_mins = (s1_yest && e1_yest) ? Math.round((new Date(`${yestDateStr}T${e1_yest}`) - new Date(`${yestDateStr}T${s1_yest}`)) / (1000 * 60)) : 0;
+                let r2_yest_mins = (s2_yest && e2_yest) ? Math.round((new Date(`${yestDateStr}T${e2_yest}`) - new Date(`${yestDateStr}T${s2_yest}`)) / (1000 * 60)) : 0;
+                let totalYestRestMins = r1_yest_mins + r2_yest_mins;
 
-            const yR1H = Math.floor(r1_yest_mins / 60); const yR1M = r1_yest_mins % 60;
-            const yR2H = Math.floor(r2_yest_mins / 60); const yR2M = r2_yest_mins % 60;
-            const yTotH = Math.floor(totalYestRestMins / 60); const yTotM = totalYestRestMins % 60;
-            const yWorkH = Math.floor(yestWorkMins / 60); const yWorkM = yestWorkMins % 60;
+                let yestWorkMins = Math.max(0, (24 * 60) - totalYestRestMins);
+                let isYestCompliant = totalYestRestMins >= 11 * 60;
+
+                const yR1H = Math.floor(r1_yest_mins / 60); const yR1M = r1_yest_mins % 60;
+                const yR2H = Math.floor(r2_yest_mins / 60); const yR2M = r2_yest_mins % 60;
+                const yTotH = Math.floor(totalYestRestMins / 60); const yTotM = totalYestRestMins % 60;
+                const yWorkH = Math.floor(yestWorkMins / 60); const yWorkM = yestWorkMins % 60;
+
+                yestCardHTML = `
+                <div class="result-card" style="border-left-color: #64748b;">
+                    <span class="badge ${isYestCompliant ? 'bg-ok' : 'bg-danger'}">${isYestCompliant ? 'COMPLIANT' : 'INCOMPLETE REST'}</span>
+                    <strong>📅 Yesterday Summary (${yestDateStr}):</strong><br><br>
+                    • <b>Period 1 Rest (${s1_yest || '--'} to ${e1_yest || '--'}):</b> ${yR1H}h ${yR1M}m<br>
+                    • <b>Period 2 Rest (${s2_yest || '--'} to ${e2_yest || '--'}):</b> ${yR2H}h ${yR2M}m<br>
+                    • <b>Total Rest Taken Yesterday:</b> <span style="color:${isYestCompliant ? 'green' : 'red'}; font-weight:bold;">${yTotH}h ${yTotM}m</span><br>
+                    • <b>Calculated Work Time Yesterday:</b> ${yWorkH}h ${yWorkM}m
+                </div>
+            `;
+            }
 
             // --- TODAY'S CALCULATION (Index 2) ---
-            const nowDT = new Date(`${curDateStr}T${curTimeVal}`);
             const s1_today = document.getElementById('start1_2').value;
             const e1_today = document.getElementById('end1_2').value;
             const s2_today = document.getElementById('start2_2').value;
             const e2_today = document.getElementById('end2_2').value;
 
-            let r1_mins = (s1_today && e1_today) ? Math.round((new Date(`${curDateStr}T${e1_today}`) - new Date(`${curDateStr}T${s1_today}`)) / (1000 * 60)) : 0;
-            let r2_mins = (s2_today && e2_today) ? Math.round((new Date(`${curDateStr}T${e2_today}`) - new Date(`${curDateStr}T${s2_today}`)) / (1000 * 60)) : 0;
+            let todayCardHTML = "";
+            let hasTodayData = (s1_today && e1_today) || (s2_today && e2_today);
 
-            let totalTodayRestMins = r1_mins + r2_mins;
+            if (!hasTodayData || !curTimeVal || !curDateStr) {
+                todayCardHTML = `
+                <div class="result-card" style="border-left-color: var(--neutral);">
+                    <span class="badge bg-info">NO DATA</span>
+                    <strong>📅 Today & Active Shift Summary (${curDateStr || 'Not Set'}):</strong><br><br>
+                    • <i>No rest entry recorded for today. Fill in rest times to see active shift limits.</i>
+                </div>
+            `;
+            } else {
+                const nowDT = new Date(`${curDateStr}T${curTimeVal}`);
 
-            let shiftStartDT = e1_today ? new Date(`${curDateStr}T${e1_today}`) : new Date(nowDT.getTime() - 24 * 60 * 60 * 1000);
-            let totalElapsedSinceShiftStart = Math.round((nowDT - shiftStartDT) / (1000 * 60));
+                let r1_mins = (s1_today && e1_today) ? Math.round((new Date(`${curDateStr}T${e1_today}`) - new Date(`${curDateStr}T${s1_today}`)) / (1000 * 60)) : 0;
+                let r2_mins = (s2_today && e2_today) ? Math.round((new Date(`${curDateStr}T${e2_today}`) - new Date(`${curDateStr}T${s2_today}`)) / (1000 * 60)) : 0;
 
-            let netWorkDoneMins = Math.max(0, totalElapsedSinceShiftStart - r2_mins);
+                let totalTodayRestMins = r1_mins + r2_mins;
 
-            const MAX_WORK_MINS = 13 * 60;
-            let remainingWorkMins = MAX_WORK_MINS - netWorkDoneMins;
+                let shiftStartDT = e1_today ? new Date(`${curDateStr}T${e1_today}`) : new Date(nowDT.getTime() - 24 * 60 * 60 * 1000);
+                let totalElapsedSinceShiftStart = Math.round((nowDT - shiftStartDT) / (1000 * 60));
 
-            const r1H = Math.floor(r1_mins / 60); const r1M = r1_mins % 60;
-            const r2H = Math.floor(r2_mins / 60); const r2M = r2_mins % 60;
-            const totRestH = Math.floor(totalTodayRestMins / 60); const totRestM = totalTodayRestMins % 60;
-            const wH = Math.floor(netWorkDoneMins / 60); const wM = netWorkDoneMins % 60;
-            const remH = Math.floor(remainingWorkMins / 60); const remM = Math.abs(remainingWorkMins % 60);
+                let netWorkDoneMins = Math.max(0, totalElapsedSinceShiftStart - r2_mins);
 
-            let latestRestDT = new Date(nowDT.getTime() + (remainingWorkMins * 60 * 1000));
-            let latestH = String(latestRestDT.getHours()).padStart(2, '0');
-            let latestM = String(latestRestDT.getMinutes()).padStart(2, '0');
+                const MAX_WORK_MINS = 13 * 60;
+                let remainingWorkMins = MAX_WORK_MINS - netWorkDoneMins;
 
-            let isCompliant = totalTodayRestMins >= 11 * 60;
+                const r1H = Math.floor(r1_mins / 60); const r1M = r1_mins % 60;
+                const r2H = Math.floor(r2_mins / 60); const r2M = r2_mins % 60;
+                const totRestH = Math.floor(totalTodayRestMins / 60); const totRestM = totalTodayRestMins % 60;
+                const wH = Math.floor(netWorkDoneMins / 60); const wM = netWorkDoneMins % 60;
+                const remH = Math.floor(Math.abs(remainingWorkMins) / 60); const remM = Math.abs(remainingWorkMins % 60);
 
-            resultsList.innerHTML = `
-            <!-- Yesterday's Details -->
-            <div class="result-card" style="border-left-color: #64748b;">
-                <span class="badge ${isYestCompliant ? 'bg-ok' : 'bg-danger'}">${isYestCompliant ? 'COMPLIANT' : 'INCOMPLETE REST'}</span>
-                <strong>📅 Yesterday Summary (${yestDateStr}):</strong><br><br>
-                • <b>Period 1 Rest (${s1_yest || '--'} to ${e1_yest || '--'}):</b> ${yR1H}h ${yR1M}m<br>
-                • <b>Period 2 Rest (${s2_yest || '--'} to ${e2_yest || '--'}):</b> ${yR2H}h ${yR2M}m<br>
-                • <b>Total Rest Taken Yesterday:</b> <span style="color:${isYestCompliant ? 'green' : 'red'}; font-weight:bold;">${yTotH}h ${yTotM}m</span><br>
-                • <b>Calculated Work Time Yesterday:</b> ${yWorkH}h ${yWorkM}m
-            </div>
+                let latestRestDT = new Date(nowDT.getTime() + (remainingWorkMins * 60 * 1000));
+                let latestH = String(latestRestDT.getHours()).padStart(2, '0');
+                let latestM = String(latestRestDT.getMinutes()).padStart(2, '0');
 
-            <!-- Today's Details -->
-            <div class="result-card">
-                <span class="badge ${isCompliant ? 'bg-ok' : 'bg-danger'}">${isCompliant ? 'COMPLIANT (11h+ REST OK)' : 'INCOMPLETE REST'}</span>
-                <strong>📅 Today & Active Shift Summary (${curDateStr}):</strong><br><br>
-                • <b>Main Rest Period (${s1_today || '--'} to ${e1_today || '--'}):</b> ${r1H}h ${r1M}m<br>
-                • <b>Mid-Shift Rest Period (${s2_today || '--'} to ${e2_today || '--'}):</b> ${r2H}h ${r2M}m<br>
-                • <b>Total Rest Taken Today:</b> <span style="color:${isCompliant ? 'green' : 'red'}; font-weight:bold;">${totRestH}h ${totRestM}m</span><br><br>
-                • <b>Net Work Done So Far (Active Shift):</b> ${wH}h ${wM}m<br>
-                ⏱️ <b>Time Left to Work From Now (${curTimeVal}):</b> <span style="color:${remainingWorkMins >= 0 ? 'green' : 'red'}; font-weight:bold;">${remainingWorkMins >= 0 ? `${remH}h ${remM}m` : `Exceeded by ${remH}h ${remM}m`}</span><br>
-                • Must start next daily rest by: <b>${latestH}:${latestM}</b>
-            </div>
-        `;
+                let isCompliant = totalTodayRestMins >= 11 * 60;
 
+                todayCardHTML = `
+                <div class="result-card">
+                    <span class="badge ${isCompliant ? 'bg-ok' : 'bg-danger'}">${isCompliant ? 'COMPLIANT (11h+ REST OK)' : 'INCOMPLETE REST'}</span>
+                    <strong>📅 Today & Active Shift Summary (${curDateStr}):</strong><br><br>
+                    • <b>Main Rest Period (${s1_today || '--'} to ${e1_today || '--'}):</b> ${r1H}h ${r1M}m<br>
+                    • <b>Mid-Shift Rest Period (${s2_today || '--'} to ${e2_today || '--'}):</b> ${r2H}h ${r2M}m<br>
+                    • <b>Total Rest Taken Today:</b> <span style="color:${isCompliant ? 'green' : 'red'}; font-weight:bold;">${totRestH}h ${totRestM}m</span><br><br>
+                    • <b>Net Work Done So Far (Active Shift):</b> ${wH}h ${wM}m<br>
+                    ⏱️ <b>Time Left to Work From Now (${curTimeVal}):</b> <span style="color:${remainingWorkMins >= 0 ? 'green' : 'red'}; font-weight:bold;">${remainingWorkMins >= 0 ? `${remH}h ${remM}m` : `Exceeded by ${remH}h ${remM}m`}</span><br>
+                    • Must start next daily rest by: <b>${latestH}:${latestM}</b>
+                </div>
+            `;
+            }
+
+            resultsList.innerHTML = yestCardHTML + todayCardHTML;
             document.getElementById('results').style.display = 'block';
         }
     </script>
