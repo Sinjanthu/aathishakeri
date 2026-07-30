@@ -196,6 +196,15 @@
         .bg-info {
             background-color: var(--neutral);
         }
+
+        .copyright-footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #64748b;
+            border-top: 1px dashed var(--border-color);
+            padding-top: 10px;
+        }
     </style>
 </head>
 
@@ -271,6 +280,11 @@
             <h3 style="margin-top:0; font-size:1rem;">📊 Summary Results (Aathish Åkeri AB):</h3>
             <div id="resultsList"></div>
         </div>
+
+        <!-- Copyright Footer -->
+        <div class="copyright-footer">
+            © 2017-2026 Aathish Åkeri AB. All Rights Reserved.
+        </div>
     </div>
 
     <script>
@@ -338,14 +352,11 @@
             calculateVilotidCorrect();
         });
 
-        // Reset All Fields & Automatically Populate Dates
         function resetAllFields() {
-            // Automatically populate dates
-            document.getElementById('date_0').value = getPastDateStr(2); // 2 days ago
-            document.getElementById('date_1').value = getPastDateStr(1); // Yesterday
-            document.getElementById('date_2').value = getPastDateStr(0); // Today
+            document.getElementById('date_0').value = getPastDateStr(2);
+            document.getElementById('date_1').value = getPastDateStr(1);
+            document.getElementById('date_2').value = getPastDateStr(0);
 
-            // Clear time input fields
             for (let i = 0; i < 3; i++) {
                 document.getElementById(`start1_${i}`).value = '';
                 document.getElementById(`end1_${i}`).value = '';
