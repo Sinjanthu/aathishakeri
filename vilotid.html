@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Färddsrapport - Aathish Åkeri AB</title>
+    <title>Journey Report - Aathish Åkeri AB</title>
     <style>
         :root {
             --paper-bg: #ffffff;
@@ -30,7 +31,7 @@
             border: 2px solid var(--border-color);
             padding: 15px;
             box-sizing: border-box;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
         .sheet-header-title {
@@ -99,7 +100,9 @@
             font-weight: bold;
         }
 
-        input[type="text"], input[type="date"], input[type="time"] {
+        input[type="text"],
+        input[type="date"],
+        input[type="time"] {
             width: 100%;
             border: none;
             outline: none;
@@ -181,107 +184,120 @@
             float: right;
         }
 
-        .bg-ok { background-color: var(--success); }
-        .bg-danger { background-color: var(--danger); }
+        .bg-ok {
+            background-color: var(--success);
+        }
+
+        .bg-danger {
+            background-color: var(--danger);
+        }
     </style>
 </head>
+
 <body>
 
-<div class="sheet-container">
+    <div class="sheet-container">
 
-    <div class="sheet-header-title">
-        Original. Riv vid perforeringen
-    </div>
+        <div class="sheet-header-title">
+            Original. Tear at perforation
+        </div>
 
-    <!-- Company Top Header Table -->
-    <table class="top-table">
-        <tr>
-            <td style="width: 65%;">
-                <div class="company-brand">
-                    <svg class="company-logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="100" cy="100" r="95" fill="none" stroke="#2c3e50" stroke-width="4"/>
-                        <path id="textPath1" d="M 30,100 A 70,70 0 0,1 170,100" fill="none"/>
-                        <text font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50" text-anchor="middle">
-                            <textPath href="#textPath1" startOffset="50%">Aathish Åkeri AB</textPath>
-                        </text>
-                        <path d="M 100,65 L 100,135 M 75,90 L 125,90 M 100,65 A 10,10 0 1,1 100,45 A 10,10 0 1,1 100,65 M 70,125 C 70,150 130,150 130,125" fill="none" stroke="#2c3e50" stroke-width="8" stroke-linecap="round"/>
-                        <path d="M 60,115 L 70,125 L 80,115 M 140,115 L 130,125 L 120,115" fill="none" stroke="#2c3e50" stroke-width="6" stroke-linecap="round"/>
-                        <path id="textPath2" d="M 170,100 A 70,70 0 0,1 30,100" fill="none"/>
-                        <text font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" text-anchor="middle">
-                            <textPath href="#textPath2" startOffset="50%">Taxi och Transport</textPath>
-                        </text>
-                        <text x="35" y="105" font-family="Arial, sans-serif" font-size="10" fill="#8b7355" font-weight="bold">EST.</text>
-                        <text x="142" y="105" font-family="Arial, sans-serif" font-size="10" fill="#8b7355" font-weight="bold">2020</text>
-                    </svg>
-                    <div>
-                        <span class="company-name">Aathish Åkeri AB</span>
-                        <div style="font-size: 0.75rem; color: #64748b;">Taxi och Transport</div>
+        <!-- Company Top Header Table -->
+        <table class="top-table">
+            <tr>
+                <td style="width: 65%;">
+                    <div class="company-brand">
+                        <svg class="company-logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="95" fill="none" stroke="#2c3e50" stroke-width="4" />
+                            <path id="textPath1" d="M 30,100 A 70,70 0 0,1 170,100" fill="none" />
+                            <text font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50"
+                                text-anchor="middle">
+                                <textPath href="#textPath1" startOffset="50%">Aathish Åkeri AB</textPath>
+                            </text>
+                            <path
+                                d="M 100,65 L 100,135 M 75,90 L 125,90 M 100,65 A 10,10 0 1,1 100,45 A 10,10 0 1,1 100,65 M 70,125 C 70,150 130,150 130,125"
+                                fill="none" stroke="#2c3e50" stroke-width="8" stroke-linecap="round" />
+                            <path d="M 60,115 L 70,125 L 80,115 M 140,115 L 130,125 L 120,115" fill="none"
+                                stroke="#2c3e50" stroke-width="6" stroke-linecap="round" />
+                            <path id="textPath2" d="M 170,100 A 70,70 0 0,1 30,100" fill="none" />
+                            <text font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50"
+                                text-anchor="middle">
+                                <textPath href="#textPath2" startOffset="50%">Taxi and Transport</textPath>
+                            </text>
+                            <text x="35" y="105" font-family="Arial, sans-serif" font-size="10" fill="#8b7355"
+                                font-weight="bold">EST.</text>
+                            <text x="142" y="105" font-family="Arial, sans-serif" font-size="10" fill="#8b7355"
+                                font-weight="bold">2020</text>
+                        </svg>
+                        <div>
+                            <span class="company-name">Aathish Åkeri AB</span>
+                            <div style="font-size: 0.75rem; color: #64748b;">Taxi and Transport</div>
+                        </div>
                     </div>
-                </div>
-            </td>
-            <td>
-                <span class="label-sm">Arbetsgivare nr</span>
-                <input type="text" id="employerNo" value="1">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <span class="label-sm">Förarens namn</span>
-                <input type="text" id="driverName" placeholder="För- och efternamn" value="">
-            </td>
-        </tr>
-    </table>
+                </td>
+                <td>
+                    <span class="label-sm">Employer No.</span>
+                    <input type="text" id="employerNo" value="1">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span class="label-sm">Driver's Name</span>
+                    <input type="text" id="driverName" placeholder="First and last name" value="">
+                </td>
+            </tr>
+        </table>
 
-    <!-- Current Time Box -->
-    <div class="current-time-box">
-        <span>⏱️ Nuvarande tid (Current Time):</span>
-        <input type="time" id="currentTime" style="width: 100px; text-align: right;">
+        <!-- Current Time Box -->
+        <div class="current-time-box">
+            <span>⏱️ Current Time:</span>
+            <input type="time" id="currentTime" style="width: 100px; text-align: right;">
+        </div>
+
+        <!-- Rest Time Blocks -->
+        <div id="blocksContainer"></div>
+
+        <div class="button-group">
+            <button class="btn" onclick="calculateVilotidCorrect()">Calculate Rest Time</button>
+            <button class="btn btn-reset" onclick="resetAllFields()">Reset Form</button>
+        </div>
+
+        <div class="result-box" id="results" style="display:none;">
+            <h3 style="margin-top:0; font-size:1rem;">📊 Summary Results (Aathish Åkeri AB):</h3>
+            <div id="resultsList"></div>
+        </div>
     </div>
 
-    <!-- Vilotid Blocks -->
-    <div id="blocksContainer"></div>
+    <script>
+        function getPastDateStr(daysAgo) {
+            const d = new Date();
+            d.setDate(d.getDate() - daysAgo);
+            return d.toISOString().split('T')[0];
+        }
 
-    <div class="button-group">
-        <button class="btn" onclick="calculateVilotidCorrect()">Beräkna Vilotid</button>
-        <button class="btn btn-reset" onclick="resetAllFields()">Reset Form</button>
-    </div>
+        const prefilledData = [
+            { date: getPastDateStr(2), s1: "00:00", e1: "13:08", s2: "21:05", e2: "22:05" },
+            { date: getPastDateStr(1), s1: "00:29", e1: "16:47", s2: "20:32", e2: "21:33" },
+            { date: getPastDateStr(0), s1: "04:17", e1: "13:35", s2: "18:55", e2: "20:55" }
+        ];
 
-    <div class="result-box" id="results" style="display:none;">
-        <h3 style="margin-top:0; font-size:1rem;">📊 Resultat Summary (Aathish Åkeri AB):</h3>
-        <div id="resultsList"></div>
-    </div>
-</div>
+        const container = document.getElementById('blocksContainer');
 
-<script>
-    function getPastDateStr(daysAgo) {
-        const d = new Date();
-        d.setDate(d.getDate() - daysAgo);
-        return d.toISOString().split('T')[0];
-    }
-
-    const prefilledData = [
-        { date: getPastDateStr(2), s1: "00:00", e1: "13:08", s2: "21:05", e2: "22:05" },
-        { date: getPastDateStr(1), s1: "00:29", e1: "16:47", s2: "20:32", e2: "21:33" },
-        { date: getPastDateStr(0), s1: "04:17", e1: "13:35", s2: "18:55", e2: "20:55" }
-    ];
-
-    const container = document.getElementById('blocksContainer');
-
-    function renderBlocks(data) {
-        container.innerHTML = '';
-        data.forEach((item, i) => {
-            container.innerHTML += `
+        function renderBlocks(data) {
+            container.innerHTML = '';
+            data.forEach((item, i) => {
+                container.innerHTML += `
                 <table class="block-table" id="block_${i}">
                     <tr class="block-header-row">
-                        <td style="width: 40%;"><span class="title-lg">Vilotid</span></td>
+                        <td style="width: 40%;"><span class="title-lg">Rest Time</span></td>
                         <td>
-                            <span class="label-sm">Datum</span>
+                            <span class="label-sm">Date</span>
                             <input type="date" id="date_${i}" value="${item.date}">
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <span class="label-sm">Från och med klockan — till och med klockan (Period 1)</span>
+                            <span class="label-sm">From — To (Period 1)</span>
                             <div class="time-range-row">
                                 <input type="time" id="start1_${i}" value="${item.s1}">
                                 <span>–</span>
@@ -291,7 +307,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <span class="label-sm">Från och med klockan — till och med klockan (Period 2)</span>
+                            <span class="label-sm">From — To (Period 2)</span>
                             <div class="time-range-row">
                                 <input type="time" id="start2_${i}" value="${item.s2}">
                                 <span>–</span>
@@ -301,100 +317,104 @@
                     </tr>
                 </table>
             `;
+            });
+        }
+
+        function setCurrentTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('currentTime').value = `${hours}:${minutes}`;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderBlocks(prefilledData);
+            setCurrentTime();
+            calculateVilotidCorrect();
         });
-    }
 
-    function setCurrentTime() {
-        const now = new Date();
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        document.getElementById('currentTime').value = `${hours}:${minutes}`;
-    }
+        // Reset All Fields & Set First Datum to Yesterday
+        function resetAllFields() {
+            document.getElementById('date_0').value = getPastDateStr(2);
+            document.getElementById('date_1').value = getPastDateStr(1); // Yesterday
+            document.getElementById('date_2').value = getPastDateStr(0); // Today
 
-    document.addEventListener("DOMContentLoaded", () => {
-        renderBlocks(prefilledData);
-        setCurrentTime();
-        calculateVilotidCorrect();
-    });
-
-    function resetAllFields() {
-        for (let i = 0; i < 3; i++) {
-            document.getElementById(`date_${i}`).value = '';
-            document.getElementById(`start1_${i}`).value = '';
-            document.getElementById(`end1_${i}`).value = '';
-            document.getElementById(`start2_${i}`).value = '';
-            document.getElementById(`end2_${i}`).value = '';
-        }
-        document.getElementById('currentTime').value = '';
-        document.getElementById('driverName').value = '';
-        document.getElementById('results').style.display = 'none';
-    }
-
-    function calculateVilotidCorrect() {
-        const resultsList = document.getElementById('resultsList');
-        resultsList.innerHTML = '';
-
-        const curTimeVal = document.getElementById('currentTime').value;
-        const curDateStr = document.getElementById('date_2').value;
-        const yestDateStr = document.getElementById('date_1').value;
-
-        if (!curTimeVal || !curDateStr) {
-            resultsList.innerHTML = `<div class="result-card" style="border-left-color: var(--danger);">⚠️ <b>Incomplete Data:</b> Please fill in date and current time.</div>`;
-            document.getElementById('results').style.display = 'block';
-            return;
+            for (let i = 0; i < 3; i++) {
+                document.getElementById(`start1_${i}`).value = '';
+                document.getElementById(`end1_${i}`).value = '';
+                document.getElementById(`start2_${i}`).value = '';
+                document.getElementById(`end2_${i}`).value = '';
+            }
+            setCurrentTime();
+            document.getElementById('driverName').value = '';
+            document.getElementById('results').style.display = 'none';
         }
 
-        // --- YESTERDAY'S CALCULATION (Index 1) ---
-        const s1_yest = document.getElementById('start1_1').value;
-        const e1_yest = document.getElementById('end1_1').value;
-        const s2_yest = document.getElementById('start2_1').value;
-        const e2_yest = document.getElementById('end2_1').value;
+        function calculateVilotidCorrect() {
+            const resultsList = document.getElementById('resultsList');
+            resultsList.innerHTML = '';
 
-        let r1_yest_mins = (s1_yest && e1_yest) ? Math.round((new Date(`${yestDateStr}T${e1_yest}`) - new Date(`${yestDateStr}T${s1_yest}`)) / (1000 * 60)) : 0;
-        let r2_yest_mins = (s2_yest && e2_yest) ? Math.round((new Date(`${yestDateStr}T${e2_yest}`) - new Date(`${yestDateStr}T${s2_yest}`)) / (1000 * 60)) : 0;
-        let totalYestRestMins = r1_yest_mins + r2_yest_mins;
+            const curTimeVal = document.getElementById('currentTime').value;
+            const curDateStr = document.getElementById('date_2').value;
+            const yestDateStr = document.getElementById('date_1').value;
 
-        let yestWorkMins = (24 * 60) - totalYestRestMins;
-        let isYestCompliant = totalYestRestMins >= 11 * 60;
+            if (!curTimeVal || !curDateStr) {
+                resultsList.innerHTML = `<div class="result-card" style="border-left-color: var(--danger);">⚠️ <b>Incomplete Data:</b> Please fill in date and current time.</div>`;
+                document.getElementById('results').style.display = 'block';
+                return;
+            }
 
-        const yR1H = Math.floor(r1_yest_mins / 60); const yR1M = r1_yest_mins % 60;
-        const yR2H = Math.floor(r2_yest_mins / 60); const yR2M = r2_yest_mins % 60;
-        const yTotH = Math.floor(totalYestRestMins / 60); const yTotM = totalYestRestMins % 60;
-        const yWorkH = Math.floor(yestWorkMins / 60); const yWorkM = yestWorkMins % 60;
+            // --- YESTERDAY'S CALCULATION (Index 1) ---
+            const s1_yest = document.getElementById('start1_1').value;
+            const e1_yest = document.getElementById('end1_1').value;
+            const s2_yest = document.getElementById('start2_1').value;
+            const e2_yest = document.getElementById('end2_1').value;
 
-        // --- TODAY'S CALCULATION (Index 2) ---
-        const nowDT = new Date(`${curDateStr}T${curTimeVal}`);
-        const s1_today = document.getElementById('start1_2').value;
-        const e1_today = document.getElementById('end1_2').value;
-        const s2_today = document.getElementById('start2_2').value;
-        const e2_today = document.getElementById('end2_2').value;
+            let r1_yest_mins = (s1_yest && e1_yest) ? Math.round((new Date(`${yestDateStr}T${e1_yest}`) - new Date(`${yestDateStr}T${s1_yest}`)) / (1000 * 60)) : 0;
+            let r2_yest_mins = (s2_yest && e2_yest) ? Math.round((new Date(`${yestDateStr}T${e2_yest}`) - new Date(`${yestDateStr}T${s2_yest}`)) / (1000 * 60)) : 0;
+            let totalYestRestMins = r1_yest_mins + r2_yest_mins;
 
-        let r1_mins = (s1_today && e1_today) ? Math.round((new Date(`${curDateStr}T${e1_today}`) - new Date(`${curDateStr}T${s1_today}`)) / (1000 * 60)) : 0;
-        let r2_mins = (s2_today && e2_today) ? Math.round((new Date(`${curDateStr}T${e2_today}`) - new Date(`${curDateStr}T${s2_today}`)) / (1000 * 60)) : 0;
+            let yestWorkMins = (24 * 60) - totalYestRestMins;
+            let isYestCompliant = totalYestRestMins >= 11 * 60;
 
-        let totalTodayRestMins = r1_mins + r2_mins;
+            const yR1H = Math.floor(r1_yest_mins / 60); const yR1M = r1_yest_mins % 60;
+            const yR2H = Math.floor(r2_yest_mins / 60); const yR2M = r2_yest_mins % 60;
+            const yTotH = Math.floor(totalYestRestMins / 60); const yTotM = totalYestRestMins % 60;
+            const yWorkH = Math.floor(yestWorkMins / 60); const yWorkM = yestWorkMins % 60;
 
-        let shiftStartDT = e1_today ? new Date(`${curDateStr}T${e1_today}`) : new Date(nowDT.getTime() - 24*60*60*1000);
-        let totalElapsedSinceShiftStart = Math.round((nowDT - shiftStartDT) / (1000 * 60));
+            // --- TODAY'S CALCULATION (Index 2) ---
+            const nowDT = new Date(`${curDateStr}T${curTimeVal}`);
+            const s1_today = document.getElementById('start1_2').value;
+            const e1_today = document.getElementById('end1_2').value;
+            const s2_today = document.getElementById('start2_2').value;
+            const e2_today = document.getElementById('end2_2').value;
 
-        let netWorkDoneMins = Math.max(0, totalElapsedSinceShiftStart - r2_mins);
+            let r1_mins = (s1_today && e1_today) ? Math.round((new Date(`${curDateStr}T${e1_today}`) - new Date(`${curDateStr}T${s1_today}`)) / (1000 * 60)) : 0;
+            let r2_mins = (s2_today && e2_today) ? Math.round((new Date(`${curDateStr}T${e2_today}`) - new Date(`${curDateStr}T${s2_today}`)) / (1000 * 60)) : 0;
 
-        const MAX_WORK_MINS = 13 * 60;
-        let remainingWorkMins = MAX_WORK_MINS - netWorkDoneMins;
+            let totalTodayRestMins = r1_mins + r2_mins;
 
-        const r1H = Math.floor(r1_mins / 60); const r1M = r1_mins % 60;
-        const r2H = Math.floor(r2_mins / 60); const r2M = r2_mins % 60;
-        const totRestH = Math.floor(totalTodayRestMins / 60); const totRestM = totalTodayRestMins % 60;
-        const wH = Math.floor(netWorkDoneMins / 60); const wM = netWorkDoneMins % 60;
-        const remH = Math.floor(remainingWorkMins / 60); const remM = Math.abs(remainingWorkMins % 60);
+            let shiftStartDT = e1_today ? new Date(`${curDateStr}T${e1_today}`) : new Date(nowDT.getTime() - 24 * 60 * 60 * 1000);
+            let totalElapsedSinceShiftStart = Math.round((nowDT - shiftStartDT) / (1000 * 60));
 
-        let latestRestDT = new Date(nowDT.getTime() + (remainingWorkMins * 60 * 1000));
-        let latestH = String(latestRestDT.getHours()).padStart(2, '0');
-        let latestM = String(latestRestDT.getMinutes()).padStart(2, '0');
+            let netWorkDoneMins = Math.max(0, totalElapsedSinceShiftStart - r2_mins);
 
-        let isCompliant = totalTodayRestMins >= 11 * 60;
+            const MAX_WORK_MINS = 13 * 60;
+            let remainingWorkMins = MAX_WORK_MINS - netWorkDoneMins;
 
-        resultsList.innerHTML = `
+            const r1H = Math.floor(r1_mins / 60); const r1M = r1_mins % 60;
+            const r2H = Math.floor(r2_mins / 60); const r2M = r2_mins % 60;
+            const totRestH = Math.floor(totalTodayRestMins / 60); const totRestM = totalTodayRestMins % 60;
+            const wH = Math.floor(netWorkDoneMins / 60); const wM = netWorkDoneMins % 60;
+            const remH = Math.floor(remainingWorkMins / 60); const remM = Math.abs(remainingWorkMins % 60);
+
+            let latestRestDT = new Date(nowDT.getTime() + (remainingWorkMins * 60 * 1000));
+            let latestH = String(latestRestDT.getHours()).padStart(2, '0');
+            let latestM = String(latestRestDT.getMinutes()).padStart(2, '0');
+
+            let isCompliant = totalTodayRestMins >= 11 * 60;
+
+            resultsList.innerHTML = `
             <!-- Yesterday's Details -->
             <div class="result-card" style="border-left-color: #64748b;">
                 <span class="badge ${isYestCompliant ? 'bg-ok' : 'bg-danger'}">${isYestCompliant ? 'COMPLIANT' : 'INCOMPLETE REST'}</span>
@@ -418,9 +438,10 @@
             </div>
         `;
 
-        document.getElementById('results').style.display = 'block';
-    }
-</script>
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
 
 </body>
+
 </html>
