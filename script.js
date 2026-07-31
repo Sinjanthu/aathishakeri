@@ -212,6 +212,78 @@ const content = {
   },
 };
 
+const scamTerms = [
+  "western union",
+  "moneygram",
+  "bitcoin",
+  "btc",
+  "cashapp",
+  "zelle",
+  "gift card",
+  "voucher",
+  "crypto",
+  "paynow",
+  "paypal",
+  "urgent payment",
+  "loan",
+  "refund",
+  "payment",
+  "swish",
+  "skrill",
+  "qr code",
+  "scam",
+  "fraud",
+  "deposit",
+  "advance",
+  "bank transfer",
+  "gift",
+  "westernunion",
+  "money gram"
+];
+
+function isScamText(text) {
+  if (!text) return false;
+  const lower = text.toLowerCase();
+  return scamTerms.some((term) => lower.includes(term));
+}
+
+function showFormWarning(message) {
+  const warning = document.getElementById("formWarning");
+  if (warning) {
+    warning.textContent = message;
+    warning.style.display = "block";
+  }
+}
+
+function hideFormWarning() {
+  const warning = document.getElementById("formWarning");
+  if (warning) {
+    warning.style.display = "none";
+    warning.textContent = "";
+  }
+}
+
+function handleFormSubmit() {
+  hideFormWarning();
+
+  const notes = document.getElementById("notesField").value || "";
+  const pickup = document.querySelector('input[name="entry.1606357890"]').value || "";
+  const drop = document.querySelector('input[name="entry.1227612234"]').value || "";
+  const email = document.querySelector('input[name="entry.360215860"]').value || "";
+  const phone = document.querySelector('input[name="entry.1852072444"]').value || "";
+
+  const combined = `${notes} ${pickup} ${drop} ${email} ${phone}`;
+  if (isScamText(combined)) {
+    showFormWarning(
+      "Your enquiry contains suspicious payment or scam-related keywords. Please remove these terms before submitting."
+    );
+    return false;
+  }
+
+  submitted = true;
+  return true;
+}
+
 function setLanguage(lang) {
   const data = content[lang];
   if (!data) return;

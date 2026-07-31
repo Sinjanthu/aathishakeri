@@ -273,6 +273,7 @@
 
         <div class="button-group">
             <button class="btn" onclick="calculateVilotidCorrect()">Calculate Rest Time</button>
+            <button class="btn btn-debug" onclick="simulateExample()">Simulate Example</button>
             <button class="btn btn-reset" onclick="resetAllFields()">Reset Form</button>
         </div>
 
@@ -412,6 +413,22 @@
             return date && time ? new Date(`${date}T${time}`) : null;
         }
 
+        function parseDateRange(date, startTime, endTime) {
+            if (!date) return [null, null];
+            const s = startTime ? new Date(`${date}T${startTime}`) : null;
+            let e = endTime ? new Date(`${date}T${endTime}`) : null;
+            if (e && endTime === '23:59') {
+                // Normalize 23:59 as midnight next day so 23:59 -> 24:00 connects cleanly to 00:00 next day.
+                e = new Date(`${date}T00:00`);
+                e.setDate(e.getDate() + 1);
+            }
+            if (s && e && e <= s) {
+                // Treat an end time that is not after start as crossing midnight to next day
+                e = new Date(e.getTime() + 24 * 60 * 60 * 1000);
+            }
+            return [s, e];
+        }
+
         function parseMidnight(date) {
             return date ? new Date(`${date}T00:00`) : null;
         }
@@ -437,7 +454,7 @@
             for (let i = 1; i < sorted.length; i++) {
                 const current = sorted[i];
                 const last = merged[merged.length - 1];
-                const allowedGapMs = 60 * 1000; // allow one-minute adjacency to preserve midnight-spanning rest
+                const allowedGapMs = 0; // strict adjacency: no gap allowed
                 if (current.start <= last.end || current.start - last.end <= allowedGapMs) {
                     last.end = new Date(Math.max(last.end.getTime(), current.end.getTime()));
                 } else {
@@ -518,14 +535,10 @@
                 const rangeStart = new Date(nowDT.getTime() - 24 * 60 * 60 * 1000);
 
                 const restIntervals = [];
-                const yest1Start = parseDateTime(yestDateStr, s1_yest);
-                const yest1End = parseDateTime(yestDateStr, e1_yest);
-                const yest2Start = parseDateTime(yestDateStr, s2_yest);
-                const yest2End = parseDateTime(yestDateStr, e2_yest);
-                const today1Start = parseDateTime(curDateStr, s1_today);
-                const today1End = parseDateTime(curDateStr, e1_today);
-                const today2Start = parseDateTime(curDateStr, s2_today);
-                const today2End = parseDateTime(curDateStr, e2_today);
+                const [yest1Start, yest1End] = parseDateRange(yestDateStr, s1_yest, e1_yest);
+                const [yest2Start, yest2End] = parseDateRange(yestDateStr, s2_yest, e2_yest);
+                const [today1Start, today1End] = parseDateRange(curDateStr, s1_today, e1_today);
+                const [today2Start, today2End] = parseDateRange(curDateStr, s2_today, e2_today);
 
                 if (fullRestYest && yestDateStr) {
                     const fullYest = clipIntervalToRange(parseMidnight(yestDateStr), parseNextMidnight(yestDateStr), rangeStart, nowDT);
@@ -559,6 +572,49 @@
                 const has8hContinuous = longestRestMins >= 8 * 60;
                 const isCompliant = has11hTotal && has8hContinuous;
 
+                // If there is an 8h continuous rest block within the last 24h, the work counter resets
+                const MAX_WORK_MINS = 13 * 60;
+                const intervalsWith8h = mergedRest.filter(iv => Math.round((iv.end - iv.start) / (1000 * 60)) >= 8 * 60);
+                let latest8End = null;
+                if (intervalsWith8h.length) {
+                    latest8End = intervalsWith8h.reduce((latest, iv) => {
+                        return (!latest || iv.end > latest) ? iv.end : latest;
+                    }, null);
+                }
+
+                let workSinceMins = null;
+                let remainingWorkMins = null;
+                let deadlineText = '';
+                let workDoneH = 0, workDoneM = 0, remWorkH = 0, remWorkM = 0;
+
+                if (latest8End) {
+                    // Calculate work since the end of the latest 8h continuous rest
+                    workSinceMins = Math.max(0, Math.round((nowDT - latest8End) / (1000 * 60)));
+                    remainingWorkMins = MAX_WORK_MINS - workSinceMins;
+                    workDoneH = Math.floor(workSinceMins / 60); workDoneM = workSinceMins % 60;
+                    remWorkH = Math.floor(Math.abs(remainingWorkMins) / 60); remWorkM = Math.abs(remainingWorkMins % 60);
+
+                    if (remainingWorkMins > 0) {
+                        const deadlineDT = new Date(nowDT.getTime() + remainingWorkMins * 60 * 1000);
+                        const dH = String(deadlineDT.getHours()).padStart(2, '0');
+                        const dM = String(deadlineDT.getMinutes()).padStart(2, '0');
+                        const sameDay = deadlineDT.toDateString() === nowDT.toDateString();
+                        const prettyDate = deadlineDT.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' });
+                        deadlineText = sameDay ? `${dH}:${dM}` : `${prettyDate} ${dH}:${dM}`;
+                    } else if (remainingWorkMins === 0) {
+                        deadlineText = 'Start rest now';
+                    } else {
+                        deadlineText = `Exceeded by ${remWorkH}h ${remWorkM}m — stop and rest`;
+                    }
+                } else {
+                    // No continuous 8h block found — rolling 24h calculation still shown for context
+                    const workDone24h = Math.max(0, (24 * 60) - totalRestMins24h);
+                    remainingWorkMins = MAX_WORK_MINS - workDone24h;
+                    workDoneH = Math.floor(workDone24h / 60); workDoneM = workDone24h % 60;
+                    remWorkH = Math.floor(Math.abs(remainingWorkMins) / 60); remWorkM = Math.abs(remainingWorkMins % 60);
+                    deadlineText = 'No 8h continuous rest in last 24h';
+                }
+
                 const r1H = Math.floor((today1Start && today1End ? Math.round((today1End - today1Start) / (1000 * 60)) : 0) / 60);
                 const r1M = Math.floor((today1Start && today1End ? Math.round((today1End - today1Start) / (1000 * 60)) : 0) % 60);
                 const r2H = Math.floor((today2Start && today2End ? Math.round((today2End - today2Start) / (1000 * 60)) : 0) / 60);
@@ -571,11 +627,15 @@
                 todayCardHTML = `
                 <div class="result-card">
                     <span class="badge ${isCompliant ? 'bg-ok' : 'bg-danger'}">${isCompliant ? 'COMPLIANT (11h total + 8h continuous)' : 'INCOMPLETE REST'}</span>
-                    <strong>📅 Last 24h Rest Summary (${curDateStr}):</strong><br><br>
+                    <strong>📅 Last 24h Rest Summary (${curDateStr}):</strong>
+                    <span title="Daily rest of at least 11 hours (of which 8 hours continuous). Must take daily rest latest within 24 hours after the previous daily rest." style="margin-left:8px; cursor:help;">ℹ️</span><br><br>
                     • <b>Main Rest Period (${s1_today || '--'} to ${e1_today || '--'}):</b> ${r1H}h ${r1M}m<br>
                     • <b>Mid-Shift Rest Period (${s2_today || '--'} to ${e2_today || '--'}):</b> ${r2H}h ${r2M}m<br>
                     • <b>Total Rest in Last 24h:</b> <span style="color:${has11hTotal ? 'green' : 'red'}; font-weight:bold;">${total24HRestH}h ${total24HRestM}m</span><br>
                     • <b>Longest Continuous Rest Block:</b> <span style="color:${has8hContinuous ? 'green' : 'red'}; font-weight:bold;">${longestContH}h ${longestContM}m</span><br><br>
+                    • <b>No of Hours worked in current shift:</b> ${workDoneH}h ${workDoneM}m<br>
+                    ⏱️ <b>Remaining Work Allowed (of 13h):</b> <span style="color:${remainingWorkMins >= 0 ? 'green' : 'red'}; font-weight:bold;">${remainingWorkMins >= 0 ? `${remWorkH}h ${remWorkM}m` : `Exceeded by ${remWorkH}h ${remWorkM}m`}</span><br>
+                    • <b>Must start rest by:</b> <b>${deadlineText}</b><br><br>
                     • <b>Rest Rule Status:</b> ${has11hTotal ? '11h total met' : '11h total missing'} / ${has8hContinuous ? '8h continuous met' : '8h continuous missing'}
                 </div>
             `;
@@ -583,6 +643,41 @@
 
             resultsList.innerHTML = yestCardHTML + todayCardHTML;
             document.getElementById('results').style.display = 'block';
+        }
+
+        function simulateExample() {
+            const today = new Date();
+            const yest = new Date();
+            yest.setDate(today.getDate() - 1);
+            const yestStr = yest.toISOString().split('T')[0];
+            const todayStr = today.toISOString().split('T')[0];
+
+            document.getElementById('date_1').value = yestStr;
+            document.getElementById('date_2').value = todayStr;
+
+            // Yesterday (this period spans into the next day: 30/07 20:00 -> 31/07 04:17)
+            document.getElementById('start1_1').value = '00:00';
+            document.getElementById('end1_1').value = '08:00';
+            document.getElementById('start2_1').value = '20:00';
+            document.getElementById('end2_1').value = '04:17';
+
+            // Today
+            document.getElementById('start1_2').value = '00:00';
+            document.getElementById('end1_2').value = '06:07';
+            document.getElementById('start2_2').value = '12:05';
+            document.getElementById('end2_2').value = '13:05';
+
+            // clear full-rest / no-rest flags
+            for (let i = 0; i < 3; i++) {
+                const f = document.getElementById(`fullRest_${i}`);
+                if (f) f.checked = false;
+                const n = document.getElementById(`noRest2_${i}`);
+                if (n) n.checked = false;
+            }
+
+            // set current time to 14:00 for reproduction
+            document.getElementById('currentTime').value = '14:00';
+            calculateVilotidCorrect();
         }
     </script>
 
