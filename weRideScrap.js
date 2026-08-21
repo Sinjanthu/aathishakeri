@@ -1,4 +1,7 @@
 (async function(){
+  // ஸ்கிரிப்ட் இயங்கத் தொடங்கிவிட்டதை உறுதிப்படுத்தும் செய்தி
+  alert("WeRide Scraping ஸ்கிரிப்ட் இயங்கத் தொடங்கிவிட்டது...");
+
   function formatDate(d) {
     var yyyy = d.getFullYear();
     var mm = String(d.getMonth() + 1).padStart(2, '0');
