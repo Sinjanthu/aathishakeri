@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aathish Åkeri AB | Premium Taxi Sweden</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
     <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
@@ -52,10 +52,16 @@
         <h1 id="mainTitle">Aathish Åkeri AB</h1>
         <p id="subTitle">Your Premium Journey Starts Here – Comfort in Every Mile.</p>
         <div class="button-row">
-            <a href="tel:+46737351993" class="btn-call" id="callBtn">Call Us Now</a>
-            <div style="display:inline-flex;align-items:center;gap:10px;">
+            <a href="tel:+46737351993" class="btn-call" id="callBtn" aria-label="Call us now">
+                <img src="assets/images/phone.svg" class="icon" alt="phone icon" aria-hidden="true">
+                <span>Call Us Now</span>
+            </a>
+            <div class="wa-wrap">
                 <a href="https://wa.me/46737351993" class="btn-whatsapp" id="whatsappBtn" target="_blank"
-                    rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">💬 Chat with us on WhatsApp</a>
+                    rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+                    <img src="assets/images/whatsapp.svg" class="icon" alt="whatsapp icon" aria-hidden="true">
+                    <span>Chat with us on WhatsApp</span>
+                </a>
                 <span class="wa-note" id="waNote">Tap to chat instantly</span>
             </div>
         </div>
