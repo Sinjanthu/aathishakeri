@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now | Aathish Åkeri AB</title>
+    <meta name="description"
+        content="Book your Stockholm or Arlanda Airport transfer directly with Aathish Åkeri AB. We confirm your ride, then send a secure SumUp payment link.">
+    <link rel="canonical" href="https://aathishakeri.se/booking.html">
+    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/manifest.json">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+
+    <nav class="topnav" aria-label="Main navigation">
+        <div class="topnav-inner">
+            <a href="index.html" class="topnav-brand">
+                <img src="assets/images/logo.png" alt="Aathish Åkeri AB" class="topnav-logo">
+                <span>Aathish Åkeri AB</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="topnav-links" id="topnavLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="faq.html">FAQ</a>
+                <a href="booking.html" class="nav-cta" aria-current="page">Book Now</a>
+            </div>
+            <div class="topnav-actions">
+                <a href="tel:+46737351993" class="nav-icon-btn" aria-label="Call us">
+                    <img src="assets/images/phone.svg" alt="">
+                </a>
+                <a href="https://wa.me/46737351993" target="_blank" rel="noopener noreferrer" class="nav-icon-btn"
+                    aria-label="WhatsApp us">
+                    <img src="assets/images/whatsapp.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Book Now</div>
+        <h1>Book Your Ride Direct</h1>
+        <p>No commission-hungry apps — book straight with us and pay securely once your trip is confirmed.</p>
+    </div>
+
+    <div class="container">
+        <section>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h3>Fill in your trip</h3>
+                    <p>Tell us your route, date/time, passengers, and preferred vehicle below.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h3>We confirm it</h3>
+                    <p>We reply by phone, WhatsApp, or email with your exact price and confirmed pickup time.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h3>Pay securely</h3>
+                    <p>Pay the driver directly, or use the secure SumUp payment link we send you — card, Apple Pay,
+                        or Google Pay.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="enquiry-section" id="booking">
+            <h2>Trip Details</h2>
+
+            <p style="margin-top:-10px; color:#666;">Quick fill for our fixed Arlanda routes:</p>
+            <div class="quick-routes">
+                <button type="button" class="route-btn"
+                    onclick="fillRoute('Arlanda Airport', 'Stockholm City')">Arlanda → Stockholm City</button>
+                <button type="button" class="route-btn"
+                    onclick="fillRoute('Stockholm City', 'Arlanda Airport')">Stockholm City → Arlanda</button>
+            </div>
+
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                onload="if(submitted) {showSuccessMessage();}"></iframe>
+
+            <form id="googleForm"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSe5kT9UmKAafZ5iCg125C1en-iSmpKkFDpOLM97xkX3vYZNrw/formResponse"
+                method="POST" target="hidden_iframe" onsubmit="return prepareBookingSubmit() && handleFormSubmit();">
+                <div id="formWarning"
+                    style="display:none; background:#dc2626; color:#fff; padding:12px 14px; border-radius:8px; margin-bottom:15px; font-weight:bold;">
+                </div>
+                <div id="successModal"
+                    style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:#fff; padding:30px; border-radius:10px; box-shadow:0 0 20px rgba(0,0,0,0.2); text-align:center; z-index:1000; width:90%; max-width:400px;">
+                    <h3 style="color:#28a745;">✔ Booking Request Sent!</h3>
+                    <p>Thanks — we've received your booking request and will confirm your price and pickup time
+                        shortly by phone, email, or WhatsApp.</p>
+                    <button onclick="closeModal()"
+                        style="background:#000; color:#fff; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">Close</button>
+                </div>
+
+                <div class="form-group">
+                    <label>Full Name:</label>
+                    <input type="text" name="entry.1153646139" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email Address:</label>
+                        <input type="email" name="entry.360215860" placeholder="email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile Number:</label>
+                        <input type="tel" name="entry.1852072444" placeholder="+46 70 000 00 00" required>
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+                <div class="form-group">
+                    <label>Pickup (Airport/City):</label>
+                    <input type="text" name="entry.1606357890" list="locationList" placeholder="e.g. Arlanda Airport"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label>Drop-off Location:</label>
+                    <input type="text" name="entry.1227612234" list="locationList"
+                        placeholder="e.g. Stockholm Central" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Flight / Vessel No (Optional):</label>
+                    <input type="text" name="entry.1654527934" placeholder="e.g. SK1408">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date:</label>
+                        <input type="date" id="visibleDate" required onchange="syncDateTime()">
+                        <input type="hidden" name="entry.902462622_year" id="date_year">
+                        <input type="hidden" name="entry.902462622_month" id="date_month">
+                        <input type="hidden" name="entry.902462622_day" id="date_day">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Time:</label>
+                        <input type="time" id="visibleTime" required onchange="syncDateTime()">
+                        <input type="hidden" name="entry.1678380838_hour" id="time_hour">
+                        <input type="hidden" name="entry.1678380838_minute" id="time_minute">
+                    </div>
+                </div>
+
+                <div class="form-group vehicle-choice">
+                    <label for="vehicleType">Preferred Vehicle:</label>
+                    <select id="vehicleType">
+                        <option value="standard">Standard Sedan (up to 4)</option>
+                        <option value="premium">Premium Sedan (up to 4, luxury)</option>
+                        <option value="van">Premium Van / Minibus (up to 7)</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Adults:</label>
+                        <input type="number" name="entry.2086286042" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Children:</label>
+                        <input type="number" name="entry.1864332574" min="0" value="0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Luggage Bags:</label>
+                    <input type="number" name="entry.1332310678" min="0" value="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Additional Notes / Questions:</label>
+                    <textarea name="entry.875811815" id="notesField"></textarea>
+                </div>
+
+                <p style="font-weight: bold; margin-top: 15px;">Extra Services / Add-ons:</p>
+                <div class="addons">
+                    <label><input type="checkbox" name="entry.1201531084" value="Child seat 0-8 months"> <span>Child
+                            seat 0-8 months</span></label>
+                    <label><input type="checkbox" name="entry.1201531084" value="Child seat 9-36 months"> <span>Child
+                            seat 9-36 months</span></label>
+                    <label><input type="checkbox" name="entry.1201531084" value="Child seat 3+ Years"> <span>Child
+                            seat 3+ Years</span></label>
+                    <label><input type="checkbox" name="entry.1201531084" value="Combi (Large Luggages)">
+                        <span>Combi (Large Luggages)</span></label>
+                    <label><input type="checkbox" name="entry.1201531084" value="Porter Help"> <span>Porter
+                            Help</span></label>
+                </div>
+
+                <button type="submit" class="btn-submit">Request Booking</button>
+            </form>
+
+            <datalist id="locationList">
+                <option value="Arlanda Airport">
+                <option value="Bromma Airport">
+                <option value="Skavsta Airport">
+                <option value="Västerås Airport">
+                <option value="Stockholm Central">
+                <option value="Stockholm City">
+                <option value="Stockholm Cruise Terminal (Frihamnen)">
+                <option value="Stockholm Cruise Terminal (Värtahamnen)">
+            </datalist>
+
+            <div class="payment-note">
+                <h4>💳 Paying for an existing booking?</h4>
+                <p>Once we confirm your trip, we'll send you a secure SumUp payment link by WhatsApp or email —
+                    accepting card, Apple Pay, and Google Pay. If you already have that link, use the button below.
+                </p>
+                <a href="#" class="sumup-pay-btn" target="_blank" rel="noopener noreferrer">Pay with SumUp</a>
+            </div>
+        </section>
+
+        <section class="contact-box" id="contact">
+            <h2>Prefer to Book by Phone or WhatsApp?</h2>
+            <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <p><strong>Phone:</strong> <a href="tel:+46737351993">+46 737 351 993</a></p>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">💬</span>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/46737351993" target="_blank"
+                        class="wa-link">Chat with us on WhatsApp</a></p>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <p><strong>Email:</strong> <a href="mailto:info@aathishakeri.se">info@aathishakeri.se</a></p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="booking.html">Book Now</a>
+            <a href="faq.html">FAQ</a>
+            <a href="terms.html">Terms & Privacy</a>
+        </div>
+        © 2017-2026 Aathish Åkeri AB. All Rights Reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

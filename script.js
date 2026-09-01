@@ -279,47 +279,124 @@ function handleFormSubmit() {
   return true;
 }
 
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el && value !== undefined) el.innerText = value;
+}
+
 function setLanguage(lang) {
   const data = content[lang];
   if (!data) return;
 
-  document.getElementById("subTitle").innerText = data.subTitle;
-  document.getElementById("callBtn").innerText = data.callBtn;
-  document.getElementById("fleetTitle").innerText = data.fleetTitle;
-  document.getElementById("enqTitle").innerText = data.enqTitle;
-  document.getElementById("contactTitle").innerText = data.contactTitle;
+  setText("subTitle", data.subTitle);
+  setText("callBtn", data.callBtn);
+  setText("fleetTitle", data.fleetTitle);
+  setText("enqTitle", data.enqTitle);
+  setText("contactTitle", data.contactTitle);
 
-  document.getElementById("car1Title").innerText = data.car1Title;
-  document.getElementById("car1Desc").innerText = data.car1Desc;
-  document.getElementById("carPremiumTitle").innerText = data.carPremiumTitle;
-  document.getElementById("carPremiumDesc").innerText = data.carPremiumDesc;
-  document.getElementById("car2Title").innerText = data.car2Title;
-  document.getElementById("car2Desc").innerText = data.car2Desc;
+  setText("car1Title", data.car1Title);
+  setText("car1Desc", data.car1Desc);
+  setText("carPremiumTitle", data.carPremiumTitle);
+  setText("carPremiumDesc", data.carPremiumDesc);
+  setText("car2Title", data.car2Title);
+  setText("car2Desc", data.car2Desc);
 
-  document.getElementById("lblPickup").innerText = data.lblPickup;
-  document.getElementById("lblDrop").innerText = data.lblDrop;
-  document.getElementById("lblFlight").innerText = data.lblFlight;
-  document.getElementById("lblDate").innerText = data.lblDate;
-  document.getElementById("lblTime").innerText = data.lblTime;
-  document.getElementById("lblAdults").innerText = data.lblAdults;
-  document.getElementById("lblKids").innerText = data.lblKids;
-  document.getElementById("lblBags").innerText = data.lblBags;
-  document.getElementById("lblNotes").innerText = data.lblNotes;
-  document.getElementById("lblAddons").innerText = data.lblAddons;
+  setText("lblPickup", data.lblPickup);
+  setText("lblDrop", data.lblDrop);
+  setText("lblFlight", data.lblFlight);
+  setText("lblDate", data.lblDate);
+  setText("lblTime", data.lblTime);
+  setText("lblAdults", data.lblAdults);
+  setText("lblKids", data.lblKids);
+  setText("lblBags", data.lblBags);
+  setText("lblNotes", data.lblNotes);
+  setText("lblAddons", data.lblAddons);
 
-  document.getElementById("optChild1").innerText = data.optChild1;
-  document.getElementById("optChild2").innerText = data.optChild2;
-  document.getElementById("optChild3").innerText = data.optChild3;
-  document.getElementById("optCombi").innerText = data.optCombi;
-  document.getElementById("optPorter").innerText = data.optPorter;
+  setText("optChild1", data.optChild1);
+  setText("optChild2", data.optChild2);
+  setText("optChild3", data.optChild3);
+  setText("optCombi", data.optCombi);
+  setText("optPorter", data.optPorter);
 
-  document.getElementById("submitBtn").innerText = data.submitBtn;
+  setText("submitBtn", data.submitBtn);
   const waLink = document.querySelector(".wa-link");
   if (waLink) waLink.innerText = data.lblWhatsapp;
 }
 
-window.onload = () => setLanguage("en");
+// Only the homepage ships full translations for these element IDs.
+window.onload = () => {
+  if (document.getElementById("subTitle")) setLanguage("en");
+};
 var submitted = false;
+
+/* =====================================================
+   Shared site chrome: mobile nav toggle + SumUp link
+   ===================================================== */
+
+// TODO: replace with your real SumUp payment link (e.g. https://pay.sumup.com/b2c/XXXXXXXX).
+// Create it in the SumUp app/dashboard under Payment Links, then paste it here once —
+// every "Pay Now" button on the site (class "sumup-pay-btn") uses this same constant.
+const SUMUP_PAYMENT_LINK = "https://pay.sumup.com/b2c/REPLACE_WITH_YOUR_SUMUP_LINK";
+
+function toggleNav() {
+  const links = document.getElementById("topnavLinks");
+  const btn = document.getElementById("navToggle");
+  if (!links || !btn) return;
+  const isOpen = links.classList.toggle("open");
+  btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+}
+
+// Pre-fill the pickup/drop-off fields on the booking/enquiry form for a common route.
+function fillRoute(pickup, drop) {
+  const pickupInput = document.querySelector('input[name="entry.1606357890"]');
+  const dropInput = document.querySelector('input[name="entry.1227612234"]');
+  if (pickupInput) pickupInput.value = pickup;
+  if (dropInput) dropInput.value = drop;
+  if (dropInput) dropInput.focus();
+}
+
+// Folds the "Preferred Vehicle" choice into the Notes field so it reaches the
+// same Google Form endpoint without needing a new form field/entry ID.
+function prepareBookingSubmit() {
+  const vehicleSel = document.getElementById("vehicleType");
+  const notes = document.getElementById("notesField");
+  if (vehicleSel && notes) {
+    if (notes.dataset.vehiclePrefix) {
+      notes.value = notes.value.replace(notes.dataset.vehiclePrefix, "");
+    }
+    const label = vehicleSel.options[vehicleSel.selectedIndex].text;
+    const prefix = `Preferred Vehicle: ${label}. `;
+    notes.value = prefix + notes.value;
+    notes.dataset.vehiclePrefix = prefix;
+  }
+  return true;
+}
+
+// Pre-fills the booking form from a link's ?pickup=&drop=&car= query params
+// (used by the pricing cards on the homepage linking into booking.html).
+function applyBookingQueryParams() {
+  const params = new URLSearchParams(window.location.search);
+  const pickup = params.get("pickup");
+  const drop = params.get("drop");
+  const car = params.get("car");
+
+  const pickupInput = document.querySelector('input[name="entry.1606357890"]');
+  const dropInput = document.querySelector('input[name="entry.1227612234"]');
+  const vehicleSel = document.getElementById("vehicleType");
+
+  if (pickup && pickupInput) pickupInput.value = pickup;
+  if (drop && dropInput) dropInput.value = drop;
+  if (car && vehicleSel) vehicleSel.value = car;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".sumup-pay-btn").forEach((btn) => {
+    btn.href = SUMUP_PAYMENT_LINK;
+  });
+  const navToggle = document.getElementById("navToggle");
+  if (navToggle) navToggle.addEventListener("click", toggleNav);
+  applyBookingQueryParams();
+});
 
 // 1. தேதி மற்றும் நேரத்தை அமைக்கும் செயல்பாடு
 function syncDateTime() {
@@ -350,8 +427,8 @@ function showSuccessMessage() {
         const pickup = document.querySelector('input[name="entry.1606357890"]').value;
         const drop = document.querySelector('input[name="entry.1227612234"]').value;
         
-        // வாட்ஸ்அப் மெசேஜ் தயார் செய்தல் (உங்கள் எண்ணை இங்கே மாற்றவும்)
-        const whatsappNumber = "46700000000"; // உங்கள் எண் (நாட்டுக் குறியீடுடன்)
+        // வாட்ஸ்அப் மெசேஜ் தயார் செய்தல்
+        const whatsappNumber = "46737351993"; // Business WhatsApp number
         const message = `*New Taxi Enquiry*%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Pickup:* ${pickup}%0A*Drop:* ${drop}`;
         
         // 2 வினாடிகளுக்குப் பிறகு வாட்ஸ்அப் திறக்கும்
@@ -372,10 +449,13 @@ function closeModal() {
 
 // 4. ஆரம்ப நிலை (இன்றைய தேதி/நேரம்)
 window.addEventListener('load', () => {
+    const dateEl = document.getElementById('visibleDate');
+    const timeEl = document.getElementById('visibleTime');
+    if (!dateEl || !timeEl) return;
     const now = new Date();
-    document.getElementById('visibleDate').value = now.toISOString().split('T')[0];
+    dateEl.value = now.toISOString().split('T')[0];
     const h = String(now.getHours()).padStart(2, '0');
     const m = String(now.getMinutes()).padStart(2, '0');
-    document.getElementById('visibleTime').value = `${h}:${m}`;
+    timeEl.value = `${h}:${m}`;
     syncDateTime();
 });

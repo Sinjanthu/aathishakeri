@@ -4,8 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aathish Åkeri AB | Premium Taxi Sweden</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <title>Aathish Åkeri AB | Premium Taxi & Arlanda Transfers, Stockholm</title>
+    <meta name="description"
+        content="Premium taxi service in Stockholm since 2017. Fixed-price Arlanda Airport transfers, business travel, and 7-seater vans. Book direct by phone, WhatsApp, or online.">
+    <link rel="canonical" href="https://aathishakeri.se/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aathish Åkeri AB | Premium Taxi & Arlanda Transfers, Stockholm">
+    <meta property="og:description"
+        content="Fixed-price Arlanda Airport transfers, business travel and 7-seater vans. Book direct by phone, WhatsApp, or online.">
+    <meta property="og:image" content="https://aathishakeri.se/assets/images/logo.png">
+    <meta property="og:url" content="https://aathishakeri.se/">
+    <meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="style.css?v=3">
     <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
@@ -24,9 +34,52 @@
     <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TaxiService",
+        "name": "Aathish Åkeri AB",
+        "url": "https://aathishakeri.se/",
+        "image": "https://aathishakeri.se/assets/images/logo.png",
+        "telephone": "+46737351993",
+        "email": "info@aathishakeri.se",
+        "areaServed": ["Stockholm", "Arlanda Airport", "Sweden"],
+        "priceRange": "SEK",
+        "sameAs": ["https://wa.me/46737351993"]
+    }
+    </script>
 </head>
 
 <body>
+
+    <nav class="topnav" aria-label="Main navigation">
+        <div class="topnav-inner">
+            <a href="index.html" class="topnav-brand">
+                <img src="assets/images/logo.png" alt="Aathish Åkeri AB" class="topnav-logo">
+                <span>Aathish Åkeri AB</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="topnav-links" id="topnavLinks">
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="faq.html">FAQ</a>
+                <a href="booking.html" class="nav-cta">Book Now</a>
+            </div>
+            <div class="topnav-actions">
+                <a href="tel:+46737351993" class="nav-icon-btn" aria-label="Call us">
+                    <img src="assets/images/phone.svg" alt="">
+                </a>
+                <a href="https://wa.me/46737351993" target="_blank" rel="noopener noreferrer" class="nav-icon-btn"
+                    aria-label="WhatsApp us">
+                    <img src="assets/images/whatsapp.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </nav>
 
     <div class="lang-switcher">
         <button class="lang-btn" onclick="setLanguage('en')"><img src="https://flagcdn.com/w40/us.png" width="20">
@@ -67,6 +120,14 @@
         </div>
     </header>
 
+    <div class="trust-strip">
+        <div class="trust-item"><span class="num">2017</span><span class="label">Serving Stockholm since</span></div>
+        <div class="trust-item"><span class="num">7</span><span class="label">Languages spoken</span></div>
+        <div class="trust-item"><span class="num">24/7</span><span class="label">Airport availability</span></div>
+        <div class="trust-item"><span class="num">Fixed</span><span class="label">Arlanda prices, no surprises</span>
+        </div>
+    </div>
+
     <div class="container">
         <section id="fleet">
             <h2 id="fleetTitle">Our Fleet</h2>
@@ -88,7 +149,7 @@
                 </div>
             </div>
         </section>
-        <section class="pricing-section">
+        <section class="pricing-section" id="pricing">
             <h2 id="priceTitle">Fixed Prices: Arlanda & Stockholm City</h2>
 
             <h3 class="direction-title">Arlanda Airport → Stockholm City</h3>
@@ -97,20 +158,23 @@
                     <h4 id="carNormal1">Normal Sedan</h4>
                     <p class="price-value">695 SEK</p>
                     <p id="descNormal1">Up to 4 Passengers</p>
-                    <a href="#googleForm" class="btn-book" id="btnBook1">Book Now</a>
+                    <a href="booking.html?pickup=Arlanda%20Airport&drop=Stockholm%20City&car=standard"
+                        class="btn-book" id="btnBook1">Book Now</a>
                 </div>
                 <div class="price-card featured">
                     <div class="badge">Recommended</div>
                     <h4 id="carPremium1">Premium Sedan</h4>
                     <p class="price-value">795 SEK</p>
                     <p id="descPremium1">Luxury & Comfort</p>
-                    <a href="#googleForm" class="btn-book" id="btnBook2">Book Now</a>
+                    <a href="booking.html?pickup=Arlanda%20Airport&drop=Stockholm%20City&car=premium"
+                        class="btn-book" id="btnBook2">Book Now</a>
                 </div>
                 <div class="price-card">
                     <h4 id="carMinibus1">Minibus (7 Seater)</h4>
                     <p class="price-value">1095 SEK</p>
                     <p id="descMinibus1">Up to 7 Passengers</p>
-                    <a href="#googleForm" class="btn-book" id="btnBook3">Book Now</a>
+                    <a href="booking.html?pickup=Arlanda%20Airport&drop=Stockholm%20City&car=van" class="btn-book"
+                        id="btnBook3">Book Now</a>
                 </div>
             </div>
 
@@ -120,25 +184,30 @@
                     <h4 id="carNormal2">Normal Sedan</h4>
                     <p class="price-value">625 SEK</p>
                     <p id="descNormal2">Up to 4 Passengers</p>
-                    <a href="#googleForm" class="btn-book" id="btnBook4">Book Now</a>
+                    <a href="booking.html?pickup=Stockholm%20City&drop=Arlanda%20Airport&car=standard"
+                        class="btn-book" id="btnBook4">Book Now</a>
                 </div>
                 <div class="price-card featured">
                     <div class="badge">Recommended</div>
                     <h4 id="carPremium2">Premium Sedan</h4>
                     <p class="price-value">725 SEK</p>
                     <p id="descPremium2">Luxury & Comfort</p>
-                    <a href="#googleForm" class="btn-book" id="btnBook5">Book Now</a>
+                    <a href="booking.html?pickup=Stockholm%20City&drop=Arlanda%20Airport&car=premium"
+                        class="btn-book" id="btnBook5">Book Now</a>
                 </div>
                 <div class="price-card">
                     <h4 id="carMinibus2">Minibus (7 Seater)</h4>
                     <p class="price-value">995 SEK</p>
                     <p id="descMinibus2">Up to 7 Passengers</p>
-                    <a href="#googleForm" class="btn-book" id="btnBook6">Book Now</a>
+                    <a href="booking.html?pickup=Stockholm%20City&drop=Arlanda%20Airport&car=van" class="btn-book"
+                        id="btnBook6">Book Now</a>
                 </div>
             </div>
         </section>
-        <section class="enquiry-section">
+        <section class="enquiry-section" id="enquiry">
             <h2 id="enqTitle">Enquire About Your Trip Price</h2>
+            <p style="margin-top:-10px; color:#666;">Already know what you need? Skip straight to our <a
+                    href="booking.html"><strong>Direct Booking page</strong></a> to reserve your ride.</p>
 
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
                 onload="if(submitted) {showSuccessMessage();}"></iframe>
@@ -249,9 +318,20 @@
 
                 <button type="submit" class="btn-submit" id="submitBtn">Send Enquiry</button>
             </form>
+
+            <datalist id="locationList">
+                <option value="Arlanda Airport">
+                <option value="Bromma Airport">
+                <option value="Skavsta Airport">
+                <option value="Västerås Airport">
+                <option value="Stockholm Central">
+                <option value="Stockholm City">
+                <option value="Stockholm Cruise Terminal (Frihamnen)">
+                <option value="Stockholm Cruise Terminal (Värtahamnen)">
+            </datalist>
         </section>
 
-        <section class="contact-box">
+        <section class="contact-box" id="contact">
             <h2 id="contactTitle">Contact Info</h2>
             <div class="contact-item">
                 <span class="contact-icon">📧</span>
@@ -272,6 +352,14 @@
     </div>
 
     <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="booking.html">Book Now</a>
+            <a href="faq.html">FAQ</a>
+            <a href="terms.html">Terms & Privacy</a>
+        </div>
         © 2017-2026 Aathish Åkeri AB. All Rights Reserved.
     </footer>
 
