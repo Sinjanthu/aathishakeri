@@ -28,6 +28,28 @@ const content = {
     submitBtn: "Send Enquiry",
     contactTitle: "Contact Info",
     lblWhatsapp: "Chat with us on WhatsApp",
+    waNoteText: "Tap to chat instantly",
+    priceTitle: "Fixed Prices: Arlanda & Stockholm City",
+    directionAtoC: "Arlanda Airport → Stockholm City",
+    directionCtoA: "Stockholm City → Arlanda Airport",
+    vehMinibus: "Minibus (7 Seater)",
+    descUpTo4: "Up to 4 Passengers",
+    descPremiumShort: "Luxury & Comfort",
+    descUpTo7: "Up to 7 Passengers",
+    badgeRecommended: "Recommended",
+    bookNowBtn: "Book Now",
+    enqSkipHtml:
+      'Already know what you need? Skip straight to our <a href="booking.html"><strong>Direct Booking page</strong></a> to reserve your ride.',
+    lblName: "Full Name:",
+    lblEmail: "Email Address:",
+    lblPhone: "Mobile Number:",
+    trustLabel1: "Serving Stockholm since",
+    trustLabel2: "Languages spoken",
+    trustLabel3: "Airport availability",
+    trustLabel4: "Arlanda prices, no surprises",
+    contactEmailLabel: "Email:",
+    contactPhoneLabel: "Phone:",
+    contactWhatsappLabel: "WhatsApp:",
   },
   sv: {
     subTitle: "Din premiumresa börjar här – Komfort i varje mil.",
@@ -58,6 +80,28 @@ const content = {
     submitBtn: "Skicka förfrågan",
     contactTitle: "Kontaktinfo",
     lblWhatsapp: "Chatta på WhatsApp",
+    waNoteText: "Tryck för att chatta direkt",
+    priceTitle: "Fasta priser: Arlanda & Stockholm City",
+    directionAtoC: "Arlanda flygplats → Stockholm City",
+    directionCtoA: "Stockholm City → Arlanda flygplats",
+    vehMinibus: "Minibuss (7 platser)",
+    descUpTo4: "Upp till 4 passagerare",
+    descPremiumShort: "Lyx & komfort",
+    descUpTo7: "Upp till 7 passagerare",
+    badgeRecommended: "Rekommenderas",
+    bookNowBtn: "Boka nu",
+    enqSkipHtml:
+      'Vet du redan vad du behöver? Gå direkt till vår <a href="booking.html"><strong>bokningssida</strong></a> för att reservera din resa.',
+    lblName: "Fullständigt namn:",
+    lblEmail: "E-postadress:",
+    lblPhone: "Mobilnummer:",
+    trustLabel1: "Verksamma i Stockholm sedan",
+    trustLabel2: "Talade språk",
+    trustLabel3: "Flygplatsservice",
+    trustLabel4: "Fasta Arlanda-priser, inga överraskningar",
+    contactEmailLabel: "E-post:",
+    contactPhoneLabel: "Telefon:",
+    contactWhatsappLabel: "WhatsApp:",
   },
   es: {
     subTitle: "Su viaje premium comienza aquí: comodidad en cada milla.",
@@ -88,6 +132,28 @@ const content = {
     submitBtn: "Enviar solicitud",
     contactTitle: "Contacto",
     lblWhatsapp: "Chat por WhatsApp",
+    waNoteText: "Toca para chatear al instante",
+    priceTitle: "Precios fijos: Arlanda y Estocolmo",
+    directionAtoC: "Aeropuerto de Arlanda → Estocolmo Ciudad",
+    directionCtoA: "Estocolmo Ciudad → Aeropuerto de Arlanda",
+    vehMinibus: "Minibús (7 plazas)",
+    descUpTo4: "Hasta 4 pasajeros",
+    descPremiumShort: "Lujo y confort",
+    descUpTo7: "Hasta 7 pasajeros",
+    badgeRecommended: "Recomendado",
+    bookNowBtn: "Reservar ahora",
+    enqSkipHtml:
+      '¿Ya sabes lo que necesitas? Ve directamente a nuestra <a href="booking.html"><strong>página de reservas</strong></a> para reservar tu viaje.',
+    lblName: "Nombre completo:",
+    lblEmail: "Correo electrónico:",
+    lblPhone: "Número de móvil:",
+    trustLabel1: "En Estocolmo desde",
+    trustLabel2: "Idiomas hablados",
+    trustLabel3: "Disponibilidad en el aeropuerto",
+    trustLabel4: "Precios fijos a Arlanda, sin sorpresas",
+    contactEmailLabel: "Correo:",
+    contactPhoneLabel: "Teléfono:",
+    contactWhatsappLabel: "WhatsApp:",
   },
   fr: {
     subTitle:
@@ -119,6 +185,28 @@ const content = {
     submitBtn: "Envoyer",
     contactTitle: "Contact",
     lblWhatsapp: "WhatsApp",
+    waNoteText: "Touchez pour discuter instantanément",
+    priceTitle: "Tarifs fixes : Arlanda et Stockholm",
+    directionAtoC: "Aéroport d'Arlanda → Stockholm centre",
+    directionCtoA: "Stockholm centre → Aéroport d'Arlanda",
+    vehMinibus: "Minibus (7 places)",
+    descUpTo4: "Jusqu'à 4 passagers",
+    descPremiumShort: "Luxe et confort",
+    descUpTo7: "Jusqu'à 7 passagers",
+    badgeRecommended: "Recommandé",
+    bookNowBtn: "Réserver",
+    enqSkipHtml:
+      "Vous savez déjà ce qu'il vous faut ? Rendez-vous directement sur notre <a href=\"booking.html\"><strong>page de réservation</strong></a> pour réserver votre trajet.",
+    lblName: "Nom complet :",
+    lblEmail: "Adresse e-mail :",
+    lblPhone: "Numéro de mobile :",
+    trustLabel1: "À Stockholm depuis",
+    trustLabel2: "Langues parlées",
+    trustLabel3: "Disponibilité aéroport",
+    trustLabel4: "Tarifs Arlanda fixes, sans surprise",
+    contactEmailLabel: "E-mail :",
+    contactPhoneLabel: "Téléphone :",
+    contactWhatsappLabel: "WhatsApp :",
   },
   de: {
     subTitle: "Ihre Premium-Reise beginnt hier – Komfort auf jeder Meile.",
@@ -149,6 +237,28 @@ const content = {
     submitBtn: "Anfrage senden",
     contactTitle: "Kontakt",
     lblWhatsapp: "WhatsApp Chat",
+    waNoteText: "Tippen zum sofortigen Chatten",
+    priceTitle: "Festpreise: Arlanda & Stockholm City",
+    directionAtoC: "Flughafen Arlanda → Stockholm City",
+    directionCtoA: "Stockholm City → Flughafen Arlanda",
+    vehMinibus: "Kleinbus (7 Sitze)",
+    descUpTo4: "Bis zu 4 Passagiere",
+    descPremiumShort: "Luxus & Komfort",
+    descUpTo7: "Bis zu 7 Passagiere",
+    badgeRecommended: "Empfohlen",
+    bookNowBtn: "Jetzt buchen",
+    enqSkipHtml:
+      'Sie wissen schon, was Sie brauchen? Gehen Sie direkt zu unserer <a href="booking.html"><strong>Buchungsseite</strong></a>, um Ihre Fahrt zu reservieren.',
+    lblName: "Vollständiger Name:",
+    lblEmail: "E-Mail-Adresse:",
+    lblPhone: "Mobilnummer:",
+    trustLabel1: "In Stockholm tätig seit",
+    trustLabel2: "Gesprochene Sprachen",
+    trustLabel3: "Flughafenverfügbarkeit",
+    trustLabel4: "Feste Arlanda-Preise, keine Überraschungen",
+    contactEmailLabel: "E-Mail:",
+    contactPhoneLabel: "Telefon:",
+    contactWhatsappLabel: "WhatsApp:",
   },
   nl: {
     subTitle: "Uw premium reis begint hier – Comfort in elke mijl.",
@@ -179,6 +289,28 @@ const content = {
     submitBtn: "Verstuur",
     contactTitle: "Contact",
     lblWhatsapp: "WhatsApp",
+    waNoteText: "Tik om direct te chatten",
+    priceTitle: "Vaste prijzen: Arlanda & Stockholm City",
+    directionAtoC: "Luchthaven Arlanda → Stockholm City",
+    directionCtoA: "Stockholm City → Luchthaven Arlanda",
+    vehMinibus: "Minibus (7 zitplaatsen)",
+    descUpTo4: "Tot 4 passagiers",
+    descPremiumShort: "Luxe & comfort",
+    descUpTo7: "Tot 7 passagiers",
+    badgeRecommended: "Aanbevolen",
+    bookNowBtn: "Nu boeken",
+    enqSkipHtml:
+      'Weet u al wat u nodig heeft? Ga direct naar onze <a href="booking.html"><strong>boekingspagina</strong></a> om uw rit te reserveren.',
+    lblName: "Volledige naam:",
+    lblEmail: "E-mailadres:",
+    lblPhone: "Mobiel nummer:",
+    trustLabel1: "Actief in Stockholm sinds",
+    trustLabel2: "Gesproken talen",
+    trustLabel3: "Beschikbaarheid luchthaven",
+    trustLabel4: "Vaste Arlanda-prijzen, geen verrassingen",
+    contactEmailLabel: "E-mail:",
+    contactPhoneLabel: "Telefoon:",
+    contactWhatsappLabel: "WhatsApp:",
   },
   it: {
     subTitle: "Il tuo viaggio premium inizia qui – Comfort in ogni chilometro.",
@@ -209,6 +341,28 @@ const content = {
     submitBtn: "Invia",
     contactTitle: "Contatti",
     lblWhatsapp: "WhatsApp",
+    waNoteText: "Tocca per chattare subito",
+    priceTitle: "Prezzi fissi: Arlanda e Stoccolma",
+    directionAtoC: "Aeroporto di Arlanda → Stoccolma città",
+    directionCtoA: "Stoccolma città → Aeroporto di Arlanda",
+    vehMinibus: "Minibus (7 posti)",
+    descUpTo4: "Fino a 4 passeggeri",
+    descPremiumShort: "Lusso e comfort",
+    descUpTo7: "Fino a 7 passeggeri",
+    badgeRecommended: "Consigliato",
+    bookNowBtn: "Prenota ora",
+    enqSkipHtml:
+      'Sai già cosa ti serve? Vai direttamente alla nostra <a href="booking.html"><strong>pagina di prenotazione</strong></a> per prenotare il tuo viaggio.',
+    lblName: "Nome completo:",
+    lblEmail: "Indirizzo email:",
+    lblPhone: "Numero di cellulare:",
+    trustLabel1: "A Stoccolma dal",
+    trustLabel2: "Lingue parlate",
+    trustLabel3: "Disponibilità aeroportuale",
+    trustLabel4: "Prezzi fissi per Arlanda, senza sorprese",
+    contactEmailLabel: "Email:",
+    contactPhoneLabel: "Telefono:",
+    contactWhatsappLabel: "WhatsApp:",
   },
 };
 
@@ -284,6 +438,18 @@ function setText(id, value) {
   if (el && value !== undefined) el.innerText = value;
 }
 
+function setHTML(id, value) {
+  const el = document.getElementById(id);
+  if (el && value !== undefined) el.innerHTML = value;
+}
+
+function setTextAll(selector, value) {
+  if (value === undefined) return;
+  document.querySelectorAll(selector).forEach((el) => {
+    el.innerText = value;
+  });
+}
+
 function setLanguage(lang) {
   const data = content[lang];
   if (!data) return;
@@ -321,6 +487,45 @@ function setLanguage(lang) {
   setText("submitBtn", data.submitBtn);
   const waLink = document.querySelector(".wa-link");
   if (waLink) waLink.innerText = data.lblWhatsapp;
+
+  setText("whatsappBtnText", data.lblWhatsapp);
+  setText("waNote", data.waNoteText);
+  setText("priceTitle", data.priceTitle);
+  setText("directionAtoC", data.directionAtoC);
+  setText("directionCtoA", data.directionCtoA);
+
+  setText("carNormal1", data.car1Title);
+  setText("carNormal2", data.car1Title);
+  setText("carPremium1", data.carPremiumTitle);
+  setText("carPremium2", data.carPremiumTitle);
+  setText("carMinibus1", data.vehMinibus);
+  setText("carMinibus2", data.vehMinibus);
+
+  setText("descNormal1", data.descUpTo4);
+  setText("descNormal2", data.descUpTo4);
+  setText("descPremium1", data.descPremiumShort);
+  setText("descPremium2", data.descPremiumShort);
+  setText("descMinibus1", data.descUpTo7);
+  setText("descMinibus2", data.descUpTo7);
+
+  setTextAll(".badge", data.badgeRecommended);
+  ["btnBook1", "btnBook2", "btnBook3", "btnBook4", "btnBook5", "btnBook6"].forEach((id) =>
+    setText(id, data.bookNowBtn)
+  );
+
+  setHTML("enqSkipText", data.enqSkipHtml);
+  setText("lblName", data.lblName);
+  setText("lblEmail", data.lblEmail);
+  setText("lblPhone", data.lblPhone);
+
+  setText("trustLabel1", data.trustLabel1);
+  setText("trustLabel2", data.trustLabel2);
+  setText("trustLabel3", data.trustLabel3);
+  setText("trustLabel4", data.trustLabel4);
+
+  setText("contactEmailLabel", data.contactEmailLabel);
+  setText("contactPhoneLabel", data.contactPhoneLabel);
+  setText("contactWhatsappLabel", data.contactWhatsappLabel);
 }
 
 // Only the homepage ships full translations for these element IDs.

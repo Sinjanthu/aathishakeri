@@ -113,7 +113,7 @@
                 <a href="https://wa.me/46737351993" class="btn-whatsapp" id="whatsappBtn" target="_blank"
                     rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
                     <img src="assets/images/whatsapp.svg" class="icon" alt="whatsapp icon" aria-hidden="true">
-                    <span>Chat with us on WhatsApp</span>
+                    <span id="whatsappBtnText">Chat with us on WhatsApp</span>
                 </a>
                 <span class="wa-note" id="waNote">Tap to chat instantly</span>
             </div>
@@ -121,10 +121,14 @@
     </header>
 
     <div class="trust-strip">
-        <div class="trust-item"><span class="num">2017</span><span class="label">Serving Stockholm since</span></div>
-        <div class="trust-item"><span class="num">7</span><span class="label">Languages spoken</span></div>
-        <div class="trust-item"><span class="num">24/7</span><span class="label">Airport availability</span></div>
-        <div class="trust-item"><span class="num">Fixed</span><span class="label">Arlanda prices, no surprises</span>
+        <div class="trust-item"><span class="num">2017</span><span class="label" id="trustLabel1">Serving Stockholm
+                since</span></div>
+        <div class="trust-item"><span class="num">7</span><span class="label" id="trustLabel2">Languages
+                spoken</span></div>
+        <div class="trust-item"><span class="num">24/7</span><span class="label" id="trustLabel3">Airport
+                availability</span></div>
+        <div class="trust-item"><span class="num">Fixed</span><span class="label" id="trustLabel4">Arlanda prices, no
+                surprises</span>
         </div>
     </div>
 
@@ -152,7 +156,7 @@
         <section class="pricing-section" id="pricing">
             <h2 id="priceTitle">Fixed Prices: Arlanda & Stockholm City</h2>
 
-            <h3 class="direction-title">Arlanda Airport → Stockholm City</h3>
+            <h3 class="direction-title" id="directionAtoC">Arlanda Airport → Stockholm City</h3>
             <div class="pricing-container">
                 <div class="price-card">
                     <h4 id="carNormal1">Normal Sedan</h4>
@@ -178,7 +182,8 @@
                 </div>
             </div>
 
-            <h3 class="direction-title" style="margin-top: 40px;">Stockholm City → Arlanda Airport</h3>
+            <h3 class="direction-title" id="directionCtoA" style="margin-top: 40px;">Stockholm City → Arlanda
+                Airport</h3>
             <div class="pricing-container">
                 <div class="price-card">
                     <h4 id="carNormal2">Normal Sedan</h4>
@@ -206,8 +211,8 @@
         </section>
         <section class="enquiry-section" id="enquiry">
             <h2 id="enqTitle">Enquire About Your Trip Price</h2>
-            <p style="margin-top:-10px; color:#666;">Already know what you need? Skip straight to our <a
-                    href="booking.html"><strong>Direct Booking page</strong></a> to reserve your ride.</p>
+            <p style="margin-top:-10px; color:#666;" id="enqSkipText">Already know what you need? Skip straight to
+                our <a href="booking.html"><strong>Direct Booking page</strong></a> to reserve your ride.</p>
 
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
                 onload="if(submitted) {showSuccessMessage();}"></iframe>
@@ -256,7 +261,7 @@
 
                 <div class="form-group">
                     <label id="lblFlight">Flight / Vessel No (Optional):</label>
-                    <input type="text" name="entry.1654527934" place>
+                    <input type="text" name="entry.1654527934" placeholder="e.g. SK1408">
                 </div>
 
                 <div class="form-row">
@@ -335,16 +340,17 @@
             <h2 id="contactTitle">Contact Info</h2>
             <div class="contact-item">
                 <span class="contact-icon">📧</span>
-                <p><strong>Email:</strong> <a href="mailto:info@aathishakeri.se">info@aathishakeri.se</a></p>
+                <p><strong id="contactEmailLabel">Email:</strong> <a
+                        href="mailto:info@aathishakeri.se">info@aathishakeri.se</a></p>
             </div>
             <div class="contact-item">
                 <span class="contact-icon">📞</span>
-                <p><strong>Phone:</strong> <a href="tel:+46737351993">+46 737 351 993</a></p>
+                <p><strong id="contactPhoneLabel">Phone:</strong> <a href="tel:+46737351993">+46 737 351 993</a></p>
             </div>
             <div class="contact-item">
                 <span class="contact-icon">💬</span>
-                <p><strong>WhatsApp:</strong> <a href="https://wa.me/46737351993" target="_blank" class="wa-link">Chat
-                        with us on WhatsApp</a></p>
+                <p><strong id="contactWhatsappLabel">WhatsApp:</strong> <a href="https://wa.me/46737351993"
+                        target="_blank" class="wa-link">Chat with us on WhatsApp</a></p>
             </div>
 
 
