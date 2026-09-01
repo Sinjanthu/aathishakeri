@@ -333,10 +333,10 @@ var submitted = false;
    Shared site chrome: mobile nav toggle + SumUp link
    ===================================================== */
 
-// TODO: replace with your real SumUp payment link (e.g. https://pay.sumup.com/b2c/XXXXXXXX).
-// Create it in the SumUp app/dashboard under Payment Links, then paste it here once —
-// every "Pay Now" button on the site (class "sumup-pay-btn") uses this same constant.
-const SUMUP_PAYMENT_LINK = "https://pay.sumup.com/b2c/REPLACE_WITH_YOUR_SUMUP_LINK";
+// Open-amount SumUp payment link — the customer enters the confirmed fare
+// themselves at checkout. Every "Pay Now" button on the site (class
+// "sumup-pay-btn") uses this same constant.
+const SUMUP_PAYMENT_LINK = "https://pay.sumup.com/b2c/Q1W5AEKH";
 
 function toggleNav() {
   const links = document.getElementById("topnavLinks");
