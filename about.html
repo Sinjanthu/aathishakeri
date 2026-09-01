@@ -8,7 +8,7 @@
     <meta name="description"
         content="Aathish Åkeri AB has been driving Stockholm and Arlanda Airport transfers since 2017. Learn about our story, our fleet, and why customers trust us.">
     <link rel="canonical" href="https://aathishakeri.se/about.html">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
@@ -24,16 +24,32 @@
                 <img src="assets/images/logo.png" alt="Aathish Åkeri AB" class="topnav-logo">
                 <span>Aathish Åkeri AB</span>
             </a>
+            <div class="lang-switcher" role="group" aria-label="Choose language">
+                <button class="lang-btn" data-lang="en" onclick="setLanguage('en')" title="English"
+                    aria-label="English"><img src="https://flagcdn.com/w40/us.png" alt="English"></button>
+                <button class="lang-btn" data-lang="sv" onclick="setLanguage('sv')" title="Svenska"
+                    aria-label="Svenska"><img src="https://flagcdn.com/w40/se.png" alt="Svenska"></button>
+                <button class="lang-btn" data-lang="es" onclick="setLanguage('es')" title="Español"
+                    aria-label="Español"><img src="https://flagcdn.com/w40/es.png" alt="Español"></button>
+                <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')" title="Français"
+                    aria-label="Français"><img src="https://flagcdn.com/w40/fr.png" alt="Français"></button>
+                <button class="lang-btn" data-lang="de" onclick="setLanguage('de')" title="Deutsch"
+                    aria-label="Deutsch"><img src="https://flagcdn.com/w40/de.png" alt="Deutsch"></button>
+                <button class="lang-btn" data-lang="nl" onclick="setLanguage('nl')" title="Nederlands"
+                    aria-label="Nederlands"><img src="https://flagcdn.com/w40/nl.png" alt="Nederlands"></button>
+                <button class="lang-btn" data-lang="it" onclick="setLanguage('it')" title="Italiano"
+                    aria-label="Italiano"><img src="https://flagcdn.com/w40/it.png" alt="Italiano"></button>
+            </div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
             <div class="topnav-links" id="topnavLinks">
-                <a href="index.html">Home</a>
-                <a href="about.html" aria-current="page">About</a>
-                <a href="services.html">Services</a>
-                <a href="index.html#pricing">Pricing</a>
-                <a href="faq.html">FAQ</a>
-                <a href="booking.html" class="nav-cta">Book Now</a>
+                <a href="index.html" data-i18n="navHome">Home</a>
+                <a href="about.html" aria-current="page" data-i18n="navAbout">About</a>
+                <a href="services.html" data-i18n="navServices">Services</a>
+                <a href="index.html#pricing" data-i18n="navPricing">Pricing</a>
+                <a href="faq.html" data-i18n="navFAQ">FAQ</a>
+                <a href="booking.html" class="nav-cta" data-i18n="navBookNow">Book Now</a>
             </div>
             <div class="topnav-actions">
                 <a href="tel:+46737351993" class="nav-icon-btn" aria-label="Call us">
@@ -48,29 +64,38 @@
     </nav>
 
     <div class="page-hero">
-        <div class="breadcrumb"><a href="index.html">Home</a> / About Us</div>
-        <h1>About Aathish Åkeri AB</h1>
-        <p>Stockholm's dependable, multilingual taxi partner for airport transfers, business travel, and everything
+        <div class="breadcrumb"><a href="index.html" data-i18n="navHome">Home</a> / <span
+                data-i18n="navAbout">About Us</span></div>
+        <h1 data-i18n="aboutHeroTitle">About Aathish Åkeri AB</h1>
+        <p data-i18n="aboutHeroSubtitle">Stockholm's dependable, multilingual taxi partner for airport transfers,
+            business travel, and everything
             in between.</p>
     </div>
 
     <div class="trust-strip">
-        <div class="trust-item"><span class="num">2017</span><span class="label">Founded</span></div>
-        <div class="trust-item"><span class="num">7</span><span class="label">Languages spoken</span></div>
-        <div class="trust-item"><span class="num">3</span><span class="label">Vehicle classes</span></div>
-        <div class="trust-item"><span class="num">Fixed</span><span class="label">Airport pricing</span></div>
+        <div class="trust-item"><span class="num">2017</span><span class="label" data-i18n="aboutTrust1">Founded</span>
+        </div>
+        <div class="trust-item"><span class="num">7</span><span class="label" data-i18n="trustLabel2">Languages
+                spoken</span></div>
+        <div class="trust-item"><span class="num">3</span><span class="label"
+                data-i18n="aboutTrust3">Vehicle classes</span></div>
+        <div class="trust-item"><span class="num">Fixed</span><span class="label" data-i18n="aboutTrust4">Airport
+                pricing</span>
+        </div>
     </div>
 
     <div class="container">
         <section>
             <div class="about-grid">
                 <div>
-                    <h2>Our Story</h2>
-                    <p>Aathish Åkeri AB has been operating in Stockholm since 2017, built around a simple idea:
+                    <h2 data-i18n="aboutStoryHeading">Our Story</h2>
+                    <p data-i18n="aboutStoryP1">Aathish Åkeri AB has been operating in Stockholm since 2017, built
+                        around a simple idea:
                         airport and city transfers should be reliable, comfortable, and honestly priced. What began
                         as a small operation focused on Arlanda Airport transfers has grown into a trusted service
                         for tourists, business travelers, and local families across greater Stockholm.</p>
-                    <p>We're a driver-led company — the people behind the wheel are the same people who answer your
+                    <p data-i18n="aboutStoryP2">We're a driver-led company — the people behind the wheel are the same
+                        people who answer your
                         call or WhatsApp message. That means fewer misunderstandings, faster confirmations, and a
                         genuine interest in getting your journey right the first time.</p>
                 </div>
@@ -79,84 +104,90 @@
         </section>
 
         <section>
-            <h2>What We Stand For</h2>
+            <h2 data-i18n="aboutValuesHeading">What We Stand For</h2>
             <div class="values-grid">
                 <div class="value-card">
                     <span class="service-icon">🎯</span>
-                    <h3>Punctuality</h3>
-                    <p>Flight tracked pickups and buffer time built in, so you're never left waiting at Arlanda.</p>
+                    <h3 data-i18n="aboutValue1Title">Punctuality</h3>
+                    <p data-i18n="aboutValue1Desc">Flight tracked pickups and buffer time built in, so you're never
+                        left waiting at Arlanda.</p>
                 </div>
                 <div class="value-card">
                     <span class="service-icon">💳</span>
-                    <h3>Transparent Pricing</h3>
-                    <p>Fixed fares for Arlanda ↔ Stockholm routes — the price you're quoted is the price you pay.</p>
+                    <h3 data-i18n="aboutValue2Title">Transparent Pricing</h3>
+                    <p data-i18n="aboutValue2Desc">Fixed fares for Arlanda ↔ Stockholm routes — the price you're
+                        quoted is the price you pay.</p>
                 </div>
                 <div class="value-card">
                     <span class="service-icon">🌍</span>
-                    <h3>Multilingual Service</h3>
-                    <p>Our team communicates in English, Swedish, Spanish, French, German, Dutch, and Italian.</p>
+                    <h3 data-i18n="aboutValue3Title">Multilingual Service</h3>
+                    <p data-i18n="aboutValue3Desc">Our team communicates in English, Swedish, Spanish, French,
+                        German, Dutch, and Italian.</p>
                 </div>
                 <div class="value-card">
                     <span class="service-icon">🧳</span>
-                    <h3>Comfort & Space</h3>
-                    <p>From a standard sedan to a 7-seater van, with room for luggage, child seats, and extra bags.
+                    <h3 data-i18n="aboutValue4Title">Comfort & Space</h3>
+                    <p data-i18n="aboutValue4Desc">From a standard sedan to a 7-seater van, with room for luggage,
+                        child seats, and extra bags.
                     </p>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>Our Fleet at a Glance</h2>
+            <h2 data-i18n="aboutFleetHeading">Our Fleet at a Glance</h2>
             <div class="grid">
                 <div class="card">
                     <img src="assets/images/standard-car.jpg" alt="Standard Sedan" class="card-img">
-                    <h3>Standard Sedan</h3>
-                    <p>Reliable for up to 4 passengers.</p>
+                    <h3 data-i18n="car1Title">Standard Sedan</h3>
+                    <p data-i18n="car1Desc">Reliable for up to 4 passengers.</p>
                 </div>
                 <div class="card highlight">
                     <img src="assets/images/premium-sedan.jpg" alt="Premium Sedan" class="card-img">
-                    <h3>Premium Sedan</h3>
-                    <p>Luxury experience for business trips.</p>
+                    <h3 data-i18n="carPremiumTitle">Premium Sedan</h3>
+                    <p data-i18n="carPremiumDesc">Luxury experience for business trips.</p>
                 </div>
                 <div class="card">
                     <img src="assets/images/van1.jpg" alt="Premium Van" class="card-img">
-                    <h3>Premium Van</h3>
-                    <p>Up to 7 passengers with large luggage space.</p>
+                    <h3 data-i18n="car2Title">Premium Van</h3>
+                    <p data-i18n="car2Desc">Up to 7 passengers with large luggage space.</p>
                 </div>
             </div>
             <p style="text-align:center; margin-top:20px;">
-                <a href="services.html" class="btn-book">See All Services</a>
+                <a href="services.html" class="btn-book" data-i18n="aboutSeeServicesBtn">See All Services</a>
             </p>
         </section>
 
         <section class="contact-box" id="contact">
-            <h2>Ready to Ride With Us?</h2>
+            <h2 data-i18n="aboutCTAHeading">Ready to Ride With Us?</h2>
             <div class="contact-item">
                 <span class="contact-icon">📧</span>
-                <p><strong>Email:</strong> <a href="mailto:info@aathishakeri.se">info@aathishakeri.se</a></p>
+                <p><strong data-i18n="contactEmailLabel">Email:</strong> <a
+                        href="mailto:info@aathishakeri.se">info@aathishakeri.se</a></p>
             </div>
             <div class="contact-item">
                 <span class="contact-icon">📞</span>
-                <p><strong>Phone:</strong> <a href="tel:+46737351993">+46 737 351 993</a></p>
+                <p><strong data-i18n="contactPhoneLabel">Phone:</strong> <a href="tel:+46737351993">+46 737 351
+                        993</a></p>
             </div>
             <div class="contact-item">
                 <span class="contact-icon">💬</span>
-                <p><strong>WhatsApp:</strong> <a href="https://wa.me/46737351993" target="_blank"
-                        class="wa-link">Chat with us on WhatsApp</a></p>
+                <p><strong data-i18n="contactWhatsappLabel">WhatsApp:</strong> <a href="https://wa.me/46737351993"
+                        target="_blank" class="wa-link" data-i18n="lblWhatsapp">Chat with us on WhatsApp</a></p>
             </div>
         </section>
     </div>
 
     <footer>
         <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="services.html">Services</a>
-            <a href="booking.html">Book Now</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Privacy</a>
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="about.html" data-i18n="footerAboutUs">About Us</a>
+            <a href="services.html" data-i18n="navServices">Services</a>
+            <a href="booking.html" data-i18n="navBookNow">Book Now</a>
+            <a href="faq.html" data-i18n="navFAQ">FAQ</a>
+            <a href="terms.html" data-i18n="footerTermsPrivacy">Terms & Privacy</a>
         </div>
-        © 2017-2026 Aathish Åkeri AB. All Rights Reserved.
+        © 2017-2026 Aathish Åkeri AB. <span data-i18n="footerRights">All Rights Reserved.</span>
     </footer>
 
     <script src="script.js"></script>

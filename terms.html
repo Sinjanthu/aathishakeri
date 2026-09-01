@@ -7,7 +7,7 @@
     <title>Terms & Privacy | Aathish Åkeri AB</title>
     <meta name="description" content="Booking terms, cancellation policy, and privacy notice for Aathish Åkeri AB.">
     <link rel="canonical" href="https://aathishakeri.se/terms.html">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
@@ -23,16 +23,32 @@
                 <img src="assets/images/logo.png" alt="Aathish Åkeri AB" class="topnav-logo">
                 <span>Aathish Åkeri AB</span>
             </a>
+            <div class="lang-switcher" role="group" aria-label="Choose language">
+                <button class="lang-btn" data-lang="en" onclick="setLanguage('en')" title="English"
+                    aria-label="English"><img src="https://flagcdn.com/w40/us.png" alt="English"></button>
+                <button class="lang-btn" data-lang="sv" onclick="setLanguage('sv')" title="Svenska"
+                    aria-label="Svenska"><img src="https://flagcdn.com/w40/se.png" alt="Svenska"></button>
+                <button class="lang-btn" data-lang="es" onclick="setLanguage('es')" title="Español"
+                    aria-label="Español"><img src="https://flagcdn.com/w40/es.png" alt="Español"></button>
+                <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')" title="Français"
+                    aria-label="Français"><img src="https://flagcdn.com/w40/fr.png" alt="Français"></button>
+                <button class="lang-btn" data-lang="de" onclick="setLanguage('de')" title="Deutsch"
+                    aria-label="Deutsch"><img src="https://flagcdn.com/w40/de.png" alt="Deutsch"></button>
+                <button class="lang-btn" data-lang="nl" onclick="setLanguage('nl')" title="Nederlands"
+                    aria-label="Nederlands"><img src="https://flagcdn.com/w40/nl.png" alt="Nederlands"></button>
+                <button class="lang-btn" data-lang="it" onclick="setLanguage('it')" title="Italiano"
+                    aria-label="Italiano"><img src="https://flagcdn.com/w40/it.png" alt="Italiano"></button>
+            </div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
             <div class="topnav-links" id="topnavLinks">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="index.html#pricing">Pricing</a>
-                <a href="faq.html">FAQ</a>
-                <a href="booking.html" class="nav-cta">Book Now</a>
+                <a href="index.html" data-i18n="navHome">Home</a>
+                <a href="about.html" data-i18n="navAbout">About</a>
+                <a href="services.html" data-i18n="navServices">Services</a>
+                <a href="index.html#pricing" data-i18n="navPricing">Pricing</a>
+                <a href="faq.html" data-i18n="navFAQ">FAQ</a>
+                <a href="booking.html" class="nav-cta" data-i18n="navBookNow">Book Now</a>
             </div>
             <div class="topnav-actions">
                 <a href="tel:+46737351993" class="nav-icon-btn" aria-label="Call us">
@@ -47,13 +63,15 @@
     </nav>
 
     <div class="page-hero">
-        <div class="breadcrumb"><a href="index.html">Home</a> / Terms & Privacy</div>
-        <h1>Terms & Privacy</h1>
-        <p>Our booking terms, cancellation policy, and how we handle your personal data.</p>
+        <div class="breadcrumb"><a href="index.html" data-i18n="navHome">Home</a> / <span
+                data-i18n="footerTermsPrivacy">Terms & Privacy</span></div>
+        <h1 data-i18n="termsHeroTitle">Terms & Privacy</h1>
+        <p data-i18n="termsHeroSubtitle">Our booking terms, cancellation policy, and how we handle your personal
+            data.</p>
     </div>
 
     <div class="container legal">
-        <div class="legal-disclaimer">
+        <div class="legal-disclaimer" data-i18n="termsDisclaimer">
             <strong>Note:</strong> This page is a general starting template covering standard taxi-service terms and
             a GDPR-style privacy notice. Please review and adjust it — including the specific waiting-time and
             cancellation windows — to match your actual policies, and have it checked against Swedish/EU law before
@@ -61,86 +79,102 @@
         </div>
 
         <div class="legal-toc">
-            <a href="#terms">Booking Terms</a>
-            <a href="#cancellation">Cancellation Policy</a>
-            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms" data-i18n="termsTocTerms">Booking Terms</a>
+            <a href="#cancellation" data-i18n="termsTocCancellation">Cancellation Policy</a>
+            <a href="#privacy" data-i18n="termsTocPrivacy">Privacy Policy</a>
         </div>
 
         <section id="terms">
-            <h2>1. Booking Terms & Conditions</h2>
-            <p>These terms apply to all bookings and enquiries made with Aathish Åkeri AB ("we", "us", "our") by
+            <h2 data-i18n="terms1Heading">1. Booking Terms & Conditions</h2>
+            <p data-i18n="terms1Intro">These terms apply to all bookings and enquiries made with Aathish Åkeri AB
+                ("we", "us", "our") by
                 phone, WhatsApp, email, or through this website.</p>
 
-            <h3>1.1 Fixed-Price Routes</h3>
-            <p>Fares shown for Arlanda Airport ↔ Stockholm City are fixed by vehicle type and are valid for direct
+            <h3 data-i18n="terms11Heading">1.1 Fixed-Price Routes</h3>
+            <p data-i18n="terms11Body">Fares shown for Arlanda Airport ↔ Stockholm City are fixed by vehicle type and
+                are valid for direct
                 transfers between those two points. Additional stops, detours, or routes outside these fixed lanes
                 are quoted individually and confirmed before travel.</p>
 
-            <h3>1.2 Booking Confirmation</h3>
-            <p>A booking is confirmed once we reply to your enquiry (by phone, WhatsApp, or email) confirming
+            <h3 data-i18n="terms12Heading">1.2 Booking Confirmation</h3>
+            <p data-i18n="terms12Body">A booking is confirmed once we reply to your enquiry (by phone, WhatsApp, or
+                email) confirming
                 vehicle, price, and pickup time. Submitting the online form or booking page is a request, not an
                 automatic confirmation.</p>
 
-            <h3>1.3 Waiting Time</h3>
-            <p>For airport pickups, we monitor your flight and include reasonable free waiting time after landing.
+            <h3 data-i18n="terms13Heading">1.3 Waiting Time</h3>
+            <p data-i18n="terms13Body">For airport pickups, we monitor your flight and include reasonable free
+                waiting time after landing.
                 For city pickups, a shorter free waiting window applies. Waiting time beyond this may incur an
                 additional charge, communicated to you at the time.</p>
 
-            <h3>1.4 Passengers & Luggage</h3>
-            <p>Please provide an accurate passenger and luggage count when booking so we can assign the right
+            <h3 data-i18n="terms14Heading">1.4 Passengers & Luggage</h3>
+            <p data-i18n="terms14Body">Please provide an accurate passenger and luggage count when booking so we can
+                assign the right
                 vehicle. We reserve the right to request an upgraded vehicle (at the correct price) if the actual
                 group or luggage exceeds what was declared.</p>
 
-            <h3>1.5 Payment</h3>
-            <p>Payment can be made in cash or by card directly with the driver, or online via a secure SumUp payment
+            <h3 data-i18n="terms15Heading">1.5 Payment</h3>
+            <p data-i18n="terms15Body">Payment can be made in cash or by card directly with the driver, or online via
+                a secure SumUp payment
                 link sent after booking confirmation. Online payment links are generated per booking and are not a
                 stored recurring charge.</p>
         </section>
 
         <section id="cancellation">
-            <h2>2. Cancellation Policy</h2>
-            <p>We understand travel plans change. As a general guide:</p>
+            <h2 data-i18n="terms2Heading">2. Cancellation Policy</h2>
+            <p data-i18n="terms2Intro">We understand travel plans change. As a general guide:</p>
             <ul>
-                <li>Cancellations made well in advance of pickup can be rescheduled or cancelled free of charge.</li>
-                <li>Late cancellations, close to the scheduled pickup time, or a "no-show" at the agreed location may
+                <li data-i18n="terms2Item1">Cancellations made well in advance of pickup can be rescheduled or
+                    cancelled free of charge.</li>
+                <li data-i18n="terms2Item2">Late cancellations, close to the scheduled pickup time, or a "no-show" at
+                    the agreed location may
                     be subject to a cancellation fee, especially where a driver has already been dispatched.</li>
-                <li>If you paid in advance via a SumUp payment link and are entitled to a refund under this policy,
+                <li data-i18n="terms2Item3">If you paid in advance via a SumUp payment link and are entitled to a
+                    refund under this policy,
                     contact us at <a href="mailto:info@aathishakeri.se">info@aathishakeri.se</a> and we will process
                     it back to your original payment method.</li>
             </ul>
-            <p>To cancel or change a booking, contact us as soon as possible by phone or
+            <p data-i18n-html="terms2ClosingHtml">To cancel or change a booking, contact us as soon as possible by
+                phone or
                 <a href="https://wa.me/46737351993" target="_blank" rel="noopener noreferrer">WhatsApp</a> — the
                 earlier we know, the more flexible we can be.
             </p>
         </section>
 
         <section id="privacy">
-            <h2>3. Privacy Policy</h2>
-            <p>This section explains what personal data we collect through this website and how it is used, in line
+            <h2 data-i18n="terms3Heading">3. Privacy Policy</h2>
+            <p data-i18n="terms3Intro">This section explains what personal data we collect through this website and
+                how it is used, in line
                 with the EU General Data Protection Regulation (GDPR).</p>
 
-            <h3>3.1 What We Collect</h3>
-            <p>When you submit an enquiry or booking, we collect the details you provide: name, email address, phone
+            <h3 data-i18n="terms31Heading">3.1 What We Collect</h3>
+            <p data-i18n="terms31Body">When you submit an enquiry or booking, we collect the details you provide:
+                name, email address, phone
                 number, pickup/drop-off locations, flight or vessel number, travel date and time, passenger and
                 luggage counts, and any notes or add-on requests.</p>
 
-            <h3>3.2 How We Use It</h3>
-            <p>This information is used solely to plan, confirm, and deliver your transfer — including contacting
+            <h3 data-i18n="terms32Heading">3.2 How We Use It</h3>
+            <p data-i18n="terms32Body">This information is used solely to plan, confirm, and deliver your transfer —
+                including contacting
                 you by phone, email, or WhatsApp about your booking. We do not sell or rent your personal data to
                 third parties.</p>
 
-            <h3>3.3 Where It's Stored</h3>
-            <p>Enquiry and booking form submissions are stored in a Google Forms/Sheets response sheet accessible
+            <h3 data-i18n="terms33Heading">3.3 Where It's Stored</h3>
+            <p data-i18n="terms33Body">Enquiry and booking form submissions are stored in a Google Forms/Sheets
+                response sheet accessible
                 only to Aathish Åkeri AB. Online payments are processed by SumUp under their own privacy policy and
                 payment terms — we do not store your card details.</p>
 
-            <h3>3.4 Cookies & Tracking</h3>
-            <p>This website does not use analytics or advertising cookies. It loads country flag icons for the
+            <h3 data-i18n="terms34Heading">3.4 Cookies & Tracking</h3>
+            <p data-i18n="terms34Body">This website does not use analytics or advertising cookies. It loads country
+                flag icons for the
                 language switcher from a third-party CDN (flagcdn.com), which may log standard web requests as any
                 image host does.</p>
 
-            <h3>3.5 Your Rights</h3>
-            <p>You may ask us at any time to access, correct, or delete the personal data we hold about you by
+            <h3 data-i18n="terms35Heading">3.5 Your Rights</h3>
+            <p data-i18n="terms35Body">You may ask us at any time to access, correct, or delete the personal data we
+                hold about you by
                 emailing <a href="mailto:info@aathishakeri.se">info@aathishakeri.se</a>. We retain booking records
                 only as long as reasonably needed for service and accounting purposes.</p>
         </section>
@@ -148,14 +182,14 @@
 
     <footer>
         <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="services.html">Services</a>
-            <a href="booking.html">Book Now</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Privacy</a>
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="about.html" data-i18n="footerAboutUs">About Us</a>
+            <a href="services.html" data-i18n="navServices">Services</a>
+            <a href="booking.html" data-i18n="navBookNow">Book Now</a>
+            <a href="faq.html" data-i18n="navFAQ">FAQ</a>
+            <a href="terms.html" data-i18n="footerTermsPrivacy">Terms & Privacy</a>
         </div>
-        © 2017-2026 Aathish Åkeri AB. All Rights Reserved.
+        © 2017-2026 Aathish Åkeri AB. <span data-i18n="footerRights">All Rights Reserved.</span>
     </footer>
 
     <script src="script.js"></script>

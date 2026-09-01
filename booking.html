@@ -8,7 +8,7 @@
     <meta name="description"
         content="Book your Stockholm or Arlanda Airport transfer directly with Aathish Åkeri AB. We confirm your ride, then send a secure SumUp payment link.">
     <link rel="canonical" href="https://aathishakeri.se/booking.html">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
@@ -24,16 +24,32 @@
                 <img src="assets/images/logo.png" alt="Aathish Åkeri AB" class="topnav-logo">
                 <span>Aathish Åkeri AB</span>
             </a>
+            <div class="lang-switcher" role="group" aria-label="Choose language">
+                <button class="lang-btn" data-lang="en" onclick="setLanguage('en')" title="English"
+                    aria-label="English"><img src="https://flagcdn.com/w40/us.png" alt="English"></button>
+                <button class="lang-btn" data-lang="sv" onclick="setLanguage('sv')" title="Svenska"
+                    aria-label="Svenska"><img src="https://flagcdn.com/w40/se.png" alt="Svenska"></button>
+                <button class="lang-btn" data-lang="es" onclick="setLanguage('es')" title="Español"
+                    aria-label="Español"><img src="https://flagcdn.com/w40/es.png" alt="Español"></button>
+                <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')" title="Français"
+                    aria-label="Français"><img src="https://flagcdn.com/w40/fr.png" alt="Français"></button>
+                <button class="lang-btn" data-lang="de" onclick="setLanguage('de')" title="Deutsch"
+                    aria-label="Deutsch"><img src="https://flagcdn.com/w40/de.png" alt="Deutsch"></button>
+                <button class="lang-btn" data-lang="nl" onclick="setLanguage('nl')" title="Nederlands"
+                    aria-label="Nederlands"><img src="https://flagcdn.com/w40/nl.png" alt="Nederlands"></button>
+                <button class="lang-btn" data-lang="it" onclick="setLanguage('it')" title="Italiano"
+                    aria-label="Italiano"><img src="https://flagcdn.com/w40/it.png" alt="Italiano"></button>
+            </div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
             <div class="topnav-links" id="topnavLinks">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="index.html#pricing">Pricing</a>
-                <a href="faq.html">FAQ</a>
-                <a href="booking.html" class="nav-cta" aria-current="page">Book Now</a>
+                <a href="index.html" data-i18n="navHome">Home</a>
+                <a href="about.html" data-i18n="navAbout">About</a>
+                <a href="services.html" data-i18n="navServices">Services</a>
+                <a href="index.html#pricing" data-i18n="navPricing">Pricing</a>
+                <a href="faq.html" data-i18n="navFAQ">FAQ</a>
+                <a href="booking.html" class="nav-cta" aria-current="page" data-i18n="navBookNow">Book Now</a>
             </div>
             <div class="topnav-actions">
                 <a href="tel:+46737351993" class="nav-icon-btn" aria-label="Call us">
@@ -48,9 +64,11 @@
     </nav>
 
     <div class="page-hero">
-        <div class="breadcrumb"><a href="index.html">Home</a> / Book Now</div>
-        <h1>Book Your Ride Direct</h1>
-        <p>No commission-hungry apps — book straight with us and pay securely once your trip is confirmed.</p>
+        <div class="breadcrumb"><a href="index.html" data-i18n="navHome">Home</a> / <span
+                data-i18n="navBookNow">Book Now</span></div>
+        <h1 data-i18n="bookingHeroTitle">Book Your Ride Direct</h1>
+        <p data-i18n="bookingHeroSubtitle">No commission-hungry apps — book straight with us and pay securely once
+            your trip is confirmed.</p>
     </div>
 
     <div class="container">
@@ -58,31 +76,35 @@
             <div class="steps">
                 <div class="step">
                     <div class="step-num">1</div>
-                    <h3>Fill in your trip</h3>
-                    <p>Tell us your route, date/time, passengers, and preferred vehicle below.</p>
+                    <h3 data-i18n="step1Title">Fill in your trip</h3>
+                    <p data-i18n="step1Desc">Tell us your route, date/time, passengers, and preferred vehicle below.
+                    </p>
                 </div>
                 <div class="step">
                     <div class="step-num">2</div>
-                    <h3>We confirm it</h3>
-                    <p>We reply by phone, WhatsApp, or email with your exact price and confirmed pickup time.</p>
+                    <h3 data-i18n="step2Title">We confirm it</h3>
+                    <p data-i18n="step2Desc">We reply by phone, WhatsApp, or email with your exact price and
+                        confirmed pickup time.</p>
                 </div>
                 <div class="step">
                     <div class="step-num">3</div>
-                    <h3>Pay securely</h3>
-                    <p>Pay the driver directly, or use the secure SumUp payment link we send you — card, Apple Pay,
+                    <h3 data-i18n="step3Title">Pay securely</h3>
+                    <p data-i18n="step3Desc">Pay the driver directly, or use the secure SumUp payment link we send
+                        you — card, Apple Pay,
                         or Google Pay.</p>
                 </div>
             </div>
         </section>
 
         <section class="enquiry-section" id="booking">
-            <h2>Trip Details</h2>
+            <h2 data-i18n="bookingTripDetailsHeading">Trip Details</h2>
 
-            <p style="margin-top:-10px; color:#666;">Quick fill for our fixed Arlanda routes:</p>
+            <p style="margin-top:-10px; color:#666;" data-i18n="quickFillIntro">Quick fill for our fixed Arlanda
+                routes:</p>
             <div class="quick-routes">
-                <button type="button" class="route-btn"
+                <button type="button" class="route-btn" data-i18n="directionAtoC"
                     onclick="fillRoute('Arlanda Airport', 'Stockholm City')">Arlanda → Stockholm City</button>
-                <button type="button" class="route-btn"
+                <button type="button" class="route-btn" data-i18n="directionCtoA"
                     onclick="fillRoute('Stockholm City', 'Arlanda Airport')">Stockholm City → Arlanda</button>
             </div>
 
@@ -97,25 +119,26 @@
                 </div>
                 <div id="successModal"
                     style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:#fff; padding:30px; border-radius:10px; box-shadow:0 0 20px rgba(0,0,0,0.2); text-align:center; z-index:1000; width:90%; max-width:400px;">
-                    <h3 style="color:#28a745;">✔ Booking Request Sent!</h3>
-                    <p>Thanks — we've received your booking request and will confirm your price and pickup time
+                    <h3 style="color:#28a745;" data-i18n="bookingSuccessTitle">✔ Booking Request Sent!</h3>
+                    <p data-i18n="bookingSuccessBody">Thanks — we've received your booking request and will confirm
+                        your price and pickup time
                         shortly by phone, email, or WhatsApp.</p>
-                    <button onclick="closeModal()"
+                    <button onclick="closeModal()" data-i18n="closeBtn"
                         style="background:#000; color:#fff; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">Close</button>
                 </div>
 
                 <div class="form-group">
-                    <label>Full Name:</label>
+                    <label data-i18n="lblName">Full Name:</label>
                     <input type="text" name="entry.1153646139" placeholder="Your Name" required>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Email Address:</label>
+                        <label data-i18n="lblEmail">Email Address:</label>
                         <input type="email" name="entry.360215860" placeholder="email@example.com" required>
                     </div>
                     <div class="form-group">
-                        <label>Mobile Number:</label>
+                        <label data-i18n="lblPhone">Mobile Number:</label>
                         <input type="tel" name="entry.1852072444" placeholder="+46 70 000 00 00" required>
                     </div>
                 </div>
@@ -123,25 +146,25 @@
                 <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
 
                 <div class="form-group">
-                    <label>Pickup (Airport/City):</label>
+                    <label data-i18n="lblPickup">Pickup (Airport/City):</label>
                     <input type="text" name="entry.1606357890" list="locationList" placeholder="e.g. Arlanda Airport"
                         required>
                 </div>
 
                 <div class="form-group">
-                    <label>Drop-off Location:</label>
+                    <label data-i18n="lblDrop">Drop-off Location:</label>
                     <input type="text" name="entry.1227612234" list="locationList"
                         placeholder="e.g. Stockholm Central" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Flight / Vessel No (Optional):</label>
+                    <label data-i18n="lblFlight">Flight / Vessel No (Optional):</label>
                     <input type="text" name="entry.1654527934" placeholder="e.g. SK1408">
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Date:</label>
+                        <label data-i18n="lblDate">Date:</label>
                         <input type="date" id="visibleDate" required onchange="syncDateTime()">
                         <input type="hidden" name="entry.902462622_year" id="date_year">
                         <input type="hidden" name="entry.902462622_month" id="date_month">
@@ -149,7 +172,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Time:</label>
+                        <label data-i18n="lblTime">Time:</label>
                         <input type="time" id="visibleTime" required onchange="syncDateTime()">
                         <input type="hidden" name="entry.1678380838_hour" id="time_hour">
                         <input type="hidden" name="entry.1678380838_minute" id="time_minute">
@@ -157,50 +180,54 @@
                 </div>
 
                 <div class="form-group vehicle-choice">
-                    <label for="vehicleType">Preferred Vehicle:</label>
+                    <label for="vehicleType" data-i18n="vehicleTypeLabel">Preferred Vehicle:</label>
                     <select id="vehicleType">
-                        <option value="standard">Standard Sedan (up to 4)</option>
-                        <option value="premium">Premium Sedan (up to 4, luxury)</option>
-                        <option value="van">Premium Van / Minibus (up to 7)</option>
+                        <option value="standard" data-i18n="vehOptStandard">Standard Sedan (up to 4)</option>
+                        <option value="premium" data-i18n="vehOptPremium">Premium Sedan (up to 4, luxury)</option>
+                        <option value="van" data-i18n="vehOptVan">Premium Van / Minibus (up to 7)</option>
                     </select>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Adults:</label>
+                        <label data-i18n="lblAdults">Adults:</label>
                         <input type="number" name="entry.2086286042" min="1" value="1" required>
                     </div>
                     <div class="form-group">
-                        <label>Children:</label>
+                        <label data-i18n="lblKids">Children:</label>
                         <input type="number" name="entry.1864332574" min="0" value="0" required>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Luggage Bags:</label>
+                    <label data-i18n="lblBags">Luggage Bags:</label>
                     <input type="number" name="entry.1332310678" min="0" value="0" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Additional Notes / Questions:</label>
+                    <label data-i18n="lblNotes">Additional Notes / Questions:</label>
                     <textarea name="entry.875811815" id="notesField"></textarea>
                 </div>
 
-                <p style="font-weight: bold; margin-top: 15px;">Extra Services / Add-ons:</p>
+                <p style="font-weight: bold; margin-top: 15px;" data-i18n="lblAddons">Extra Services / Add-ons:</p>
                 <div class="addons">
-                    <label><input type="checkbox" name="entry.1201531084" value="Child seat 0-8 months"> <span>Child
+                    <label><input type="checkbox" name="entry.1201531084" value="Child seat 0-8 months">
+                        <span data-i18n="optChild1">Child
                             seat 0-8 months</span></label>
-                    <label><input type="checkbox" name="entry.1201531084" value="Child seat 9-36 months"> <span>Child
+                    <label><input type="checkbox" name="entry.1201531084" value="Child seat 9-36 months">
+                        <span data-i18n="optChild2">Child
                             seat 9-36 months</span></label>
-                    <label><input type="checkbox" name="entry.1201531084" value="Child seat 3+ Years"> <span>Child
+                    <label><input type="checkbox" name="entry.1201531084" value="Child seat 3+ Years">
+                        <span data-i18n="optChild3">Child
                             seat 3+ Years</span></label>
                     <label><input type="checkbox" name="entry.1201531084" value="Combi (Large Luggages)">
-                        <span>Combi (Large Luggages)</span></label>
-                    <label><input type="checkbox" name="entry.1201531084" value="Porter Help"> <span>Porter
+                        <span data-i18n="optCombi">Combi (Large Luggages)</span></label>
+                    <label><input type="checkbox" name="entry.1201531084" value="Porter Help">
+                        <span data-i18n="optPorter">Porter
                             Help</span></label>
                 </div>
 
-                <button type="submit" class="btn-submit">Request Booking</button>
+                <button type="submit" class="btn-submit" data-i18n="requestBookingBtn">Request Booking</button>
             </form>
 
             <datalist id="locationList">
@@ -215,42 +242,46 @@
             </datalist>
 
             <div class="payment-note">
-                <h4>💳 Paying for an existing booking?</h4>
-                <p>Once we confirm your trip, we'll send you a secure SumUp payment link by WhatsApp or email —
+                <h4 data-i18n="paymentNoteHeading">💳 Paying for an existing booking?</h4>
+                <p data-i18n="paymentNoteBody">Once we confirm your trip, we'll send you a secure SumUp payment link
+                    by WhatsApp or email —
                     accepting card, Apple Pay, and Google Pay. If you already have that link, use the button below.
                 </p>
-                <a href="#" class="sumup-pay-btn" target="_blank" rel="noopener noreferrer">Pay with SumUp</a>
+                <a href="#" class="sumup-pay-btn" target="_blank" rel="noopener noreferrer"
+                    data-i18n="sumupPayBtn">Pay with SumUp</a>
             </div>
         </section>
 
         <section class="contact-box" id="contact">
-            <h2>Prefer to Book by Phone or WhatsApp?</h2>
+            <h2 data-i18n="bookingPreferPhoneHeading">Prefer to Book by Phone or WhatsApp?</h2>
             <div class="contact-item">
                 <span class="contact-icon">📞</span>
-                <p><strong>Phone:</strong> <a href="tel:+46737351993">+46 737 351 993</a></p>
+                <p><strong data-i18n="contactPhoneLabel">Phone:</strong> <a href="tel:+46737351993">+46 737 351
+                        993</a></p>
             </div>
             <div class="contact-item">
                 <span class="contact-icon">💬</span>
-                <p><strong>WhatsApp:</strong> <a href="https://wa.me/46737351993" target="_blank"
-                        class="wa-link">Chat with us on WhatsApp</a></p>
+                <p><strong data-i18n="contactWhatsappLabel">WhatsApp:</strong> <a href="https://wa.me/46737351993"
+                        target="_blank" class="wa-link" data-i18n="lblWhatsapp">Chat with us on WhatsApp</a></p>
             </div>
             <div class="contact-item">
                 <span class="contact-icon">📧</span>
-                <p><strong>Email:</strong> <a href="mailto:info@aathishakeri.se">info@aathishakeri.se</a></p>
+                <p><strong data-i18n="contactEmailLabel">Email:</strong> <a
+                        href="mailto:info@aathishakeri.se">info@aathishakeri.se</a></p>
             </div>
         </section>
     </div>
 
     <footer>
         <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="services.html">Services</a>
-            <a href="booking.html">Book Now</a>
-            <a href="faq.html">FAQ</a>
-            <a href="terms.html">Terms & Privacy</a>
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="about.html" data-i18n="footerAboutUs">About Us</a>
+            <a href="services.html" data-i18n="navServices">Services</a>
+            <a href="booking.html" data-i18n="navBookNow">Book Now</a>
+            <a href="faq.html" data-i18n="navFAQ">FAQ</a>
+            <a href="terms.html" data-i18n="footerTermsPrivacy">Terms & Privacy</a>
         </div>
-        © 2017-2026 Aathish Åkeri AB. All Rights Reserved.
+        © 2017-2026 Aathish Åkeri AB. <span data-i18n="footerRights">All Rights Reserved.</span>
     </footer>
 
     <script src="script.js"></script>
