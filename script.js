@@ -100,7 +100,7 @@ const content = {
     aboutTrust4: "Airport pricing",
     aboutStoryHeading: "Our Story",
     aboutStoryP1:
-      "Aathish Åkeri AB has been operating in Stockholm since 2017, built around a simple idea: airport and city transfers should be reliable, comfortable, and honestly priced. What began as a small operation focused on Arlanda Airport transfers has grown into a trusted service for tourists, business travelers, and local families across greater Stockholm.",
+      "Aathish Åkeri AB was founded in 2017 and has focused on premium taxi and airport transfer service in Stockholm since 2020, built around a simple idea: airport and city transfers should be reliable, comfortable, and honestly priced. Since then, what began as a small operation focused on Arlanda Airport transfers has grown into a trusted service for tourists, business travelers, and local families across greater Stockholm.",
     aboutStoryP2:
       "We're a driver-led company — the people behind the wheel are the same people who answer your call or WhatsApp message. That means fewer misunderstandings, faster confirmations, and a genuine interest in getting your journey right the first time.",
     aboutValuesHeading: "What We Stand For",
@@ -339,7 +339,7 @@ const content = {
     aboutTrust4: "Flygplatspriser",
     aboutStoryHeading: "Vår historia",
     aboutStoryP1:
-      "Aathish Åkeri AB har varit verksamt i Stockholm sedan 2017, byggt kring en enkel idé: flygplats- och stadstransfer ska vara pålitligt, bekvämt och ärligt prissatt. Det som började som en liten verksamhet fokuserad på Arlanda-transfer har växt till en betrodd tjänst för turister, affärsresenärer och lokala familjer i hela Storstockholm.",
+      "Aathish Åkeri AB grundades 2017 och har sedan 2020 fokuserat på premium taxi- och flygplatstransfer i Stockholm, byggt kring en enkel idé: flygplats- och stadstransfer ska vara pålitligt, bekvämt och ärligt prissatt. Det som därefter började som en liten verksamhet fokuserad på Arlanda-transfer har växt till en betrodd tjänst för turister, affärsresenärer och lokala familjer i hela Storstockholm.",
     aboutStoryP2:
       "Vi är ett förarlett företag — personerna bakom ratten är samma personer som svarar på ditt samtal eller WhatsApp-meddelande. Det betyder färre missförstånd, snabbare bekräftelser och ett genuint intresse av att få din resa rätt från början.",
     aboutValuesHeading: "Det här står vi för",
@@ -569,7 +569,7 @@ const content = {
     aboutTrust4: "Precios de aeropuerto",
     aboutStoryHeading: "Nuestra historia",
     aboutStoryP1:
-      "Aathish Åkeri AB opera en Estocolmo desde 2017, construida sobre una idea simple: los traslados aeroportuarios y urbanos deben ser fiables, cómodos y con un precio honesto. Lo que empezó como una pequeña operación centrada en traslados al aeropuerto de Arlanda ha crecido hasta convertirse en un servicio de confianza para turistas, viajeros de negocios y familias locales en todo el Gran Estocolmo.",
+      "Aathish Åkeri AB se fundó en 2017 y desde 2020 se dedica al servicio de taxi premium y traslados al aeropuerto en Estocolmo, construida sobre una idea simple: los traslados aeroportuarios y urbanos deben ser fiables, cómodos y con un precio honesto. Desde entonces, lo que empezó como una pequeña operación centrada en traslados al aeropuerto de Arlanda ha crecido hasta convertirse en un servicio de confianza para turistas, viajeros de negocios y familias locales en todo el Gran Estocolmo.",
     aboutStoryP2:
       "Somos una empresa liderada por conductores — las personas al volante son las mismas que responden a tu llamada o mensaje de WhatsApp. Eso significa menos malentendidos, confirmaciones más rápidas y un interés genuino en que tu viaje salga bien a la primera.",
     aboutValuesHeading: "Lo que defendemos",
@@ -793,7 +793,7 @@ const content = {
     aboutTrust4: "Tarifs aéroport",
     aboutStoryHeading: "Notre histoire",
     aboutStoryP1:
-      "Aathish Åkeri AB opère à Stockholm depuis 2017, autour d'une idée simple : les transferts aéroport et en ville doivent être fiables, confortables et honnêtement tarifés. Ce qui a commencé comme une petite activité centrée sur les transferts vers l'aéroport d'Arlanda est devenu un service de confiance pour les touristes, les voyageurs d'affaires et les familles locales dans tout le Grand Stockholm.",
+      "Aathish Åkeri AB a été fondée en 2017 et se consacre depuis 2020 au taxi premium et aux transferts aéroportuaires à Stockholm, autour d'une idée simple : les transferts aéroport et en ville doivent être fiables, confortables et honnêtement tarifés. Depuis, ce qui a commencé comme une petite activité centrée sur les transferts vers l'aéroport d'Arlanda est devenu un service de confiance pour les touristes, les voyageurs d'affaires et les familles locales dans tout le Grand Stockholm.",
     aboutStoryP2:
       "Nous sommes une entreprise dirigée par ses chauffeurs — les personnes au volant sont les mêmes qui répondent à votre appel ou message WhatsApp. Cela signifie moins de malentendus, des confirmations plus rapides et un intérêt sincère à bien réussir votre trajet dès la première fois.",
     aboutValuesHeading: "Nos valeurs",
@@ -1016,7 +1016,7 @@ const content = {
     aboutTrust4: "Flughafenpreise",
     aboutStoryHeading: "Unsere Geschichte",
     aboutStoryP1:
-      "Aathish Åkeri AB ist seit 2017 in Stockholm tätig, aufgebaut auf einer einfachen Idee: Flughafen- und Stadttransfers sollen zuverlässig, komfortabel und ehrlich bepreist sein. Was als kleiner Betrieb mit Fokus auf Transfers zum Flughafen Arlanda begann, ist zu einem vertrauenswürdigen Service für Touristen, Geschäftsreisende und Familien in ganz Stockholm geworden.",
+      "Aathish Åkeri AB wurde 2017 gegründet und widmet sich seit 2020 dem Premium-Taxi- und Flughafentransferservice in Stockholm, aufgebaut auf einer einfachen Idee: Flughafen- und Stadttransfers sollen zuverlässig, komfortabel und ehrlich bepreist sein. Was seitdem als kleiner Betrieb mit Fokus auf Transfers zum Flughafen Arlanda begann, ist zu einem vertrauenswürdigen Service für Touristen, Geschäftsreisende und Familien in ganz Stockholm geworden.",
     aboutStoryP2:
       "Wir sind ein von Fahrern geführtes Unternehmen — die Personen am Steuer sind dieselben, die Ihren Anruf oder Ihre WhatsApp-Nachricht beantworten. Das bedeutet weniger Missverständnisse, schnellere Bestätigungen und echtes Interesse daran, Ihre Fahrt gleich beim ersten Mal richtig zu machen.",
     aboutValuesHeading: "Wofür wir stehen",
@@ -1239,7 +1239,7 @@ const content = {
     aboutTrust4: "Luchthavenprijzen",
     aboutStoryHeading: "Ons verhaal",
     aboutStoryP1:
-      "Aathish Åkeri AB is sinds 2017 actief in Stockholm, gebouwd rond een simpel idee: luchthaven- en stadstransfers moeten betrouwbaar, comfortabel en eerlijk geprijsd zijn. Wat begon als een kleine onderneming gericht op transfers naar luchthaven Arlanda, is uitgegroeid tot een vertrouwde dienst voor toeristen, zakenreizigers en lokale gezinnen in heel Groot-Stockholm.",
+      "Aathish Åkeri AB werd opgericht in 2017 en richt zich sinds 2020 op premium taxi- en luchthaventransfers in Stockholm, gebouwd rond een simpel idee: luchthaven- en stadstransfers moeten betrouwbaar, comfortabel en eerlijk geprijsd zijn. Wat sindsdien begon als een kleine onderneming gericht op transfers naar luchthaven Arlanda, is uitgegroeid tot een vertrouwde dienst voor toeristen, zakenreizigers en lokale gezinnen in heel Groot-Stockholm.",
     aboutStoryP2:
       "Wij zijn een door chauffeurs geleid bedrijf — de mensen achter het stuur zijn dezelfde mensen die uw telefoontje of WhatsApp-bericht beantwoorden. Dat betekent minder misverstanden, snellere bevestigingen en oprechte interesse om uw reis meteen goed te laten verlopen.",
     aboutValuesHeading: "Waar wij voor staan",
@@ -1462,7 +1462,7 @@ const content = {
     aboutTrust4: "Prezzi aeroportuali",
     aboutStoryHeading: "La nostra storia",
     aboutStoryP1:
-      "Aathish Åkeri AB opera a Stoccolma dal 2017, costruita su un'idea semplice: i transfer aeroportuali e urbani devono essere affidabili, confortevoli e con un prezzo onesto. Ciò che è iniziato come una piccola attività concentrata sui transfer per l'aeroporto di Arlanda è cresciuto fino a diventare un servizio di fiducia per turisti, viaggiatori d'affari e famiglie locali in tutta l'area di Stoccolma.",
+      "Aathish Åkeri AB è stata fondata nel 2017 e dal 2020 si dedica al servizio di taxi premium e transfer aeroportuali a Stoccolma, costruita su un'idea semplice: i transfer aeroportuali e urbani devono essere affidabili, confortevoli e con un prezzo onesto. Da allora, ciò che è iniziato come una piccola attività concentrata sui transfer per l'aeroporto di Arlanda è cresciuto fino a diventare un servizio di fiducia per turisti, viaggiatori d'affari e famiglie locali in tutta l'area di Stoccolma.",
     aboutStoryP2:
       "Siamo un'azienda guidata dagli autisti — le persone al volante sono le stesse che rispondono alla tua chiamata o al tuo messaggio WhatsApp. Questo significa meno malintesi, conferme più rapide e un interesse genuino a far andare bene il tuo viaggio fin dalla prima volta.",
     aboutValuesHeading: "I nostri valori",
