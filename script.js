@@ -1,3 +1,24 @@
+/* =====================================================
+   PROMO CODE — edit this one block to change or turn off
+   the "book direct" discount (e.g. on the car cards).
+   No other file needs to change.
+   =====================================================
+   - active: false hides the Promo Code field on the
+     booking page entirely (customers won't see it at all).
+   - code: what customers type in. Not shown anywhere on
+     the site itself — it only appears on the printed card,
+     so only people who got a card know it.
+   - Changing the discount PERCENTAGE itself is a business
+     decision applied manually when you confirm a booking
+     (there's no automatic pricing engine on this site) —
+     this switch only controls whether the code field shows
+     up and what code it expects.
+   ===================================================== */
+const PROMO = {
+  active: true,
+  code: "DIRECT10",
+};
+
 const content = {
   en: {
     subTitle: "Your Premium Journey Starts Here – Comfort in Every Mile.",
@@ -144,7 +165,7 @@ const content = {
     vehOptPremium: "Premium Sedan (up to 4, luxury)",
     vehOptVan: "Premium Van / Minibus (up to 7)",
     lblPromoCode: "Promo Code (optional):",
-    phPromoCode: "e.g. DIRECT10",
+    phPromoCode: "Have a code? Enter it here",
     requestBookingBtn: "Request Booking",
     paymentNoteHeading: "💳 Paying for an existing booking?",
     paymentNoteBody:
@@ -378,7 +399,7 @@ const content = {
     vehOptPremium: "Premiumsedan (upp till 4, lyx)",
     vehOptVan: "Premium van / minibuss (upp till 7)",
     lblPromoCode: "Rabattkod (valfritt):",
-    phPromoCode: "t.ex. DIRECT10",
+    phPromoCode: "Har du en kod? Ange den här",
     requestBookingBtn: "Skicka bokningsförfrågan",
     paymentNoteHeading: "💳 Betalar du en befintlig bokning?",
     paymentNoteBody:
@@ -603,7 +624,7 @@ const content = {
     vehOptPremium: "Sedán premium (hasta 4, lujo)",
     vehOptVan: "Furgoneta premium / minibús (hasta 7)",
     lblPromoCode: "Código promocional (opcional):",
-    phPromoCode: "ej. DIRECT10",
+    phPromoCode: "¿Tienes un código? Escríbelo aquí",
     requestBookingBtn: "Solicitar reserva",
     paymentNoteHeading: "💳 ¿Vas a pagar una reserva existente?",
     paymentNoteBody:
@@ -827,7 +848,7 @@ const content = {
     vehOptPremium: "Berline premium (jusqu'à 4, luxe)",
     vehOptVan: "Van premium / minibus (jusqu'à 7)",
     lblPromoCode: "Code promo (facultatif) :",
-    phPromoCode: "ex. DIRECT10",
+    phPromoCode: "Un code ? Saisissez-le ici",
     requestBookingBtn: "Demander une réservation",
     paymentNoteHeading: "💳 Vous réglez une réservation existante ?",
     paymentNoteBody:
@@ -1050,7 +1071,7 @@ const content = {
     vehOptPremium: "Premium-Limousine (bis 4, Luxus)",
     vehOptVan: "Premium-Van / Kleinbus (bis 7)",
     lblPromoCode: "Rabattcode (optional):",
-    phPromoCode: "z. B. DIRECT10",
+    phPromoCode: "Haben Sie einen Code? Hier eingeben",
     requestBookingBtn: "Buchung anfragen",
     paymentNoteHeading: "💳 Zahlen Sie eine bestehende Buchung?",
     paymentNoteBody:
@@ -1273,7 +1294,7 @@ const content = {
     vehOptPremium: "Premium sedan (tot 4, luxe)",
     vehOptVan: "Premium van / minibus (tot 7)",
     lblPromoCode: "Kortingscode (optioneel):",
-    phPromoCode: "bijv. DIRECT10",
+    phPromoCode: "Heeft u een code? Vul die hier in",
     requestBookingBtn: "Boeking aanvragen",
     paymentNoteHeading: "💳 Betaalt u een bestaande boeking?",
     paymentNoteBody:
@@ -1496,7 +1517,7 @@ const content = {
     vehOptPremium: "Berlina premium (fino a 4, lusso)",
     vehOptVan: "Van premium / minibus (fino a 7)",
     lblPromoCode: "Codice promozionale (opzionale):",
-    phPromoCode: "es. DIRECT10",
+    phPromoCode: "Hai un codice? Inseriscilo qui",
     requestBookingBtn: "Richiedi prenotazione",
     paymentNoteHeading: "💳 Stai pagando una prenotazione esistente?",
     paymentNoteBody:
@@ -1769,7 +1790,7 @@ function prepareBookingSubmit() {
     ? `Preferred Vehicle: ${vehicleSel.options[vehicleSel.selectedIndex].text}. `
     : "";
   const promoPrefix =
-    promoInput && promoInput.value.trim()
+    PROMO.active && promoInput && promoInput.value.trim()
       ? `Promo Code: ${promoInput.value.trim().toUpperCase()}. `
       : "";
 
@@ -1803,6 +1824,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const navToggle = document.getElementById("navToggle");
   if (navToggle) navToggle.addEventListener("click", toggleNav);
   applyBookingQueryParams();
+
+  // Hide the Promo Code field entirely when PROMO.active is false (see the
+  // PROMO block at the top of this file) — e.g. once an offer has ended.
+  const promoGroup = document.getElementById("promoCodeGroup");
+  if (promoGroup) promoGroup.style.display = PROMO.active ? "" : "none";
 });
 
 // 1. தேதி மற்றும் நேரத்தை அமைக்கும் செயல்பாடு
