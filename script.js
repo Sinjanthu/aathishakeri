@@ -143,6 +143,8 @@ const content = {
     vehOptStandard: "Standard Sedan (up to 4)",
     vehOptPremium: "Premium Sedan (up to 4, luxury)",
     vehOptVan: "Premium Van / Minibus (up to 7)",
+    lblPromoCode: "Promo Code (optional):",
+    phPromoCode: "e.g. DIRECT10",
     requestBookingBtn: "Request Booking",
     paymentNoteHeading: "💳 Paying for an existing booking?",
     paymentNoteBody:
@@ -375,6 +377,8 @@ const content = {
     vehOptStandard: "Standardsedan (upp till 4)",
     vehOptPremium: "Premiumsedan (upp till 4, lyx)",
     vehOptVan: "Premium van / minibuss (upp till 7)",
+    lblPromoCode: "Rabattkod (valfritt):",
+    phPromoCode: "t.ex. DIRECT10",
     requestBookingBtn: "Skicka bokningsförfrågan",
     paymentNoteHeading: "💳 Betalar du en befintlig bokning?",
     paymentNoteBody:
@@ -598,6 +602,8 @@ const content = {
     vehOptStandard: "Sedán estándar (hasta 4)",
     vehOptPremium: "Sedán premium (hasta 4, lujo)",
     vehOptVan: "Furgoneta premium / minibús (hasta 7)",
+    lblPromoCode: "Código promocional (opcional):",
+    phPromoCode: "ej. DIRECT10",
     requestBookingBtn: "Solicitar reserva",
     paymentNoteHeading: "💳 ¿Vas a pagar una reserva existente?",
     paymentNoteBody:
@@ -820,6 +826,8 @@ const content = {
     vehOptStandard: "Berline standard (jusqu'à 4)",
     vehOptPremium: "Berline premium (jusqu'à 4, luxe)",
     vehOptVan: "Van premium / minibus (jusqu'à 7)",
+    lblPromoCode: "Code promo (facultatif) :",
+    phPromoCode: "ex. DIRECT10",
     requestBookingBtn: "Demander une réservation",
     paymentNoteHeading: "💳 Vous réglez une réservation existante ?",
     paymentNoteBody:
@@ -1041,6 +1049,8 @@ const content = {
     vehOptStandard: "Standard-Limousine (bis 4)",
     vehOptPremium: "Premium-Limousine (bis 4, Luxus)",
     vehOptVan: "Premium-Van / Kleinbus (bis 7)",
+    lblPromoCode: "Rabattcode (optional):",
+    phPromoCode: "z. B. DIRECT10",
     requestBookingBtn: "Buchung anfragen",
     paymentNoteHeading: "💳 Zahlen Sie eine bestehende Buchung?",
     paymentNoteBody:
@@ -1262,6 +1272,8 @@ const content = {
     vehOptStandard: "Standaard sedan (tot 4)",
     vehOptPremium: "Premium sedan (tot 4, luxe)",
     vehOptVan: "Premium van / minibus (tot 7)",
+    lblPromoCode: "Kortingscode (optioneel):",
+    phPromoCode: "bijv. DIRECT10",
     requestBookingBtn: "Boeking aanvragen",
     paymentNoteHeading: "💳 Betaalt u een bestaande boeking?",
     paymentNoteBody:
@@ -1483,6 +1495,8 @@ const content = {
     vehOptStandard: "Berlina standard (fino a 4)",
     vehOptPremium: "Berlina premium (fino a 4, lusso)",
     vehOptVan: "Van premium / minibus (fino a 7)",
+    lblPromoCode: "Codice promozionale (opzionale):",
+    phPromoCode: "es. DIRECT10",
     requestBookingBtn: "Richiedi prenotazione",
     paymentNoteHeading: "💳 Stai pagando una prenotazione esistente?",
     paymentNoteBody:
@@ -1733,20 +1747,35 @@ function fillRoute(pickup, drop) {
   if (dropInput) dropInput.focus();
 }
 
-// Folds the "Preferred Vehicle" choice into the Notes field so it reaches the
-// same Google Form endpoint without needing a new form field/entry ID.
+// Folds the "Preferred Vehicle" choice and any promo code into the Notes
+// field so both reach the same Google Form endpoint without needing new
+// form fields/entry IDs.
 function prepareBookingSubmit() {
   const vehicleSel = document.getElementById("vehicleType");
+  const promoInput = document.getElementById("promoCodeField");
   const notes = document.getElementById("notesField");
-  if (vehicleSel && notes) {
-    if (notes.dataset.vehiclePrefix) {
-      notes.value = notes.value.replace(notes.dataset.vehiclePrefix, "");
-    }
-    const label = vehicleSel.options[vehicleSel.selectedIndex].text;
-    const prefix = `Preferred Vehicle: ${label}. `;
-    notes.value = prefix + notes.value;
-    notes.dataset.vehiclePrefix = prefix;
+  if (!notes) return true;
+
+  // Strip any prefix inserted by a previous (invalid) submit attempt first,
+  // so retries don't stack duplicate "Preferred Vehicle: ..." / "Promo Code: ..." lines.
+  if (notes.dataset.vehiclePrefix) {
+    notes.value = notes.value.replace(notes.dataset.vehiclePrefix, "");
   }
+  if (notes.dataset.promoPrefix) {
+    notes.value = notes.value.replace(notes.dataset.promoPrefix, "");
+  }
+
+  const vehiclePrefix = vehicleSel
+    ? `Preferred Vehicle: ${vehicleSel.options[vehicleSel.selectedIndex].text}. `
+    : "";
+  const promoPrefix =
+    promoInput && promoInput.value.trim()
+      ? `Promo Code: ${promoInput.value.trim().toUpperCase()}. `
+      : "";
+
+  notes.value = vehiclePrefix + promoPrefix + notes.value;
+  notes.dataset.vehiclePrefix = vehiclePrefix;
+  notes.dataset.promoPrefix = promoPrefix;
   return true;
 }
 
