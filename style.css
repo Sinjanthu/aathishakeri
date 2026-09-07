@@ -395,7 +395,7 @@ footer {
 
 @media (max-width:600px) {
     header {
-        padding: 30px 16px;
+        padding: 24px 16px;
     }
 
     .button-row {
@@ -409,9 +409,18 @@ footer {
     .btn-whatsapp {
         width: 100%;
         justify-content: center;
-        padding: 14px 18px;
-        font-size: 1.03rem;
-        min-height: 52px;
+        padding: 12px 14px;
+        font-size: 0.95rem;
+        gap: 8px;
+        min-height: 48px;
+        white-space: nowrap;
+    }
+
+    .btn-call .icon,
+    .btn-whatsapp .icon {
+        width: 18px;
+        flex: 0 0 18px;
+        height: 18px;
     }
 
     .container {
@@ -420,7 +429,7 @@ footer {
     }
 
     .company-logo {
-        max-width: 140px;
+        max-width: 120px;
     }
 }
 
