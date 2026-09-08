@@ -1690,6 +1690,7 @@ function applyTranslations(lang) {
   const data = content[lang];
   if (!data) return;
   currentLang = lang;
+  document.documentElement.lang = lang;
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
