@@ -425,6 +425,12 @@ footer {
         width: 100%;
     }
 
+    /* Hover tooltips don't translate to touch - iOS can also leave
+       :hover/:focus-within stuck "on" after a tap, so hide it outright. */
+    .wa-note {
+        display: none;
+    }
+
     .btn-call .icon,
     .btn-whatsapp .icon {
         width: 18px;
