@@ -68,6 +68,13 @@ const content = {
     trustLabel2: "Languages spoken",
     trustLabel3: "Airport availability",
     trustNumFixed: "Fixed",
+    waGenericMessage: "Hi! I'd like to book a transfer with Aathish Åkeri AB.",
+    waBookingTemplate: "Hi! I'd like to book a transfer from {pickup} to {drop} on {date}.",
+    priceEstimateLabel: "Fixed price for this route:",
+    priceEstimatePromoLabel: "With DIRECT10, you pay:",
+    installBannerText: "Install Aathish Åkeri for quick access, like an app.",
+    installBannerBtn: "Install",
+    installBannerIosText: "Add to Home Screen: tap Share, then \"Add to Home Screen\".",
     trustLabel4: "Arlanda prices, no surprises",
     contactEmailLabel: "Email:",
     contactPhoneLabel: "Phone:",
@@ -310,6 +317,13 @@ const content = {
     trustLabel2: "Talade språk",
     trustLabel3: "Flygplatsservice",
     trustNumFixed: "Fasta",
+    waGenericMessage: "Hej! Jag skulle vilja boka en transfer med Aathish Åkeri AB.",
+    waBookingTemplate: "Hej! Jag skulle vilja boka en transfer från {pickup} till {drop} den {date}.",
+    priceEstimateLabel: "Fast pris för denna sträcka:",
+    priceEstimatePromoLabel: "Med DIRECT10 betalar du:",
+    installBannerText: "Installera Aathish Åkeri för snabb åtkomst, som en app.",
+    installBannerBtn: "Installera",
+    installBannerIosText: "Lägg till på hemskärmen: tryck på Dela och sedan \"Lägg till på hemskärmen\".",
     trustLabel4: "Fasta Arlanda-priser, inga överraskningar",
     contactEmailLabel: "E-post:",
     contactPhoneLabel: "Telefon:",
@@ -541,6 +555,13 @@ const content = {
     trustLabel2: "Idiomas hablados",
     trustLabel3: "Disponibilidad en el aeropuerto",
     trustNumFixed: "Fijos",
+    waGenericMessage: "¡Hola! Me gustaría reservar un traslado con Aathish Åkeri AB.",
+    waBookingTemplate: "¡Hola! Me gustaría reservar un traslado de {pickup} a {drop} el {date}.",
+    priceEstimateLabel: "Precio fijo para esta ruta:",
+    priceEstimatePromoLabel: "Con DIRECT10, pagas:",
+    installBannerText: "Instala Aathish Åkeri para un acceso rápido, como una app.",
+    installBannerBtn: "Instalar",
+    installBannerIosText: "Añadir a la pantalla de inicio: toca Compartir y luego \"Añadir a pantalla de inicio\".",
     trustLabel4: "Precios fijos a Arlanda, sin sorpresas",
     contactEmailLabel: "Correo:",
     contactPhoneLabel: "Teléfono:",
@@ -766,6 +787,13 @@ const content = {
     trustLabel2: "Langues parlées",
     trustLabel3: "Disponibilité aéroport",
     trustNumFixed: "Fixes",
+    waGenericMessage: "Bonjour ! J'aimerais réserver un transfert avec Aathish Åkeri AB.",
+    waBookingTemplate: "Bonjour ! J'aimerais réserver un transfert de {pickup} à {drop} le {date}.",
+    priceEstimateLabel: "Prix fixe pour cet itinéraire :",
+    priceEstimatePromoLabel: "Avec DIRECT10, vous payez :",
+    installBannerText: "Installez Aathish Åkeri pour un accès rapide, comme une application.",
+    installBannerBtn: "Installer",
+    installBannerIosText: "Ajouter à l'écran d'accueil : appuyez sur Partager puis \"Sur l'écran d'accueil\".",
     trustLabel4: "Tarifs Arlanda fixes, sans surprise",
     contactEmailLabel: "E-mail :",
     contactPhoneLabel: "Téléphone :",
@@ -990,6 +1018,13 @@ const content = {
     trustLabel2: "Gesprochene Sprachen",
     trustLabel3: "Flughafenverfügbarkeit",
     trustNumFixed: "Feste",
+    waGenericMessage: "Hallo! Ich möchte einen Transfer mit Aathish Åkeri AB buchen.",
+    waBookingTemplate: "Hallo! Ich möchte einen Transfer von {pickup} nach {drop} am {date} buchen.",
+    priceEstimateLabel: "Festpreis für diese Strecke:",
+    priceEstimatePromoLabel: "Mit DIRECT10 zahlen Sie:",
+    installBannerText: "Installiere Aathish Åkeri für schnellen Zugriff, wie eine App.",
+    installBannerBtn: "Installieren",
+    installBannerIosText: "Zum Home-Bildschirm hinzufügen: Tippe auf Teilen und dann auf \"Zum Home-Bildschirm\".",
     trustLabel4: "Feste Arlanda-Preise, keine Überraschungen",
     contactEmailLabel: "E-Mail:",
     contactPhoneLabel: "Telefon:",
@@ -1214,6 +1249,13 @@ const content = {
     trustLabel2: "Gesproken talen",
     trustLabel3: "Beschikbaarheid luchthaven",
     trustNumFixed: "Vaste",
+    waGenericMessage: "Hallo! Ik zou graag een transfer boeken bij Aathish Åkeri AB.",
+    waBookingTemplate: "Hallo! Ik zou graag een transfer boeken van {pickup} naar {drop} op {date}.",
+    priceEstimateLabel: "Vaste prijs voor deze route:",
+    priceEstimatePromoLabel: "Met DIRECT10 betaal je:",
+    installBannerText: "Installeer Aathish Åkeri voor snelle toegang, zoals een app.",
+    installBannerBtn: "Installeren",
+    installBannerIosText: "Toevoegen aan beginscherm: tik op Delen en dan op \"Zet op beginscherm\".",
     trustLabel4: "Vaste Arlanda-prijzen, geen verrassingen",
     contactEmailLabel: "E-mail:",
     contactPhoneLabel: "Telefoon:",
@@ -1438,6 +1480,13 @@ const content = {
     trustLabel2: "Lingue parlate",
     trustLabel3: "Disponibilità aeroportuale",
     trustNumFixed: "Fissi",
+    waGenericMessage: "Ciao! Vorrei prenotare un transfer con Aathish Åkeri AB.",
+    waBookingTemplate: "Ciao! Vorrei prenotare un transfer da {pickup} a {drop} il {date}.",
+    priceEstimateLabel: "Prezzo fisso per questo tragitto:",
+    priceEstimatePromoLabel: "Con DIRECT10, paghi:",
+    installBannerText: "Installa Aathish Åkeri per un accesso rapido, come un'app.",
+    installBannerBtn: "Installa",
+    installBannerIosText: "Aggiungi alla schermata Home: tocca Condividi e poi \"Aggiungi a Home\".",
     trustLabel4: "Prezzi fissi per Arlanda, senza sorprese",
     contactEmailLabel: "Email:",
     contactPhoneLabel: "Telefono:",
@@ -1725,6 +1774,9 @@ function applyTranslations(lang) {
   } catch (e) {
     /* localStorage unavailable (private browsing etc.) — language just won't persist */
   }
+
+  refreshGenericWaLinks();
+  updateBookingWaLink();
 }
 
 // Public API — flag buttons call setLanguage('sv') etc.
@@ -1774,6 +1826,92 @@ function fillRoute(pickup, drop) {
   if (pickupInput) pickupInput.value = pickup;
   if (dropInput) dropInput.value = drop;
   if (dropInput) dropInput.focus();
+  updatePriceEstimate();
+  updateBookingWaLink();
+}
+
+/* =====================================================
+   LIVE PRICE ESTIMATE — instant fixed-fare display for the
+   two confirmed Arlanda <-> Stockholm lanes. Anything outside
+   these two exact pairings just hides the box; we never guess
+   a price for a route we haven't fixed a fare for.
+   ===================================================== */
+const FIXED_FARES = {
+  "arlanda airport|stockholm city": { standard: 739, premium: 790, van: 1090 },
+  "stockholm city|arlanda airport": { standard: 629, premium: 680, van: 890 },
+};
+
+function normalizeLoc(s) {
+  return (s || "").trim().toLowerCase();
+}
+
+function updatePriceEstimate() {
+  const pickupInput = document.querySelector('input[name="entry.1606357890"]');
+  const dropInput = document.querySelector('input[name="entry.1227612234"]');
+  const vehicleSel = document.getElementById("vehicleType");
+  const box = document.getElementById("priceEstimateBox");
+  const valueEl = document.getElementById("priceEstimateValue");
+  const promoBox = document.getElementById("priceEstimatePromo");
+  const promoValueEl = document.getElementById("priceEstimatePromoValue");
+  const promoInput = document.getElementById("promoCodeField");
+  if (!pickupInput || !dropInput || !vehicleSel || !box || !valueEl) return;
+
+  const key = `${normalizeLoc(pickupInput.value)}|${normalizeLoc(dropInput.value)}`;
+  const fares = FIXED_FARES[key];
+  if (!fares) {
+    box.style.display = "none";
+    return;
+  }
+  const price = fares[vehicleSel.value] ?? fares.standard;
+  valueEl.textContent = `${price} kr`;
+  box.style.display = "";
+
+  const codeEntered = promoInput && promoInput.value.trim().toUpperCase();
+  if (promoBox && promoValueEl) {
+    if (PROMO.active && codeEntered && codeEntered === PROMO.code) {
+      promoValueEl.textContent = `${Math.round(price * 0.9)} kr`;
+      promoBox.style.display = "";
+    } else {
+      promoBox.style.display = "none";
+    }
+  }
+}
+
+/* =====================================================
+   WHATSAPP DEEP LINKS — every "Chat on WhatsApp" link opens
+   with a pre-filled message instead of a blank chat. Generic
+   links get a translated greeting; the booking page's contact
+   link reflects whatever route/date is currently filled in.
+   ===================================================== */
+function buildWaLink(message) {
+  return `https://wa.me/46737351993?text=${encodeURIComponent(message)}`;
+}
+
+function refreshGenericWaLinks() {
+  const data = content[currentLang] || content.en;
+  document
+    .querySelectorAll('a[href^="https://wa.me/"]:not(.wa-dynamic)')
+    .forEach((link) => {
+      link.href = buildWaLink(data.waGenericMessage);
+    });
+}
+
+function updateBookingWaLink() {
+  const link = document.getElementById("waContactLink");
+  if (!link) return;
+  const pickupInput = document.querySelector('input[name="entry.1606357890"]');
+  const dropInput = document.querySelector('input[name="entry.1227612234"]');
+  const dateInput = document.getElementById("visibleDate");
+  const data = content[currentLang] || content.en;
+
+  let message = data.waGenericMessage;
+  if (pickupInput && dropInput && pickupInput.value.trim() && dropInput.value.trim()) {
+    message = data.waBookingTemplate
+      .replace("{pickup}", pickupInput.value.trim())
+      .replace("{drop}", dropInput.value.trim())
+      .replace("{date}", (dateInput && dateInput.value) || "");
+  }
+  link.href = buildWaLink(message);
 }
 
 // Folds the "Preferred Vehicle" choice and any promo code into the Notes
@@ -1825,6 +1963,76 @@ function applyBookingQueryParams() {
   if (car && vehicleSel) vehicleSel.value = car;
 }
 
+/* =====================================================
+   PWA INSTALL BANNER
+   - Android/Chrome: capture the real beforeinstallprompt event
+     and trigger it from our own button.
+   - iOS Safari never fires that event (Apple doesn't support
+     it) - the only path there is the manual Share > Add to
+     Home Screen flow, so we just show instructions instead.
+   - Dismissed state is remembered so it doesn't nag every visit.
+   ===================================================== */
+let deferredInstallPrompt = null;
+
+function isIosDevice() {
+  return /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
+}
+
+function isRunningStandalone() {
+  return (
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true
+  );
+}
+
+function dismissInstallBanner() {
+  const banner = document.getElementById("installBanner");
+  if (banner) banner.hidden = true;
+  try {
+    localStorage.setItem("ak_install_dismissed", "1");
+  } catch (e) {
+    /* ignore */
+  }
+}
+
+function initInstallBanner() {
+  const banner = document.getElementById("installBanner");
+  if (!banner || isRunningStandalone()) return;
+
+  try {
+    if (localStorage.getItem("ak_install_dismissed") === "1") return;
+  } catch (e) {
+    /* ignore */
+  }
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    banner.hidden = false;
+    banner.classList.add("install-android");
+  });
+
+  if (isIosDevice()) {
+    banner.hidden = false;
+    banner.classList.add("install-ios");
+  }
+
+  const installBtn = document.getElementById("installBannerBtn");
+  if (installBtn) {
+    installBtn.addEventListener("click", async () => {
+      if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        await deferredInstallPrompt.userChoice;
+        deferredInstallPrompt = null;
+      }
+      dismissInstallBanner();
+    });
+  }
+
+  const closeBtn = document.getElementById("installBannerClose");
+  if (closeBtn) closeBtn.addEventListener("click", dismissInstallBanner);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".sumup-pay-btn").forEach((btn) => {
     btn.href = SUMUP_PAYMENT_LINK;
@@ -1837,6 +2045,26 @@ document.addEventListener("DOMContentLoaded", () => {
   // PROMO block at the top of this file) — e.g. once an offer has ended.
   const promoGroup = document.getElementById("promoCodeGroup");
   if (promoGroup) promoGroup.style.display = PROMO.active ? "" : "none";
+
+  // Live price estimate + WhatsApp deep link — keep both in sync with
+  // whatever's currently in the pickup/drop/vehicle/date/promo fields.
+  const pickupInput = document.querySelector('input[name="entry.1606357890"]');
+  const dropInput = document.querySelector('input[name="entry.1227612234"]');
+  const vehicleSel = document.getElementById("vehicleType");
+  const promoField = document.getElementById("promoCodeField");
+  const dateField = document.getElementById("visibleDate");
+  const syncBookingWidgets = () => {
+    updatePriceEstimate();
+    updateBookingWaLink();
+  };
+  [pickupInput, dropInput, promoField, dateField].forEach((el) => {
+    if (el) el.addEventListener("input", syncBookingWidgets);
+  });
+  if (vehicleSel) vehicleSel.addEventListener("change", syncBookingWidgets);
+  syncBookingWidgets(); // reflect any values pre-filled via query params
+
+  refreshGenericWaLinks();
+  initInstallBanner();
 });
 
 // 1. தேதி மற்றும் நேரத்தை அமைக்கும் செயல்பாடு

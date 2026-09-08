@@ -24,7 +24,7 @@
     <meta property="og:image" content="https://aathishakeri.se/assets/images/logo.png">
     <meta property="og:url" content="https://aathishakeri.se/">
     <meta name="twitter:card" content="summary">
-    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="style.css?v=10">
     <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
@@ -383,7 +383,14 @@
         © 2017-2026 Aathish Åkeri AB. <span data-i18n="footerRights">All Rights Reserved.</span>
     </footer>
 
-    <script src="script.js?v=3"></script>
+    <div id="installBanner" class="install-banner" hidden>
+        <span class="install-banner-text install-banner-text-android" data-i18n="installBannerText">Install Aathish Åkeri for quick access, like an app.</span>
+        <span class="install-banner-text install-banner-text-ios" data-i18n="installBannerIosText">Add to Home Screen: tap Share, then "Add to Home Screen".</span>
+        <button type="button" id="installBannerBtn" class="install-banner-btn" data-i18n="installBannerBtn">Install</button>
+        <button type="button" id="installBannerClose" class="install-banner-close" aria-label="Dismiss">&times;</button>
+    </div>
+
+    <script src="script.js?v=4"></script>
 </body>
 
 </html>

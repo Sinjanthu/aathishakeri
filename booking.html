@@ -17,7 +17,7 @@
     <meta name="description"
         content="Book your Stockholm or Arlanda Airport transfer directly with Aathish Åkeri AB. We confirm your ride, then send a secure SumUp payment link.">
     <link rel="canonical" href="https://aathishakeri.se/booking.html">
-    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="style.css?v=10">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
@@ -203,6 +203,17 @@
                         placeholder="Have a code? Enter it here">
                 </div>
 
+                <div class="price-estimate-box" id="priceEstimateBox" style="display:none;">
+                    <div class="price-estimate-row">
+                        <span data-i18n="priceEstimateLabel">Fixed price for this route:</span>
+                        <span class="price-estimate-value" id="priceEstimateValue">739 kr</span>
+                    </div>
+                    <div class="price-estimate-row price-estimate-promo" id="priceEstimatePromo" style="display:none;">
+                        <span data-i18n="priceEstimatePromoLabel">With DIRECT10, you pay:</span>
+                        <span class="price-estimate-value" id="priceEstimatePromoValue">665 kr</span>
+                    </div>
+                </div>
+
                 <div class="form-row">
                     <div class="form-group">
                         <label data-i18n="lblAdults">Adults:</label>
@@ -277,7 +288,7 @@
             <div class="contact-item">
                 <span class="contact-icon">💬</span>
                 <p><strong data-i18n="contactWhatsappLabel">WhatsApp:</strong> <a href="https://wa.me/46737351993"
-                        target="_blank" class="wa-link" data-i18n="lblWhatsapp">Chat with us on WhatsApp</a></p>
+                        target="_blank" id="waContactLink" class="wa-link wa-dynamic" data-i18n="lblWhatsapp">Chat with us on WhatsApp</a></p>
             </div>
             <div class="contact-item">
                 <span class="contact-icon">📧</span>
@@ -299,7 +310,14 @@
         © 2017-2026 Aathish Åkeri AB. <span data-i18n="footerRights">All Rights Reserved.</span>
     </footer>
 
-    <script src="script.js?v=3"></script>
+    <div id="installBanner" class="install-banner" hidden>
+        <span class="install-banner-text install-banner-text-android" data-i18n="installBannerText">Install Aathish Åkeri for quick access, like an app.</span>
+        <span class="install-banner-text install-banner-text-ios" data-i18n="installBannerIosText">Add to Home Screen: tap Share, then "Add to Home Screen".</span>
+        <button type="button" id="installBannerBtn" class="install-banner-btn" data-i18n="installBannerBtn">Install</button>
+        <button type="button" id="installBannerClose" class="install-banner-close" aria-label="Dismiss">&times;</button>
+    </div>
+
+    <script src="script.js?v=4"></script>
 </body>
 
 </html>
