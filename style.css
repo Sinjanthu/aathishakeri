@@ -416,6 +416,10 @@ footer {
         white-space: nowrap;
     }
 
+    .wa-wrap {
+        width: 100%;
+    }
+
     .btn-call .icon,
     .btn-whatsapp .icon {
         width: 18px;
