@@ -17,7 +17,7 @@
     <meta name="description"
         content="Book your Stockholm or Arlanda Airport transfer directly with Aathish Åkeri AB. We confirm your ride, then send a secure SumUp payment link.">
     <link rel="canonical" href="https://aathishakeri.se/booking.html">
-    <link rel="stylesheet" href="style.css?v=12">
+    <link rel="stylesheet" href="style.css?v=13">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
@@ -203,13 +203,19 @@
                         placeholder="Have a code? Enter it here">
                 </div>
 
+                <div class="form-group">
+                    <label for="referralField" data-i18n="lblReferral">Referred by a friend? (optional)</label>
+                    <input type="text" id="referralField" data-i18n-placeholder="phReferral"
+                        placeholder="Enter their name">
+                </div>
+
                 <div class="price-estimate-box" id="priceEstimateBox" style="display:none;">
                     <div class="price-estimate-row">
                         <span data-i18n="priceEstimateLabel">Fixed price for this route:</span>
                         <span class="price-estimate-value" id="priceEstimateValue">739 kr</span>
                     </div>
                     <div class="price-estimate-row price-estimate-promo" id="priceEstimatePromo" style="display:none;">
-                        <span data-i18n="priceEstimatePromoLabel">With DIRECT10, you pay:</span>
+                        <span data-i18n="priceEstimatePromoLabel">Your discounted price:</span>
                         <span class="price-estimate-value" id="priceEstimatePromoValue">665 kr</span>
                     </div>
                 </div>
@@ -304,6 +310,8 @@
             <a href="about.html" data-i18n="footerAboutUs">About Us</a>
             <a href="services.html" data-i18n="navServices">Services</a>
             <a href="booking.html" data-i18n="navBookNow">Book Now</a>
+            <a href="corporate.html" data-i18n="footerCorporate">Corporate Accounts</a>
+            <a href="referral.html" data-i18n="footerReferral">Refer a Friend</a>
             <a href="faq.html" data-i18n="navFAQ">FAQ</a>
             <a href="terms.html" data-i18n="footerTermsPrivacy">Terms & Privacy</a>
         </div>
@@ -317,7 +325,7 @@
         <button type="button" id="installBannerClose" class="install-banner-close" aria-label="Dismiss">&times;</button>
     </div>
 
-    <script src="script.js?v=6"></script>
+    <script src="script.js?v=7"></script>
 </body>
 
 </html>

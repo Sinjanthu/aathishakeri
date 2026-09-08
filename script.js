@@ -71,13 +71,46 @@ const content = {
     waGenericMessage: "Hi! I'd like to book a transfer with Aathish Åkeri AB.",
     waBookingTemplate: "Hi! I'd like to book a transfer from {pickup} to {drop} on {date}.",
     priceEstimateLabel: "Fixed price for this route:",
-    priceEstimatePromoLabel: "With DIRECT10, you pay:",
+    priceEstimatePromoLabel: "Your discounted price:",
     installBannerText: "Install Aathish Åkeri for quick access, like an app.",
     installBannerBtn: "Install",
     installBannerIosText: "Add to Home Screen: tap Share, then \"Add to Home Screen\".",
     reviewsTitle: "What Our Customers Say",
     reviewsSubtitle: "Real feedback from riders who've traveled with us.",
     reviewsCta: "Send Us Your Feedback",
+    footerCorporate: "Corporate Accounts",
+    footerReferral: "Refer a Friend",
+    footerGuide: "Arlanda ↔ Stockholm Guide",
+    corporateHeroTitle: "Corporate & Business Travel Accounts",
+    corporateHeroSubtitle: "Reliable, professionally invoiced transfers for hotels, relocation agencies, embassies, and corporate travel.",
+    corporateIntro: "Aathish Åkeri AB works with hotels, relocation agencies, embassies, and corporate travel managers across Stockholm who need dependable, presentable transport for their guests, clients, and staff — without the hassle of per-trip payment.",
+    corporateWhoTitle: "Who This Is For",
+    corporateWho1: "Hotels & concierge desks",
+    corporateWho2: "Relocation agencies & international schools",
+    corporateWho3: "Embassies & consulates",
+    corporateWho4: "Corporate travel managers & event planners",
+    corporateBenefitsTitle: "What You Get",
+    corporateBenefit1: "Monthly invoicing — no per-trip payment hassle",
+    corporateBenefit2: "A dedicated contact for bookings and questions",
+    corporateBenefit3: "Priority booking for recurring or last-minute trips",
+    corporateBenefit4: "Multilingual drivers (English, Swedish, Italian, and more)",
+    corporateBenefit5: "Fixed corporate rates, agreed in advance",
+    corporateCtaTitle: "Set Up a Corporate Account",
+    corporateCtaText: "Tell us about your organization and typical travel needs, and we'll set up an account with agreed rates and monthly invoicing.",
+    corporateCtaButton: "Contact Us About a Corporate Account",
+    referralHeroTitle: "Give 10%, Get 10%",
+    referralHeroSubtitle: "Share Aathish Åkeri with a friend — they save on their first ride, and you save on your next one.",
+    referralHow1Title: "Tell a friend",
+    referralHow1Text: "Share our number or website with someone who needs an Arlanda or Stockholm transfer.",
+    referralHow2Title: "They mention you",
+    referralHow2Text: "When they book, they enter your name in the \"Referred by\" field — they get 10% off their ride.",
+    referralHow3Title: "You get 10% too",
+    referralHow3Text: "On your next booking, mention that you referred them and we'll take 10% off your fare as a thank-you.",
+    referralCtaButton: "Book a Ride & Start Referring",
+    referralNote: "No limit on how many friends you can refer — the more you share, the more you save.",
+    lblReferral: "Referred by a friend? (optional)",
+    phReferral: "Enter their name",
+    btnLearnMore: "Learn More",
     trustLabel4: "Arlanda prices, no surprises",
     contactEmailLabel: "Email:",
     contactPhoneLabel: "Phone:",
@@ -193,6 +226,7 @@ const content = {
     faqQ2: "How do the fixed Arlanda prices work?",
     faqA2:
       "Our Arlanda Airport ↔ Stockholm City fares are fixed by vehicle type — Standard Sedan, Premium Sedan, or Minibus — so the price you're quoted is the price you pay, regardless of traffic.",
+      faqA2Html: "Our Arlanda Airport ↔ Stockholm City fares are fixed by vehicle type — Standard Sedan, Premium Sedan, or Minibus — so the price you're quoted is the price you pay, regardless of traffic. See the full breakdown on our <a href=\"index.html#pricing\">pricing table</a>, or read our <a href=\"guide-arlanda-stockholm.html\">Arlanda ↔ Stockholm guide</a> for travel times and other transport options.",
     faqQ3: "What happens if my flight is delayed?",
     faqA3:
       "Add your flight number when booking and we track it, adjusting your pickup time automatically at no extra charge for reasonable delays. Please still message us on WhatsApp if the delay is significant.",
@@ -323,13 +357,46 @@ const content = {
     waGenericMessage: "Hej! Jag skulle vilja boka en transfer med Aathish Åkeri AB.",
     waBookingTemplate: "Hej! Jag skulle vilja boka en transfer från {pickup} till {drop} den {date}.",
     priceEstimateLabel: "Fast pris för denna sträcka:",
-    priceEstimatePromoLabel: "Med DIRECT10 betalar du:",
+    priceEstimatePromoLabel: "Ditt rabatterade pris:",
     installBannerText: "Installera Aathish Åkeri för snabb åtkomst, som en app.",
     installBannerBtn: "Installera",
     installBannerIosText: "Lägg till på hemskärmen: tryck på Dela och sedan \"Lägg till på hemskärmen\".",
     reviewsTitle: "Vad Våra Kunder Säger",
     reviewsSubtitle: "Riktig feedback från resenärer som har åkt med oss.",
     reviewsCta: "Skicka Din Feedback",
+    footerCorporate: "Företagskonton",
+    footerReferral: "Tipsa en Vän",
+    footerGuide: "Arlanda ↔ Stockholm-guide",
+    corporateHeroTitle: "Företags- och Affärsresekonton",
+    corporateHeroSubtitle: "Pålitliga, professionellt fakturerade transfers för hotell, flyttbyråer, ambassader och affärsresor.",
+    corporateIntro: "Aathish Åkeri AB samarbetar med hotell, flyttbyråer, ambassader och företagsreseansvariga i hela Stockholm som behöver pålitlig, representativ transport för sina gäster, kunder och medarbetare — utan krångel med betalning per resa.",
+    corporateWhoTitle: "Vem Detta Passar",
+    corporateWho1: "Hotell & concierge-avdelningar",
+    corporateWho2: "Flyttbyråer & internationella skolor",
+    corporateWho3: "Ambassader & konsulat",
+    corporateWho4: "Företagsreseansvariga & eventplanerare",
+    corporateBenefitsTitle: "Vad Du Får",
+    corporateBenefit1: "Månadsfakturering — inget krångel med betalning per resa",
+    corporateBenefit2: "En dedikerad kontaktperson för bokningar och frågor",
+    corporateBenefit3: "Prioriterad bokning för återkommande eller sena resor",
+    corporateBenefit4: "Flerspråkiga förare (engelska, svenska, italienska med flera)",
+    corporateBenefit5: "Fasta företagspriser, avtalade i förväg",
+    corporateCtaTitle: "Skapa Ett Företagskonto",
+    corporateCtaText: "Berätta om din organisation och era vanliga resebehov, så sätter vi upp ett konto med avtalade priser och månadsfakturering.",
+    corporateCtaButton: "Kontakta Oss Om Ett Företagskonto",
+    referralHeroTitle: "Ge 10%, Få 10%",
+    referralHeroSubtitle: "Dela Aathish Åkeri med en vän — de sparar på sin första resa, och du sparar på din nästa.",
+    referralHow1Title: "Berätta för en vän",
+    referralHow1Text: "Dela vårt nummer eller vår webbplats med någon som behöver en transfer till Arlanda eller Stockholm.",
+    referralHow2Title: "De nämner dig",
+    referralHow2Text: "När de bokar anger de ditt namn i fältet \"Rekommenderad av\" — de får 10% rabatt på sin resa.",
+    referralHow3Title: "Du får också 10%",
+    referralHow3Text: "Vid din nästa bokning, nämn att du rekommenderade dem så drar vi av 10% på ditt pris som tack.",
+    referralCtaButton: "Boka en Resa & Börja Rekommendera",
+    referralNote: "Ingen gräns för hur många vänner du kan rekommendera — ju mer du delar, desto mer sparar du.",
+    lblReferral: "Rekommenderad av en vän? (valfritt)",
+    phReferral: "Ange deras namn",
+    btnLearnMore: "Läs Mer",
     trustLabel4: "Fasta Arlanda-priser, inga överraskningar",
     contactEmailLabel: "E-post:",
     contactPhoneLabel: "Telefon:",
@@ -437,6 +504,7 @@ const content = {
     faqQ2: "Hur fungerar de fasta Arlanda-priserna?",
     faqA2:
       "Våra priser Arlanda ↔ Stockholm City är fasta per fordonstyp — standardsedan, premiumsedan eller minibuss — så priset du får är priset du betalar, oavsett trafik.",
+      faqA2Html: "Våra priser Arlanda ↔ Stockholm City är fasta per fordonstyp — standardsedan, premiumsedan eller minibuss — så priset du får är priset du betalar, oavsett trafik. Se hela prislistan i vår <a href=\"index.html#pricing\">pristabell</a>, eller läs vår <a href=\"guide-arlanda-stockholm.html\">Arlanda ↔ Stockholm-guide</a> för restider och andra transportalternativ.",
     faqQ3: "Vad händer om mitt flyg är försenat?",
     faqA3:
       "Ange ditt flygnummer vid bokning så bevakar vi det och justerar hämtningstiden automatiskt utan extra kostnad vid rimliga förseningar. Hör gärna av dig på WhatsApp om förseningen är betydande.",
@@ -564,13 +632,46 @@ const content = {
     waGenericMessage: "¡Hola! Me gustaría reservar un traslado con Aathish Åkeri AB.",
     waBookingTemplate: "¡Hola! Me gustaría reservar un traslado de {pickup} a {drop} el {date}.",
     priceEstimateLabel: "Precio fijo para esta ruta:",
-    priceEstimatePromoLabel: "Con DIRECT10, pagas:",
+    priceEstimatePromoLabel: "Tu precio con descuento:",
     installBannerText: "Instala Aathish Åkeri para un acceso rápido, como una app.",
     installBannerBtn: "Instalar",
     installBannerIosText: "Añadir a la pantalla de inicio: toca Compartir y luego \"Añadir a pantalla de inicio\".",
     reviewsTitle: "Lo Que Dicen Nuestros Clientes",
     reviewsSubtitle: "Comentarios reales de pasajeros que han viajado con nosotros.",
     reviewsCta: "Envíanos Tu Opinión",
+    footerCorporate: "Cuentas Corporativas",
+    footerReferral: "Recomienda a un Amigo",
+    footerGuide: "Guía Arlanda ↔ Estocolmo",
+    corporateHeroTitle: "Cuentas Corporativas y de Viajes de Negocios",
+    corporateHeroSubtitle: "Traslados fiables y facturados profesionalmente para hoteles, agencias de reubicación, embajadas y viajes corporativos.",
+    corporateIntro: "Aathish Åkeri AB colabora con hoteles, agencias de reubicación, embajadas y responsables de viajes corporativos en todo Estocolmo que necesitan transporte fiable y presentable para sus huéspedes, clientes y personal — sin la molestia del pago por cada viaje.",
+    corporateWhoTitle: "Para Quién Es Esto",
+    corporateWho1: "Hoteles y recepciones de conserjería",
+    corporateWho2: "Agencias de reubicación y colegios internacionales",
+    corporateWho3: "Embajadas y consulados",
+    corporateWho4: "Responsables de viajes corporativos y organizadores de eventos",
+    corporateBenefitsTitle: "Lo Que Obtienes",
+    corporateBenefit1: "Facturación mensual — sin la molestia del pago por viaje",
+    corporateBenefit2: "Un contacto dedicado para reservas y consultas",
+    corporateBenefit3: "Reservas prioritarias para viajes recurrentes o de última hora",
+    corporateBenefit4: "Conductores multilingües (inglés, sueco, italiano y más)",
+    corporateBenefit5: "Tarifas corporativas fijas, acordadas de antemano",
+    corporateCtaTitle: "Crear Una Cuenta Corporativa",
+    corporateCtaText: "Cuéntanos sobre tu organización y necesidades habituales de viaje, y configuraremos una cuenta con tarifas acordadas y facturación mensual.",
+    corporateCtaButton: "Contáctanos Sobre Una Cuenta Corporativa",
+    referralHeroTitle: "Da 10%, Recibe 10%",
+    referralHeroSubtitle: "Comparte Aathish Åkeri con un amigo — ellos ahorran en su primer viaje, y tú ahorras en el siguiente.",
+    referralHow1Title: "Cuéntaselo a un amigo",
+    referralHow1Text: "Comparte nuestro número o sitio web con alguien que necesite un traslado a Arlanda o Estocolmo.",
+    referralHow2Title: "Te mencionan",
+    referralHow2Text: "Al reservar, indican tu nombre en el campo \"Recomendado por\" — obtienen un 10% de descuento en su viaje.",
+    referralHow3Title: "Tú también obtienes 10%",
+    referralHow3Text: "En tu próxima reserva, menciona que los recomendaste y te descontaremos un 10% como agradecimiento.",
+    referralCtaButton: "Reserva un Viaje y Empieza a Recomendar",
+    referralNote: "Sin límite de cuántos amigos puedes recomendar — cuanto más compartas, más ahorras.",
+    lblReferral: "¿Recomendado por un amigo? (opcional)",
+    phReferral: "Introduce su nombre",
+    btnLearnMore: "Saber Más",
     trustLabel4: "Precios fijos a Arlanda, sin sorpresas",
     contactEmailLabel: "Correo:",
     contactPhoneLabel: "Teléfono:",
@@ -673,6 +774,7 @@ const content = {
     faqQ2: "¿Cómo funcionan los precios fijos a Arlanda?",
     faqA2:
       "Nuestras tarifas Arlanda ↔ Estocolmo Ciudad son fijas según el tipo de vehículo — sedán estándar, sedán premium o minibús — así que el precio indicado es el que pagas, sin importar el tráfico.",
+      faqA2Html: "Nuestras tarifas Arlanda ↔ Estocolmo Ciudad son fijas según el tipo de vehículo — sedán estándar, sedán premium o minibús — así que el precio indicado es el que pagas, sin importar el tráfico. Consulta el desglose completo en nuestra <a href=\"index.html#pricing\">tabla de precios</a>, o lee nuestra <a href=\"guide-arlanda-stockholm.html\">guía Arlanda ↔ Estocolmo</a> para tiempos de viaje y otras opciones de transporte.",
     faqQ3: "¿Qué pasa si mi vuelo se retrasa?",
     faqA3:
       "Añade tu número de vuelo al reservar y lo monitorizamos, ajustando tu hora de recogida automáticamente sin coste adicional por retrasos razonables. Escríbenos por WhatsApp si el retraso es considerable.",
@@ -799,13 +901,46 @@ const content = {
     waGenericMessage: "Bonjour ! J'aimerais réserver un transfert avec Aathish Åkeri AB.",
     waBookingTemplate: "Bonjour ! J'aimerais réserver un transfert de {pickup} à {drop} le {date}.",
     priceEstimateLabel: "Prix fixe pour cet itinéraire :",
-    priceEstimatePromoLabel: "Avec DIRECT10, vous payez :",
+    priceEstimatePromoLabel: "Votre prix réduit :",
     installBannerText: "Installez Aathish Åkeri pour un accès rapide, comme une application.",
     installBannerBtn: "Installer",
     installBannerIosText: "Ajouter à l'écran d'accueil : appuyez sur Partager puis \"Sur l'écran d'accueil\".",
     reviewsTitle: "Ce Que Disent Nos Clients",
     reviewsSubtitle: "De vrais retours de passagers qui ont voyagé avec nous.",
     reviewsCta: "Envoyez-Nous Votre Avis",
+    footerCorporate: "Comptes Entreprises",
+    footerReferral: "Parrainer un Ami",
+    footerGuide: "Guide Arlanda ↔ Stockholm",
+    corporateHeroTitle: "Comptes Entreprises et Voyages d'Affaires",
+    corporateHeroSubtitle: "Des transferts fiables et facturés professionnellement pour hôtels, agences de relocalisation, ambassades et voyages d'affaires.",
+    corporateIntro: "Aathish Åkeri AB collabore avec des hôtels, des agences de relocalisation, des ambassades et des responsables de voyages d'affaires dans tout Stockholm qui ont besoin d'un transport fiable et présentable pour leurs clients, invités et employés — sans les tracas du paiement à chaque trajet.",
+    corporateWhoTitle: "À Qui Cela S'Adresse",
+    corporateWho1: "Hôtels et conciergeries",
+    corporateWho2: "Agences de relocalisation et écoles internationales",
+    corporateWho3: "Ambassades et consulats",
+    corporateWho4: "Responsables de voyages d'affaires et organisateurs d'événements",
+    corporateBenefitsTitle: "Ce Que Vous Obtenez",
+    corporateBenefit1: "Facturation mensuelle — plus de paiement à chaque trajet",
+    corporateBenefit2: "Un contact dédié pour les réservations et questions",
+    corporateBenefit3: "Réservation prioritaire pour les trajets récurrents ou de dernière minute",
+    corporateBenefit4: "Chauffeurs multilingues (anglais, suédois, italien et plus)",
+    corporateBenefit5: "Tarifs entreprise fixes, convenus à l'avance",
+    corporateCtaTitle: "Créer Un Compte Entreprise",
+    corporateCtaText: "Parlez-nous de votre organisation et de vos besoins de déplacement habituels, et nous mettrons en place un compte avec des tarifs convenus et une facturation mensuelle.",
+    corporateCtaButton: "Contactez-Nous Pour Un Compte Entreprise",
+    referralHeroTitle: "Offrez 10%, Recevez 10%",
+    referralHeroSubtitle: "Partagez Aathish Åkeri avec un ami — il économise sur son premier trajet, et vous économisez sur le vôtre.",
+    referralHow1Title: "Parlez-en à un ami",
+    referralHow1Text: "Partagez notre numéro ou notre site avec quelqu'un qui a besoin d'un transfert vers Arlanda ou Stockholm.",
+    referralHow2Title: "Il vous mentionne",
+    referralHow2Text: "Lors de sa réservation, il indique votre nom dans le champ \"Recommandé par\" — il obtient 10% de réduction sur son trajet.",
+    referralHow3Title: "Vous obtenez aussi 10%",
+    referralHow3Text: "Lors de votre prochaine réservation, mentionnez que vous l'avez recommandé et nous vous offrirons 10% de réduction en remerciement.",
+    referralCtaButton: "Réservez un Trajet et Commencez à Parrainer",
+    referralNote: "Aucune limite au nombre d'amis que vous pouvez parrainer — plus vous partagez, plus vous économisez.",
+    lblReferral: "Recommandé par un ami ? (facultatif)",
+    phReferral: "Indiquez son nom",
+    btnLearnMore: "En Savoir Plus",
     trustLabel4: "Tarifs Arlanda fixes, sans surprise",
     contactEmailLabel: "E-mail :",
     contactPhoneLabel: "Téléphone :",
@@ -908,6 +1043,7 @@ const content = {
     faqQ2: "Comment fonctionnent les tarifs fixes vers Arlanda ?",
     faqA2:
       "Nos tarifs Arlanda ↔ Stockholm centre sont fixes selon le type de véhicule — berline standard, berline premium ou minibus — donc le prix annoncé est celui que vous payez, quel que soit le trafic.",
+      faqA2Html: "Nos tarifs Arlanda ↔ Stockholm centre sont fixes selon le type de véhicule — berline standard, berline premium ou minibus — donc le prix annoncé est celui que vous payez, quel que soit le trafic. Consultez le détail complet dans notre <a href=\"index.html#pricing\">tableau des tarifs</a>, ou lisez notre <a href=\"guide-arlanda-stockholm.html\">guide Arlanda ↔ Stockholm</a> pour les temps de trajet et les autres options de transport.",
     faqQ3: "Que se passe-t-il si mon vol est retardé ?",
     faqA3:
       "Ajoutez votre numéro de vol lors de la réservation, nous le suivons et ajustons automatiquement l'heure de prise en charge sans frais supplémentaires pour les retards raisonnables. Contactez-nous tout de même sur WhatsApp en cas de retard important.",
@@ -1033,13 +1169,46 @@ const content = {
     waGenericMessage: "Hallo! Ich möchte einen Transfer mit Aathish Åkeri AB buchen.",
     waBookingTemplate: "Hallo! Ich möchte einen Transfer von {pickup} nach {drop} am {date} buchen.",
     priceEstimateLabel: "Festpreis für diese Strecke:",
-    priceEstimatePromoLabel: "Mit DIRECT10 zahlen Sie:",
+    priceEstimatePromoLabel: "Ihr ermäßigter Preis:",
     installBannerText: "Installiere Aathish Åkeri für schnellen Zugriff, wie eine App.",
     installBannerBtn: "Installieren",
     installBannerIosText: "Zum Home-Bildschirm hinzufügen: Tippe auf Teilen und dann auf \"Zum Home-Bildschirm\".",
     reviewsTitle: "Was Unsere Kunden Sagen",
     reviewsSubtitle: "Echtes Feedback von Fahrgästen, die mit uns gereist sind.",
     reviewsCta: "Sende Uns Dein Feedback",
+    footerCorporate: "Firmenkonten",
+    footerReferral: "Freund Empfehlen",
+    footerGuide: "Arlanda ↔ Stockholm-Guide",
+    corporateHeroTitle: "Firmen- und Geschäftsreisekonten",
+    corporateHeroSubtitle: "Zuverlässige, professionell abgerechnete Transfers für Hotels, Relocation-Agenturen, Botschaften und Geschäftsreisen.",
+    corporateIntro: "Aathish Åkeri AB arbeitet mit Hotels, Relocation-Agenturen, Botschaften und Geschäftsreiseverantwortlichen in ganz Stockholm zusammen, die zuverlässigen, repräsentativen Transport für ihre Gäste, Kunden und Mitarbeiter benötigen — ohne den Aufwand einer Zahlung pro Fahrt.",
+    corporateWhoTitle: "Für Wen Das Geeignet Ist",
+    corporateWho1: "Hotels & Concierge-Empfänge",
+    corporateWho2: "Relocation-Agenturen & internationale Schulen",
+    corporateWho3: "Botschaften & Konsulate",
+    corporateWho4: "Geschäftsreiseverantwortliche & Eventplaner",
+    corporateBenefitsTitle: "Das Erhalten Sie",
+    corporateBenefit1: "Monatliche Abrechnung — kein Aufwand bei Zahlung pro Fahrt",
+    corporateBenefit2: "Ein fester Ansprechpartner für Buchungen und Fragen",
+    corporateBenefit3: "Priorisierte Buchung für wiederkehrende oder kurzfristige Fahrten",
+    corporateBenefit4: "Mehrsprachige Fahrer (Englisch, Schwedisch, Italienisch und mehr)",
+    corporateBenefit5: "Feste Firmenpreise, im Voraus vereinbart",
+    corporateCtaTitle: "Firmenkonto Einrichten",
+    corporateCtaText: "Erzählen Sie uns von Ihrer Organisation und Ihrem üblichen Reisebedarf, und wir richten ein Konto mit vereinbarten Preisen und monatlicher Abrechnung ein.",
+    corporateCtaButton: "Kontaktieren Sie Uns Für Ein Firmenkonto",
+    referralHeroTitle: "10% Geben, 10% Bekommen",
+    referralHeroSubtitle: "Teilen Sie Aathish Åkeri mit einem Freund — er spart bei seiner ersten Fahrt, und Sie sparen bei Ihrer nächsten.",
+    referralHow1Title: "Erzählen Sie es einem Freund",
+    referralHow1Text: "Teilen Sie unsere Nummer oder Website mit jemandem, der einen Transfer nach Arlanda oder Stockholm braucht.",
+    referralHow2Title: "Er nennt Sie",
+    referralHow2Text: "Bei der Buchung gibt er Ihren Namen im Feld \"Empfohlen von\" an — er erhält 10% Rabatt auf seine Fahrt.",
+    referralHow3Title: "Sie bekommen auch 10%",
+    referralHow3Text: "Erwähnen Sie bei Ihrer nächsten Buchung, dass Sie ihn empfohlen haben, und wir ziehen Ihnen 10% als Dankeschön ab.",
+    referralCtaButton: "Fahrt Buchen & Mit Dem Empfehlen Beginnen",
+    referralNote: "Keine Begrenzung, wie viele Freunde Sie empfehlen können — je mehr Sie teilen, desto mehr sparen Sie.",
+    lblReferral: "Von einem Freund empfohlen? (optional)",
+    phReferral: "Namen eingeben",
+    btnLearnMore: "Mehr Erfahren",
     trustLabel4: "Feste Arlanda-Preise, keine Überraschungen",
     contactEmailLabel: "E-Mail:",
     contactPhoneLabel: "Telefon:",
@@ -1142,6 +1311,7 @@ const content = {
     faqQ2: "Wie funktionieren die Festpreise nach Arlanda?",
     faqA2:
       "Unsere Preise Arlanda ↔ Stockholm City sind je nach Fahrzeugtyp fest — Standard-Limousine, Premium-Limousine oder Kleinbus — sodass der genannte Preis unabhängig vom Verkehr gilt.",
+      faqA2Html: "Unsere Preise Arlanda ↔ Stockholm City sind je nach Fahrzeugtyp fest — Standard-Limousine, Premium-Limousine oder Kleinbus — sodass der genannte Preis unabhängig vom Verkehr gilt. Die vollständige Übersicht finden Sie in unserer <a href=\"index.html#pricing\">Preistabelle</a>, oder lesen Sie unseren <a href=\"guide-arlanda-stockholm.html\">Arlanda ↔ Stockholm-Guide</a> für Fahrzeiten und andere Transportoptionen.",
     faqQ3: "Was passiert, wenn sich mein Flug verspätet?",
     faqA3:
       "Geben Sie bei der Buchung Ihre Flugnummer an, wir verfolgen den Flug und passen die Abholzeit bei angemessenen Verspätungen automatisch und kostenlos an. Bitte schreiben Sie uns dennoch bei erheblicher Verspätung über WhatsApp.",
@@ -1267,13 +1437,46 @@ const content = {
     waGenericMessage: "Hallo! Ik zou graag een transfer boeken bij Aathish Åkeri AB.",
     waBookingTemplate: "Hallo! Ik zou graag een transfer boeken van {pickup} naar {drop} op {date}.",
     priceEstimateLabel: "Vaste prijs voor deze route:",
-    priceEstimatePromoLabel: "Met DIRECT10 betaal je:",
+    priceEstimatePromoLabel: "Jouw kortingsprijs:",
     installBannerText: "Installeer Aathish Åkeri voor snelle toegang, zoals een app.",
     installBannerBtn: "Installeren",
     installBannerIosText: "Toevoegen aan beginscherm: tik op Delen en dan op \"Zet op beginscherm\".",
     reviewsTitle: "Wat Onze Klanten Zeggen",
     reviewsSubtitle: "Echte feedback van reizigers die met ons hebben gereisd.",
     reviewsCta: "Stuur Ons Je Feedback",
+    footerCorporate: "Zakelijke Accounts",
+    footerReferral: "Vriend Aanbevelen",
+    footerGuide: "Arlanda ↔ Stockholm-gids",
+    corporateHeroTitle: "Zakelijke en Bedrijfsreisaccounts",
+    corporateHeroSubtitle: "Betrouwbare, professioneel gefactureerde transfers voor hotels, verhuisbureaus, ambassades en zakenreizen.",
+    corporateIntro: "Aathish Åkeri AB werkt samen met hotels, verhuisbureaus, ambassades en zakenreisverantwoordelijken in heel Stockholm die betrouwbaar, representatief vervoer nodig hebben voor hun gasten, klanten en medewerkers — zonder het gedoe van betaling per rit.",
+    corporateWhoTitle: "Voor Wie Dit Is",
+    corporateWho1: "Hotels & conciërgebalies",
+    corporateWho2: "Verhuisbureaus & internationale scholen",
+    corporateWho3: "Ambassades & consulaten",
+    corporateWho4: "Zakenreisverantwoordelijken & evenementplanners",
+    corporateBenefitsTitle: "Wat Je Krijgt",
+    corporateBenefit1: "Maandelijkse facturatie — geen gedoe met betaling per rit",
+    corporateBenefit2: "Een vaste contactpersoon voor boekingen en vragen",
+    corporateBenefit3: "Voorrang bij boeken voor terugkerende of last-minute ritten",
+    corporateBenefit4: "Meertalige chauffeurs (Engels, Zweeds, Italiaans en meer)",
+    corporateBenefit5: "Vaste zakelijke tarieven, vooraf afgesproken",
+    corporateCtaTitle: "Zakelijk Account Aanmaken",
+    corporateCtaText: "Vertel ons over je organisatie en gebruikelijke reisbehoeften, en we stellen een account samen met afgesproken tarieven en maandelijkse facturatie.",
+    corporateCtaButton: "Neem Contact Op Over Een Zakelijk Account",
+    referralHeroTitle: "Geef 10%, Krijg 10%",
+    referralHeroSubtitle: "Deel Aathish Åkeri met een vriend — zij besparen op hun eerste rit, en jij bespaart op je volgende.",
+    referralHow1Title: "Vertel het een vriend",
+    referralHow1Text: "Deel ons nummer of onze website met iemand die een transfer naar Arlanda of Stockholm nodig heeft.",
+    referralHow2Title: "Ze noemen jou",
+    referralHow2Text: "Bij het boeken vullen ze jouw naam in bij \"Aanbevolen door\" — zij krijgen 10% korting op hun rit.",
+    referralHow3Title: "Jij krijgt ook 10%",
+    referralHow3Text: "Vermeld bij je volgende boeking dat je hen hebt aanbevolen en we geven je 10% korting als bedankje.",
+    referralCtaButton: "Boek Een Rit & Begin Met Aanbevelen",
+    referralNote: "Geen limiet aan hoeveel vrienden je kunt aanbevelen — hoe meer je deelt, hoe meer je bespaart.",
+    lblReferral: "Aanbevolen door een vriend? (optioneel)",
+    phReferral: "Voer hun naam in",
+    btnLearnMore: "Meer Weten",
     trustLabel4: "Vaste Arlanda-prijzen, geen verrassingen",
     contactEmailLabel: "E-mail:",
     contactPhoneLabel: "Telefoon:",
@@ -1376,6 +1579,7 @@ const content = {
     faqQ2: "Hoe werken de vaste Arlanda-prijzen?",
     faqA2:
       "Onze tarieven Arlanda ↔ Stockholm City liggen vast per voertuigtype — standaard sedan, premium sedan of minibus — dus de geoffreerde prijs is de prijs die u betaalt, ongeacht het verkeer.",
+      faqA2Html: "Onze tarieven Arlanda ↔ Stockholm City liggen vast per voertuigtype — standaard sedan, premium sedan of minibus — dus de geoffreerde prijs is de prijs die u betaalt, ongeacht het verkeer. Bekijk het volledige overzicht in onze <a href=\"index.html#pricing\">prijstabel</a>, of lees onze <a href=\"guide-arlanda-stockholm.html\">Arlanda ↔ Stockholm-gids</a> voor reistijden en andere vervoersopties.",
     faqQ3: "Wat gebeurt er als mijn vlucht vertraagd is?",
     faqA3:
       "Voeg uw vluchtnummer toe bij het boeken, dan volgen wij deze en passen we uw ophaaltijd automatisch en kosteloos aan bij redelijke vertragingen. Stuur ons bij aanzienlijke vertraging toch een bericht via WhatsApp.",
@@ -1501,13 +1705,46 @@ const content = {
     waGenericMessage: "Ciao! Vorrei prenotare un transfer con Aathish Åkeri AB.",
     waBookingTemplate: "Ciao! Vorrei prenotare un transfer da {pickup} a {drop} il {date}.",
     priceEstimateLabel: "Prezzo fisso per questo tragitto:",
-    priceEstimatePromoLabel: "Con DIRECT10, paghi:",
+    priceEstimatePromoLabel: "Il tuo prezzo scontato:",
     installBannerText: "Installa Aathish Åkeri per un accesso rapido, come un'app.",
     installBannerBtn: "Installa",
     installBannerIosText: "Aggiungi alla schermata Home: tocca Condividi e poi \"Aggiungi a Home\".",
     reviewsTitle: "Cosa Dicono I Nostri Clienti",
     reviewsSubtitle: "Feedback reali da passeggeri che hanno viaggiato con noi.",
     reviewsCta: "Inviaci Il Tuo Feedback",
+    footerCorporate: "Account Aziendali",
+    footerReferral: "Consiglia un Amico",
+    footerGuide: "Guida Arlanda ↔ Stoccolma",
+    corporateHeroTitle: "Account Aziendali e Viaggi di Lavoro",
+    corporateHeroSubtitle: "Transfer affidabili e fatturati professionalmente per hotel, agenzie di relocation, ambasciate e viaggi aziendali.",
+    corporateIntro: "Aathish Åkeri AB collabora con hotel, agenzie di relocation, ambasciate e responsabili di viaggi aziendali in tutta Stoccolma che hanno bisogno di un trasporto affidabile e rappresentativo per i loro ospiti, clienti e dipendenti — senza il fastidio del pagamento per ogni corsa.",
+    corporateWhoTitle: "Per Chi È Pensato",
+    corporateWho1: "Hotel e reception concierge",
+    corporateWho2: "Agenzie di relocation e scuole internazionali",
+    corporateWho3: "Ambasciate e consolati",
+    corporateWho4: "Responsabili di viaggi aziendali e organizzatori di eventi",
+    corporateBenefitsTitle: "Cosa Ottieni",
+    corporateBenefit1: "Fatturazione mensile — niente pagamento per ogni corsa",
+    corporateBenefit2: "Un referente dedicato per prenotazioni e domande",
+    corporateBenefit3: "Prenotazione prioritaria per corse ricorrenti o last-minute",
+    corporateBenefit4: "Autisti multilingue (inglese, svedese, italiano e altro)",
+    corporateBenefit5: "Tariffe aziendali fisse, concordate in anticipo",
+    corporateCtaTitle: "Attiva Un Account Aziendale",
+    corporateCtaText: "Raccontaci della tua organizzazione e delle tue esigenze di viaggio abituali, e configureremo un account con tariffe concordate e fatturazione mensile.",
+    corporateCtaButton: "Contattaci Per Un Account Aziendale",
+    referralHeroTitle: "Dai il 10%, Ricevi il 10%",
+    referralHeroSubtitle: "Condividi Aathish Åkeri con un amico — lui risparmia sulla prima corsa, e tu risparmi sulla prossima.",
+    referralHow1Title: "Parlane a un amico",
+    referralHow1Text: "Condividi il nostro numero o sito web con qualcuno che ha bisogno di un transfer per Arlanda o Stoccolma.",
+    referralHow2Title: "Ti menziona",
+    referralHow2Text: "Al momento della prenotazione, inserisce il tuo nome nel campo \"Consigliato da\" — ottiene il 10% di sconto sulla sua corsa.",
+    referralHow3Title: "Ricevi anche tu il 10%",
+    referralHow3Text: "Alla tua prossima prenotazione, menziona di averlo consigliato e ti scaleremo il 10% come ringraziamento.",
+    referralCtaButton: "Prenota Una Corsa e Inizia a Consigliare",
+    referralNote: "Nessun limite a quanti amici puoi consigliare — più condividi, più risparmi.",
+    lblReferral: "Consigliato da un amico? (facoltativo)",
+    phReferral: "Inserisci il suo nome",
+    btnLearnMore: "Scopri Di Più",
     trustLabel4: "Prezzi fissi per Arlanda, senza sorprese",
     contactEmailLabel: "Email:",
     contactPhoneLabel: "Telefono:",
@@ -1610,6 +1847,7 @@ const content = {
     faqQ2: "Come funzionano i prezzi fissi per Arlanda?",
     faqA2:
       "Le nostre tariffe Arlanda ↔ Stoccolma città sono fisse in base al tipo di veicolo — berlina standard, berlina premium o minibus — quindi il prezzo indicato è quello che paghi, indipendentemente dal traffico.",
+      faqA2Html: "Le nostre tariffe Arlanda ↔ Stoccolma città sono fisse in base al tipo di veicolo — berlina standard, berlina premium o minibus — quindi il prezzo indicato è quello che paghi, indipendentemente dal traffico. Consulta il quadro completo nella nostra <a href=\"index.html#pricing\">tabella prezzi</a>, oppure leggi la nostra <a href=\"guide-arlanda-stockholm.html\">guida Arlanda ↔ Stoccolma</a> per tempi di viaggio e altre opzioni di trasporto.",
     faqQ3: "Cosa succede se il mio volo è in ritardo?",
     faqA3:
       "Aggiungi il numero di volo al momento della prenotazione, lo monitoriamo e regoliamo automaticamente l'orario di ritiro senza costi aggiuntivi per ritardi ragionevoli. Scrivici comunque su WhatsApp in caso di ritardo significativo.",
@@ -1875,6 +2113,7 @@ function updatePriceEstimate() {
   const promoBox = document.getElementById("priceEstimatePromo");
   const promoValueEl = document.getElementById("priceEstimatePromoValue");
   const promoInput = document.getElementById("promoCodeField");
+  const referralInput = document.getElementById("referralField");
   if (!pickupInput || !dropInput || !vehicleSel || !box || !valueEl) return;
 
   const key = `${normalizeLoc(pickupInput.value)}|${normalizeLoc(dropInput.value)}`;
@@ -1887,9 +2126,13 @@ function updatePriceEstimate() {
   valueEl.textContent = `${price} kr`;
   box.style.display = "";
 
+  // A discount applies from either a valid promo code (e.g. DIRECT10 on a
+  // Book Direct Pass card) OR a filled-in referral field — same 10% either way.
   const codeEntered = promoInput && promoInput.value.trim().toUpperCase();
+  const promoMatches = PROMO.active && codeEntered && codeEntered === PROMO.code;
+  const referred = referralInput && referralInput.value.trim().length > 0;
   if (promoBox && promoValueEl) {
-    if (PROMO.active && codeEntered && codeEntered === PROMO.code) {
+    if (promoMatches || referred) {
       promoValueEl.textContent = `${Math.round(price * 0.9)} kr`;
       promoBox.style.display = "";
     } else {
@@ -1941,16 +2184,21 @@ function updateBookingWaLink() {
 function prepareBookingSubmit() {
   const vehicleSel = document.getElementById("vehicleType");
   const promoInput = document.getElementById("promoCodeField");
+  const referralInput = document.getElementById("referralField");
   const notes = document.getElementById("notesField");
   if (!notes) return true;
 
   // Strip any prefix inserted by a previous (invalid) submit attempt first,
-  // so retries don't stack duplicate "Preferred Vehicle: ..." / "Promo Code: ..." lines.
+  // so retries don't stack duplicate "Preferred Vehicle: ..." / "Promo Code: ..." /
+  // "Referred by: ..." lines.
   if (notes.dataset.vehiclePrefix) {
     notes.value = notes.value.replace(notes.dataset.vehiclePrefix, "");
   }
   if (notes.dataset.promoPrefix) {
     notes.value = notes.value.replace(notes.dataset.promoPrefix, "");
+  }
+  if (notes.dataset.referralPrefix) {
+    notes.value = notes.value.replace(notes.dataset.referralPrefix, "");
   }
 
   const vehiclePrefix = vehicleSel
@@ -1960,10 +2208,15 @@ function prepareBookingSubmit() {
     PROMO.active && promoInput && promoInput.value.trim()
       ? `Promo Code: ${promoInput.value.trim().toUpperCase()}. `
       : "";
+  const referralPrefix =
+    referralInput && referralInput.value.trim()
+      ? `Referred by: ${referralInput.value.trim()} (apply 10% referral discount). `
+      : "";
 
-  notes.value = vehiclePrefix + promoPrefix + notes.value;
+  notes.value = vehiclePrefix + promoPrefix + referralPrefix + notes.value;
   notes.dataset.vehiclePrefix = vehiclePrefix;
   notes.dataset.promoPrefix = promoPrefix;
+  notes.dataset.referralPrefix = referralPrefix;
   return true;
 }
 
@@ -2073,12 +2326,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const dropInput = document.querySelector('input[name="entry.1227612234"]');
   const vehicleSel = document.getElementById("vehicleType");
   const promoField = document.getElementById("promoCodeField");
+  const referralField = document.getElementById("referralField");
   const dateField = document.getElementById("visibleDate");
   const syncBookingWidgets = () => {
     updatePriceEstimate();
     updateBookingWaLink();
   };
-  [pickupInput, dropInput, promoField, dateField].forEach((el) => {
+  [pickupInput, dropInput, promoField, referralField, dateField].forEach((el) => {
     if (el) el.addEventListener("input", syncBookingWidgets);
   });
   if (vehicleSel) vehicleSel.addEventListener("change", syncBookingWidgets);
